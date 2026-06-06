@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>研修事業部 | はてなベース株式会社</title>
-<meta name="description" content="freee会計の実務スキルを短期集中で習得する研修プログラム。未経験者を即戦力に育て、派遣先企業への就業まで一気通貫で支援します。"/>
+<title>クラウド会計アカデミー | はてなベース株式会社</title>
+<meta name="description" content="freee・マネーフォワード・勘定奉行クラウドの3大ソフト対応。短期集中で実務スキルを習得し、研修修了後は就労マッチングまで一気通貫で支援。"/>
 <link rel="stylesheet" href="css/miyazawa.css">
 <style>
 /* Training page specific */
@@ -23,6 +23,7 @@
 .hb-training-tag.individual { background:#E8F5E9; color:#2E7D32; border:1px solid #C8E6C9; }
 .hb-training-tag.corporate  { background:#E3F2FD; color:#1565C0; border:1px solid #BBDEFB; }
 .hb-training-tag.dispatch   { background:#FFF3E0; color:#E65100; border:1px solid #FFE0B2; }
+.hb-training-tag.coming     { background:#F5F5F5; color:#757575; border:1px solid #E0E0E0; }
 .hb-training-title {
   font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
   font-weight:700; font-size:17px; color:#0E0E14; margin-bottom:10px; line-height:1.5;
@@ -53,12 +54,12 @@
 .hb-tier-section { margin-bottom:64px; }
 
 .hb-metrics {
-  display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:32px;
   margin-top:48px; padding-top:32px; border-top:1px solid rgba(255,255,255,.25);
 }
 .hb-metric-val {
   font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:300;
-  font-size:56px; color:#fff; line-height:1; margin-bottom:8px;
+  font-size:48px; color:#fff; line-height:1; margin-bottom:8px;
 }
 .hb-metric-val small { font-size:.45em; font-style:normal; opacity:.7; }
 .hb-metric-label { font-size:12px; color:rgba(255,255,255,.7); letter-spacing:.04em; }
@@ -68,9 +69,105 @@
   justify-content:center; padding:32px 0;
 }
 
+.hb-pain-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  border:1px solid var(--hb-border);
+}
+.hb-pain-card {
+  padding:32px 28px; border-right:1px solid var(--hb-border); border-bottom:1px solid var(--hb-border);
+  transition: background .35s;
+}
+.hb-pain-card:nth-child(3n) { border-right:none; }
+.hb-pain-card:nth-child(n+4) { border-bottom:none; }
+.hb-pain-card:hover { background:var(--hb-blue-ghost); }
+
+.hb-step-grid {
+  display:grid; grid-template-columns:repeat(5,1fr); gap:0;
+  border:1px solid var(--hb-border);
+}
+.hb-step-card {
+  padding:36px 24px; border-right:1px solid var(--hb-border);
+  position:relative;
+}
+.hb-step-card:last-child { border-right:none; }
+
+.hb-career-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+  border:1px solid var(--hb-border);
+}
+.hb-career-card {
+  padding:32px 24px; border-right:1px solid var(--hb-border);
+  transition: background .35s;
+}
+.hb-career-card:last-child { border-right:none; }
+.hb-career-card:hover { background:var(--hb-blue-ghost); }
+
+.hb-case-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  border:1px solid var(--hb-border);
+}
+.hb-case-card {
+  padding:36px 28px; border-right:1px solid var(--hb-border);
+}
+.hb-case-card:last-child { border-right:none; }
+
+.hb-faq-item {
+  padding:24px 0; border-bottom:1px solid var(--hb-border);
+}
+.hb-faq-q {
+  font-weight:700; font-size:15px; margin-bottom:12px;
+  display:flex; align-items:baseline; gap:14px;
+}
+.hb-faq-a {
+  font-size:13.5px; line-height:2; color:var(--hb-sub);
+  padding-left:38px;
+}
+.hb-faq-badge {
+  font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:300;
+  font-size:24px; color:var(--hb-blue); line-height:1; flex-shrink:0;
+}
+
+.hb-price-table {
+  width:100%; border-collapse:collapse; font-size:14px;
+}
+.hb-price-table th {
+  background:var(--hb-blue); color:#fff; padding:14px 20px;
+  font-family:Inter,system-ui,sans-serif; font-size:11px; font-weight:600;
+  letter-spacing:.12em; text-align:left;
+}
+.hb-price-table td {
+  padding:16px 20px; border-bottom:1px solid var(--hb-border);
+}
+.hb-price-table tr:nth-child(even) td { background:var(--hb-blue-ghost); }
+
+.hb-line-btn {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 28px; background:#06C755; color:#fff;
+  font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+  font-size:14px; font-weight:700; letter-spacing:.02em;
+  text-decoration:none; border-radius:0;
+}
+
 @media (max-width:880px) {
   .hb-training-grid { grid-template-columns:1fr; }
-  .hb-metrics { grid-template-columns:1fr; gap:24px; text-align:center; }
+  .hb-metrics { grid-template-columns:repeat(2,1fr); gap:24px; }
+  .hb-pain-grid { grid-template-columns:1fr; }
+  .hb-pain-card { border-right:none !important; border-bottom:1px solid var(--hb-border) !important; }
+  .hb-pain-card:last-child { border-bottom:none !important; }
+  .hb-step-grid { grid-template-columns:1fr; }
+  .hb-step-card { border-right:none; border-bottom:1px solid var(--hb-border); }
+  .hb-step-card:last-child { border-bottom:none; }
+  .hb-career-grid { grid-template-columns:repeat(2,1fr); }
+  .hb-career-card:nth-child(2n) { border-right:none; }
+  .hb-career-card { border-bottom:1px solid var(--hb-border); }
+  .hb-case-grid { grid-template-columns:1fr; }
+  .hb-case-card { border-right:none; border-bottom:1px solid var(--hb-border); }
+  .hb-case-card:last-child { border-bottom:none; }
+}
+@media (max-width:480px) {
+  .hb-metrics { grid-template-columns:1fr; text-align:center; }
+  .hb-career-grid { grid-template-columns:1fr; }
+  .hb-career-card { border-right:none; }
 }
 </style>
 </head>
@@ -82,26 +179,31 @@
   <nav class="hb-pc-nav">
     <a href="#programs" class="hb-nav-item active">
       <span class="hb-nav-en">Programs</span>
-      <span class="hb-nav-jp">研修プログラム</span>
+      <span class="hb-nav-jp">研修ラインナップ</span>
       <span class="hb-nav-underline"></span>
     </a>
-    <a href="#for-candidates" class="hb-nav-item">
-      <span class="hb-nav-en">For Candidates</span>
-      <span class="hb-nav-jp">受講者の方</span>
+    <a href="#flow" class="hb-nav-item">
+      <span class="hb-nav-en">Flow</span>
+      <span class="hb-nav-jp">受講の流れ</span>
       <span class="hb-nav-underline"></span>
     </a>
-    <a href="#for-companies" class="hb-nav-item">
-      <span class="hb-nav-en">For Companies</span>
-      <span class="hb-nav-jp">企業の方</span>
+    <a href="#career" class="hb-nav-item">
+      <span class="hb-nav-en">Career</span>
+      <span class="hb-nav-jp">就労先</span>
       <span class="hb-nav-underline"></span>
     </a>
-    <a href="#partners" class="hb-nav-item">
-      <span class="hb-nav-en">Partners</span>
-      <span class="hb-nav-jp">パートナー</span>
+    <a href="#pricing" class="hb-nav-item">
+      <span class="hb-nav-en">Pricing</span>
+      <span class="hb-nav-jp">料金</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#faq" class="hb-nav-item">
+      <span class="hb-nav-en">FAQ</span>
+      <span class="hb-nav-jp">よくある質問</span>
       <span class="hb-nav-underline"></span>
     </a>
     <span class="hb-nav-divider"></span>
-    <a href="#contact" class="hb-contact-btn">CONTACT <span class="hb-arrow">↗</span></a>
+    <a href="https://lin.ee/QnI7WzZ" class="hb-contact-btn" style="background:#06C755">LINE登録 <span class="hb-arrow">↗</span></a>
   </nav>
   <button class="hb-mb-burger" aria-label="menu">
     <div style="position:relative;width:18px;height:12px;margin:0 auto">
@@ -115,7 +217,6 @@
 <!-- ====== HERO ====== -->
 <section class="hb-hero" style="background:#0E0E14;color:#fff;padding:96px 32px 80px" id="top">
   <svg viewBox="0 0 880 880" class="hb-deco-svg" style="top:40px;right:-220px;width:880px;height:880px">
-    <!-- Diagonal grid lines -->
     <line x1="0" y1="0" x2="880" y2="880" stroke="#5C8FDB" stroke-opacity=".10" stroke-width=".5"/>
     <line x1="220" y1="0" x2="880" y2="660" stroke="#5C8FDB" stroke-opacity=".07" stroke-width=".5"/>
     <line x1="440" y1="0" x2="880" y2="440" stroke="#5C8FDB" stroke-opacity=".10" stroke-width=".5"/>
@@ -123,45 +224,46 @@
     <line x1="0" y1="220" x2="660" y2="880" stroke="#5C8FDB" stroke-opacity=".07" stroke-width=".5"/>
     <line x1="0" y1="440" x2="440" y2="880" stroke="#5C8FDB" stroke-opacity=".10" stroke-width=".5"/>
     <line x1="0" y1="660" x2="220" y2="880" stroke="#5C8FDB" stroke-opacity=".07" stroke-width=".5"/>
-    <!-- Counter-diagonal accents -->
     <line x1="880" y1="0" x2="0" y2="880" stroke="#5C8FDB" stroke-opacity=".06" stroke-width=".5"/>
     <line x1="880" y1="440" x2="440" y2="880" stroke="#5C8FDB" stroke-opacity=".06" stroke-width=".5"/>
     <line x1="440" y1="0" x2="0" y2="440" stroke="#5C8FDB" stroke-opacity=".06" stroke-width=".5"/>
-    <!-- Intersection dots -->
     <circle cx="440" cy="440" r="3" fill="#5C8FDB" opacity=".35"/>
     <circle cx="220" cy="220" r="2" fill="#5C8FDB" opacity=".20"/>
     <circle cx="660" cy="660" r="2" fill="#5C8FDB" opacity=".20"/>
   </svg>
   <div style="position:relative;max-width:1280px;margin:0 auto">
-    <div class="hb-hero-badge hb-up is-in" style="color:#5C8FDB">TRAINING DIVISION — 研修事業部</div>
+    <div class="hb-hero-badge hb-up is-in" style="color:#5C8FDB">CLOUD ACCOUNTING ACADEMY — クラウド会計アカデミー</div>
     <h1 class="hb-hero-display" style="color:#fff">
-      <div><span class="hb-chars is-in"><span class="hb-line">人を育て、</span></span></div>
-      <div><span class="hb-accent" style="border-bottom-color:#5C8FDB"><span class="hb-chars is-in"><span class="hb-line">現場を変える。</span></span></span></div>
-      <div style="margin-top:24px"><em style="color:#5C8FDB"><span class="hb-chars is-in"><span class="hb-line">Train.&nbsp;Deploy.&nbsp;Transform.</span></span></em></div>
+      <div><span class="hb-chars is-in"><span class="hb-line">経理の実務力を、</span></span></div>
+      <div><span class="hb-accent" style="border-bottom-color:#5C8FDB"><span class="hb-chars is-in"><span class="hb-line">10日間で。</span></span></span></div>
     </h1>
     <div class="hb-hero-body" style="margin-top:32px;max-width:640px">
       <p class="hb-up is-in" style="font-size:16px;line-height:1.9;color:rgba(255,255,255,.8);margin:0">
-        <span style="color:#5C8FDB;font-weight:600">freee × 実務研修 × 派遣</span> の一気通貫モデルで、<br>
-        未経験者を<strong style="font-weight:600;color:#fff">即戦力の経理人材</strong>に育成し、<br>
-        企業の経理DX推進を人材面から支えるパートナー。
+        <span style="color:#5C8FDB;font-weight:600">freee・マネーフォワード・勘定奉行クラウド</span>の3大ソフト対応。<br>
+        短期集中で実務スキルを習得し、研修修了後は<br>
+        <strong style="font-weight:600;color:#fff">就労マッチングまで一気通貫で支援</strong>します。
       </p>
     </div>
     <div class="hb-hero-actions hb-up is-in" style="margin-top:36px">
-      <a href="#contact" class="hb-btn-primary" style="background:#5C8FDB">受講を申し込む <span class="hb-arrow">→</span></a>
-      <a href="#programs" class="hb-btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4)">プログラムを見る <span class="hb-arrow">↗</span></a>
+      <a href="https://lin.ee/QnI7WzZ" class="hb-line-btn">公式LINEに登録する <span class="hb-arrow">→</span></a>
+      <a href="#programs" class="hb-btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4)">プログラム詳細を見る <span class="hb-arrow">↗</span></a>
     </div>
     <div class="hb-metrics">
       <div class="hb-up is-in">
-        <div class="hb-metric-val">10<small>日間</small></div>
-        <div class="hb-metric-label">短期集中プログラム</div>
+        <div class="hb-metric-val">150<small>名+</small></div>
+        <div class="hb-metric-label">修了者数</div>
       </div>
       <div class="hb-up is-in">
-        <div class="hb-metric-val">¥50,000</div>
-        <div class="hb-metric-label">全額返金保証付き</div>
+        <div class="hb-metric-val">3<small>ソフト</small></div>
+        <div class="hb-metric-label">クラウド会計対応</div>
       </div>
       <div class="hb-up is-in">
-        <div class="hb-metric-val">100<small>%</small></div>
-        <div class="hb-metric-label">修了後の就業支援</div>
+        <div class="hb-metric-val">6<small>ヶ月</small></div>
+        <div class="hb-metric-label">修了後フォロー期間</div>
+      </div>
+      <div class="hb-up is-in">
+        <div class="hb-metric-val">¥0<small>〜</small></div>
+        <div class="hb-metric-label">就労決定時 実質負担</div>
       </div>
     </div>
   </div>
@@ -170,21 +272,67 @@
 <!-- ====== PARTNER LOGOS ====== -->
 <section style="padding:28px 32px;border-bottom:1px solid var(--hb-border);background:#fff">
   <div class="hb-partner-row" style="max-width:1280px;margin:0 auto">
-    <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted);margin-right:24px">OFFICIAL PARTNERS</div>
+    <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted);margin-right:24px">PARTNERS</div>
     <img src="images/logo_freee.svg" alt="freee" style="height:28px;opacity:.5">
-    <span style="font-family:Inter,system-ui,sans-serif;font-size:16px;font-weight:300;color:#8A8A93;letter-spacing:.04em">DIGITAL BASE</span>
+    <span style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:300;color:#8A8A93;letter-spacing:.04em">DIGITAL BASE</span>
+    <span style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:300;color:#8A8A93;letter-spacing:.04em">Career Mom</span>
+    <span style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:300;color:#8A8A93;letter-spacing:.04em">MAIA</span>
+    <span style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:300;color:#8A8A93;letter-spacing:.04em">MerryBiz</span>
+    <span style="font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:300;color:#8A8A93;letter-spacing:.04em">OBC</span>
+  </div>
+</section>
+
+<!-- ====== PAIN POINTS ====== -->
+<section class="hb-section" style="background:#fff">
+  <div class="hb-section-narrow">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Pain Points</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">こんな悩みはありませんか</span></span></span>
+    </div>
+    <div class="hb-pain-grid">
+      <div class="hb-pain-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:var(--hb-blue);margin-bottom:14px">01</div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:10px">資格はあるのに実務経験がない</div>
+        <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0">簿記の資格を取得したものの、実務経験がないため応募できる求人が限られている。</p>
+      </div>
+      <div class="hb-pain-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:var(--hb-blue);margin-bottom:14px">02</div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:10px">クラウド会計ソフトが使えない</div>
+        <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0">freeeやマネーフォワードの操作経験がなく、求人の必須条件を満たせない。</p>
+      </div>
+      <div class="hb-pain-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:var(--hb-blue);margin-bottom:14px">03</div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:10px">独学では限界を感じている</div>
+        <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0">YouTubeや書籍で勉強しても、実際の月次決算の流れがイメージできない。</p>
+      </div>
+      <div class="hb-pain-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:var(--hb-blue);margin-bottom:14px">04</div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:10px">子育てしながら働きたい</div>
+        <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0">リモートで柔軟に働ける経理職に就きたいが、未経験だと門前払いされてしまう。</p>
+      </div>
+      <div class="hb-pain-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:var(--hb-blue);margin-bottom:14px">05</div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:10px">キャリアブランクがある</div>
+        <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0">育児や介護でブランクがあり、復職への不安が大きい。</p>
+      </div>
+      <div class="hb-pain-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:var(--hb-blue);margin-bottom:14px">06</div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:10px">学習方法の選択に迷っている</div>
+        <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0">スクール、通信講座、独学のどれが自分に合っているかわからない。</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ====== MODEL ====== -->
-<section class="hb-section" style="background:#fff">
+<section class="hb-section hb-section-alt">
   <div class="hb-section-narrow">
     <div class="hb-section-head">
-      <span class="hb-section-head-en">Model</span>
-      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">研修→派遣→定着のワンストップ</span></span></span>
+      <span class="hb-section-head-en">Solution</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">学ぶ → 実践 → 働く をワンストップで</span></span></span>
     </div>
     <p class="hb-up" style="font-size:15px;line-height:2.1;color:#3A3A45;margin:0 0 48px;max-width:680px">
-      はてなベースの研修事業は、単なるスキル研修ではありません。<br>
+      クラウド会計アカデミーは、単なるスキル研修ではありません。<br>
       <span style="color:#1F61AB;font-weight:700">「育てる → 届ける → 定着させる」</span>の一貫体制で、<br>
       企業の経理DXを「人材」の側面から加速させます。
     </p>
@@ -195,7 +343,7 @@
           <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted)">TRAIN</span>
         </div>
         <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:24px;line-height:1.3;margin:0 0 18px">育てる</h3>
-        <p style="font-size:13.5px;line-height:2;color:var(--hb-sub);margin:0">eラーニング＋対面研修の短期集中プログラム。freee会計の実務オペレーションを10日間で完全習得。模擬月次決算で実践力を担保。</p>
+        <p style="font-size:13.5px;line-height:2;color:var(--hb-sub);margin:0">eラーニング8h＋実地研修2日間の短期集中プログラム。デモ環境での模擬月次決算で実践力を担保。freee認定5つ星アドバイザーが監修。</p>
       </div>
       <div class="hb-up" style="padding:48px 36px;border-right:1px solid var(--hb-border);background:var(--hb-blue-ghost)">
         <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:28px">
@@ -203,7 +351,7 @@
           <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted)">DEPLOY</span>
         </div>
         <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:24px;line-height:1.3;margin:0 0 18px">届ける</h3>
-        <p style="font-size:13.5px;line-height:2;color:var(--hb-sub);margin:0">修了者を経理DX人材として派遣先企業にマッチング。freee導入済み・導入予定の企業を中心に、即戦力として配置。</p>
+        <p style="font-size:13.5px;line-height:2;color:var(--hb-sub);margin:0">修了者を提携企業・自社BPO案件・税理士事務所にマッチング。メリービズ、NTTデータ経由案件など、多様な就労先を確保。</p>
       </div>
       <div class="hb-up" style="padding:48px 36px">
         <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:28px">
@@ -211,199 +359,359 @@
           <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted)">SUPPORT</span>
         </div>
         <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:24px;line-height:1.3;margin:0 0 18px">定着させる</h3>
-        <p style="font-size:13.5px;line-height:2;color:var(--hb-sub);margin:0">就業後6ヶ月間のSlackフォローアップ。業務上の疑問や応用スキルのサポートで、現場への定着と成長を支え続ける。</p>
+        <p style="font-size:13.5px;line-height:2;color:var(--hb-sub);margin:0">就業後6ヶ月間のSlackフォローアップ。業務上の疑問や応用スキルのサポートで、現場への定着と成長を支え続けます。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ====== PROGRAMS ====== -->
-<section id="programs" class="hb-section hb-section-alt">
+<section id="programs" class="hb-section" style="background:#fff">
   <div style="max-width:1280px;margin:0 auto">
     <div class="hb-section-head">
       <span class="hb-section-head-en">Programs</span>
-      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">研修プログラム</span></span></span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">研修ラインナップ</span></span></span>
       <span class="hb-section-head-count">03 PROGRAMS</span>
     </div>
-
-    <!-- Tier 1: Individual -->
-    <div class="hb-tier-section">
-      <div class="hb-tier-header hb-up">
-        <span class="hb-tier-num">01</span>
-        <span class="hb-tier-label">個人向け研修</span>
-        <span class="hb-tier-en">FOR INDIVIDUALS</span>
-      </div>
-      <div class="hb-training-grid">
-        <a href="lp/freee-training/index.html" class="hb-training-card hb-up">
-          <span class="hb-training-tag individual">FLAGSHIP</span>
-          <div class="hb-training-title">速習freee会計研修</div>
-          <div class="hb-training-desc">eラーニング8h＋対面研修2日間で、freee会計の実務オペレーションを完全習得。模擬月次決算演習付き。修了後は派遣先企業への就業まで一気通貫で支援。</div>
-          <div class="hb-training-price">¥50,000（全額返金保証付き）</div>
-          <div class="hb-training-arrow">VIEW PROGRAM <span class="hb-arrow">↗</span></div>
-        </a>
-        <a href="#" class="hb-training-card hb-up">
-          <span class="hb-training-tag individual">ADVANCED</span>
-          <div class="hb-training-title">freee会計アドバンス研修</div>
-          <div class="hb-training-desc">速習研修修了者向け。管理会計・部門別損益・予実管理・API連携など、freeeの応用機能をマスターする上級プログラム。</div>
-          <div class="hb-training-price">¥80,000</div>
-          <div class="hb-training-arrow">COMING SOON</div>
-        </a>
-        <a href="#" class="hb-training-card hb-up">
-          <span class="hb-training-tag individual">CAREER</span>
-          <div class="hb-training-title">経理キャリアブートキャンプ</div>
-          <div class="hb-training-desc">未経験から経理職へのキャリアチェンジを目指す方向け。簿記基礎＋freee実務＋ビジネスマナーの3本柱で、就業準備を完了。</div>
-          <div class="hb-training-price">¥120,000</div>
-          <div class="hb-training-arrow">COMING SOON</div>
-        </a>
-      </div>
+    <div class="hb-training-grid">
+      <a href="lp/freee-training/index.html" class="hb-training-card hb-up">
+        <span class="hb-training-tag individual">NOW OPEN</span>
+        <div class="hb-training-title">freee会計研修</div>
+        <div class="hb-training-desc">eラーニング8h＋実地研修2日間。仕訳入力から月次決算まで全15レッスン。freee認定5つ星アドバイザー監修。デモ環境での模擬月次決算演習付き。</div>
+        <div class="hb-training-price">¥50,000（税抜）</div>
+        <div style="font-size:11px;color:var(--hb-sub);margin-top:6px">パートナー: freee株式会社 / DIGITAL BASE</div>
+        <div class="hb-training-arrow">VIEW PROGRAM <span class="hb-arrow">↗</span></div>
+      </a>
+      <a href="https://lin.ee/QnI7WzZ" class="hb-training-card hb-up">
+        <span class="hb-training-tag coming">2026年夏 開講予定</span>
+        <div class="hb-training-title">マネーフォワード クラウド研修</div>
+        <div class="hb-training-desc">eラーニング＋実地研修で、マネーフォワードクラウド会計の実務オペレーションを習得。株式会社マネーフォワードとの連携を準備中。</div>
+        <div class="hb-training-price" style="color:var(--hb-muted)">準備中</div>
+        <div class="hb-training-arrow" style="color:#06C755">LINEで最新情報を受取る <span class="hb-arrow">↗</span></div>
+      </a>
+      <a href="https://lin.ee/QnI7WzZ" class="hb-training-card hb-up">
+        <span class="hb-training-tag coming">2026年秋 開講予定</span>
+        <div class="hb-training-title">勘定奉行クラウド研修</div>
+        <div class="hb-training-desc">eラーニング＋ライブ研修（約44h）で、勘定奉行クラウドの実務を習得。株式会社OBCとの連携を協議中。</div>
+        <div class="hb-training-price" style="color:var(--hb-muted)">準備中</div>
+        <div class="hb-training-arrow" style="color:#06C755">LINEで最新情報を受取る <span class="hb-arrow">↗</span></div>
+      </a>
     </div>
+  </div>
+</section>
 
-    <!-- Tier 2: Corporate -->
-    <div class="hb-tier-section">
-      <div class="hb-tier-header hb-up">
-        <span class="hb-tier-num">02</span>
-        <span class="hb-tier-label">法人向け研修</span>
-        <span class="hb-tier-en">FOR COMPANIES</span>
-      </div>
-      <div class="hb-training-grid">
-        <a href="#" class="hb-training-card hb-up">
-          <span class="hb-training-tag corporate">ONBOARDING</span>
-          <div class="hb-training-title">freee導入研修（オンサイト）</div>
-          <div class="hb-training-desc">freee導入済み企業の経理チーム向け。操作研修・月次決算フロー設計・運用ルール策定をオンサイトで実施。チーム全体のスキル底上げ。</div>
-          <div class="hb-training-price">個別見積り</div>
-          <div class="hb-training-arrow">VIEW PROGRAM <span class="hb-arrow">↗</span></div>
-        </a>
-        <a href="#" class="hb-training-card hb-up">
-          <span class="hb-training-tag corporate">AI</span>
-          <div class="hb-training-title">生成AI × 経理DX研修</div>
-          <div class="hb-training-desc">ChatGPT・Claudeを経理業務に活用するための実践研修。仕訳推論・レポート生成・データ分析の自動化スキルを習得。</div>
-          <div class="hb-training-price">個別見積り</div>
-          <div class="hb-training-arrow">VIEW PROGRAM <span class="hb-arrow">↗</span></div>
-        </a>
-        <a href="#" class="hb-training-card hb-up">
-          <span class="hb-training-tag corporate">CUSTOM</span>
-          <div class="hb-training-title">カスタム研修プログラム</div>
-          <div class="hb-training-desc">企業の課題に合わせたオーダーメイド研修。kintone・Salesforce等のSaaS研修、業務フロー設計研修なども対応。</div>
-          <div class="hb-training-price">個別見積り</div>
-          <div class="hb-training-arrow">VIEW PROGRAM <span class="hb-arrow">↗</span></div>
-        </a>
-      </div>
+<!-- ====== FLOW ====== -->
+<section id="flow" class="hb-section hb-section-alt">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Flow</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">登録から就労まで、およそ6週間</span></span></span>
     </div>
-
-    <!-- Tier 3: Dispatch -->
-    <div class="hb-tier-section" style="margin-bottom:0">
-      <div class="hb-tier-header hb-up">
-        <span class="hb-tier-num">03</span>
-        <span class="hb-tier-label">人材派遣</span>
-        <span class="hb-tier-en">STAFFING</span>
+    <div class="hb-step-grid">
+      <div class="hb-step-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:36px;color:var(--hb-blue);line-height:1;margin-bottom:18px">01</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--hb-muted);margin-bottom:8px">10 SEC</div>
+        <h3 style="font-weight:700;font-size:16px;margin:0 0 12px">公式LINE登録</h3>
+        <p style="font-size:12.5px;line-height:1.85;color:var(--hb-sub);margin:0">研修スケジュール・説明会案内・キャリア情報をお届け。</p>
       </div>
-      <div class="hb-training-grid">
-        <a href="lp/training-candidate/index.html" class="hb-training-card hb-up">
-          <span class="hb-training-tag dispatch">FOR CANDIDATES</span>
-          <div class="hb-training-title">研修修了者向け 就業サポート</div>
-          <div class="hb-training-desc">研修修了後、freee導入企業への派遣をサポート。スキルマッチング・面談調整・就業後フォローまで無料で対応。</div>
-          <div class="hb-training-price">無料</div>
-          <div class="hb-training-arrow">VIEW DETAILS <span class="hb-arrow">↗</span></div>
-        </a>
-        <a href="lp/training-dispatch/index.html" class="hb-training-card hb-up">
-          <span class="hb-training-tag dispatch">FOR COMPANIES</span>
-          <div class="hb-training-title">企業向け 経理DX人材派遣</div>
-          <div class="hb-training-desc">freee実務研修を修了した即戦力人材を派遣。経理採用に苦戦する企業に、教育コスト不要で経理DX人材を提供。</div>
-          <div class="hb-training-price">月額派遣料（個別見積り）</div>
-          <div class="hb-training-arrow">VIEW DETAILS <span class="hb-arrow">↗</span></div>
-        </a>
+      <div class="hb-step-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:36px;color:var(--hb-blue);line-height:1;margin-bottom:18px">02</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--hb-muted);margin-bottom:8px">15-30 MIN</div>
+        <h3 style="font-weight:700;font-size:16px;margin:0 0 12px">無料カウンセリング</h3>
+        <p style="font-size:12.5px;line-height:1.85;color:var(--hb-sub);margin:0">キャリア目標のヒアリングと最適なコースのご提案。オンラインで実施。</p>
+      </div>
+      <div class="hb-step-card hb-up" style="background:var(--hb-blue-ghost)">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:36px;color:var(--hb-blue);line-height:1;margin-bottom:18px">03</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--hb-muted);margin-bottom:8px">ABOUT 8H</div>
+        <h3 style="font-weight:700;font-size:16px;margin:0 0 12px">eラーニング受講</h3>
+        <p style="font-size:12.5px;line-height:1.85;color:var(--hb-sub);margin:0">1ヶ月間視聴可能。Slackでの質問対応付き。自分のペースで進められます。</p>
+      </div>
+      <div class="hb-step-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:36px;color:var(--hb-blue);line-height:1;margin-bottom:18px">04</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--hb-muted);margin-bottom:8px">2 DAYS</div>
+        <h3 style="font-weight:700;font-size:16px;margin:0 0 12px">実地研修</h3>
+        <p style="font-size:12.5px;line-height:1.85;color:var(--hb-sub);margin:0">デモ環境で模擬月次決算を体験。Zoom参加も可能。</p>
+      </div>
+      <div class="hb-step-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:36px;color:var(--hb-blue);line-height:1;margin-bottom:18px">05</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--hb-muted);margin-bottom:8px">+ 6 MONTHS</div>
+        <h3 style="font-weight:700;font-size:16px;margin:0 0 12px">就労マッチング</h3>
+        <p style="font-size:12.5px;line-height:1.85;color:var(--hb-sub);margin:0">マッチング面談を実施。就労決定時はキャッシュバック制度あり。6ヶ月間フォローアップ。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====== FOR CANDIDATES ====== -->
-<section id="for-candidates" class="hb-vision" style="background:#1F61AB">
+<!-- ====== CAREER ====== -->
+<section id="career" class="hb-vision" style="background:#1F61AB">
   <svg viewBox="0 0 780 780" class="hb-deco-svg" style="top:50%;left:-200px;transform:translateY(-50%);width:780px;height:780px;opacity:.18">
-    <!-- Offset geometric rectangles -->
     <rect x="80" y="120" width="360" height="360" rx="0" fill="none" stroke="#fff" stroke-width="1" transform="rotate(12 260 300)"/>
     <rect x="200" y="200" width="280" height="280" rx="0" fill="none" stroke="#fff" stroke-width=".7" transform="rotate(-6 340 340)"/>
     <rect x="300" y="80" width="200" height="200" rx="0" fill="none" stroke="#fff" stroke-width=".5" transform="rotate(25 400 180)"/>
-    <!-- Accent lines -->
     <line x1="60" y1="500" x2="720" y2="500" stroke="#fff" stroke-width=".5" stroke-opacity=".4"/>
     <line x1="390" y1="60" x2="390" y2="720" stroke="#fff" stroke-width=".5" stroke-opacity=".3"/>
-    <!-- Corner marks -->
     <path d="M80,120 L80,150 M80,120 L110,120" fill="none" stroke="#fff" stroke-width="1.2" transform="rotate(12 260 300)"/>
     <path d="M440,480 L440,450 M440,480 L410,480" fill="none" stroke="#fff" stroke-width="1.2" transform="rotate(12 260 300)"/>
   </svg>
   <div class="hb-vision-inner">
     <div>
-      <div class="hb-up" style="font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:500;letter-spacing:.32em;opacity:.85;margin-bottom:32px;display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff"></span>FOR CANDIDATES</div>
-      <h2 class="hb-vision-display" style="font-size:clamp(64px,8vw,120px)">
-        <div><span class="hb-chars is-in"><span class="hb-line">未経験</span></span></div>
-        <div style="padding-left:.3em"><span class="hb-chars is-in"><span class="hb-line">から</span></span></div>
-        <div style="padding-left:.5em"><span class="hb-chars is-in"><span class="hb-line">即戦力</span></span></div>
+      <div class="hb-up" style="font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:500;letter-spacing:.32em;opacity:.85;margin-bottom:32px;display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff"></span>CAREER PATH</div>
+      <h2 class="hb-vision-display" style="font-size:clamp(48px,7vw,96px)">
+        <div><span class="hb-chars is-in"><span class="hb-line">研修修了後、</span></span></div>
+        <div style="padding-left:.3em"><span class="hb-chars is-in"><span class="hb-line">キャリアが</span></span></div>
+        <div style="padding-left:.5em"><span class="hb-chars is-in"><span class="hb-line">広がる。</span></span></div>
       </h2>
     </div>
     <div>
-      <h3 class="hb-up" style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:28px;line-height:1.55;margin:0 0 24px">経理未経験でも、<br>10日間でfreeeが使えるようになる。</h3>
-      <p class="hb-up" style="font-size:14px;line-height:2.1;opacity:.9;margin:0 0 28px">「経理をやってみたいけど経験がない」「freeeを使ったことがない」。そんな方のための研修プログラムです。修了後は派遣先企業での就業まで、無料でサポートします。</p>
-      <a href="lp/training-candidate/index.html" class="hb-cta hb-cta-white hb-up"><span>受講者向け詳細を見る</span><span class="hb-arrow" style="font-size:18px">↗</span></a>
+      <div class="hb-career-grid" style="border-color:rgba(255,255,255,.2)">
+        <div class="hb-career-card hb-up" style="border-color:rgba(255,255,255,.2)">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:rgba(255,255,255,.6);margin-bottom:14px">01</div>
+          <h4 style="font-size:15px;font-weight:700;margin:0 0 10px;color:#fff">リモート経理スタッフ</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#fff;margin-bottom:10px">¥1,800〜2,000<small style="font-size:10px;opacity:.7">/h</small></div>
+          <p style="font-size:12px;line-height:1.8;color:rgba(255,255,255,.7);margin:0">フルリモート・柔軟な働き方に対応</p>
+        </div>
+        <div class="hb-career-card hb-up" style="border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.06)">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:rgba(255,255,255,.6);margin-bottom:14px">02</div>
+          <h4 style="font-size:15px;font-weight:700;margin:0 0 10px;color:#fff">税理士事務所スタッフ</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#fff;margin-bottom:10px">¥200,000〜<small style="font-size:10px;opacity:.7">/月</small></div>
+          <p style="font-size:12px;line-height:1.8;color:rgba(255,255,255,.7);margin:0">税務知見の習得機会あり</p>
+        </div>
+        <div class="hb-career-card hb-up" style="border-color:rgba(255,255,255,.2)">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:rgba(255,255,255,.6);margin-bottom:14px">03</div>
+          <h4 style="font-size:15px;font-weight:700;margin:0 0 10px;color:#fff">BPO案件担当</h4>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#fff;margin-bottom:10px">¥30,000〜<small style="font-size:10px;opacity:.7">/社</small></div>
+          <p style="font-size:12px;line-height:1.8;color:rgba(255,255,255,.7);margin:0">複数社の経験値を蓄積</p>
+        </div>
+        <div class="hb-career-card hb-up" style="border-color:rgba(255,255,255,.2)">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:28px;color:rgba(255,255,255,.6);margin-bottom:14px">04</div>
+          <h4 style="font-size:15px;font-weight:700;margin:0 0 10px;color:#fff">講師・リーダーへ</h4>
+          <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:10px;letter-spacing:.12em">CAREER UP</div>
+          <p style="font-size:12px;line-height:1.8;color:rgba(255,255,255,.7);margin:0">後輩育成・マネジメント経験</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ====== FOR COMPANIES ====== -->
-<section id="for-companies" class="hb-section" style="background:#fff">
+<!-- ====== 就労先パートナー ====== -->
+<section class="hb-section" style="background:#fff">
   <div class="hb-section-narrow">
     <div class="hb-section-head">
-      <span class="hb-section-head-en">For Companies</span>
-      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">経理人材の「育成済み調達」</span></span></span>
+      <span class="hb-section-head-en">Placement</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">研修修了者の就労先</span></span></span>
     </div>
-    <p class="hb-up" style="font-size:15px;line-height:2.1;color:#3A3A45;margin:0 0 48px;max-width:680px">
-      経理の採用に苦戦していませんか。はてなベースが育成した<span style="color:#1F61AB;font-weight:700">freee実務スキル保有者</span>を、即戦力として御社に派遣します。教育コスト・ミスマッチリスクを最小化。
-    </p>
-    <a href="lp/training-dispatch/index.html" class="hb-svc-block hb-up">
+    <a href="#" class="hb-svc-block hb-up">
       <span class="hb-svc-num">01</span>
       <div>
-        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">Staffing</div>
-        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">freee経理人材の派遣</h3>
-        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">研修修了者をfreee導入企業に派遣。freee操作・月次決算・請求管理を即日対応可能な即戦力。</p>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">MerryBiz</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">メリービズ株式会社</h3>
+        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">オンライン経理アウトソーシングのリーディングカンパニー。フルリモートで柔軟な働き方が可能。</p>
       </div>
       <span class="hb-arrow" style="font-size:24px;color:#1F61AB">→</span>
     </a>
     <a href="#" class="hb-svc-block hb-up">
       <span class="hb-svc-num">02</span>
       <div>
-        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">In-house Training</div>
-        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">法人向けオンサイト研修</h3>
-        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">御社の経理チームにfreee・生成AI・業務DXの実務研修を出張で実施。チーム全体のスキル底上げ。</p>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">In-house BPO</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">はてなベース株式会社（自社BPO）</h3>
+        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">1名で3〜5社を担当し、実務経験を積みながら収入を得られます。</p>
+      </div>
+      <span class="hb-arrow" style="font-size:24px;color:#1F61AB">→</span>
+    </a>
+    <a href="#" class="hb-svc-block hb-up">
+      <span class="hb-svc-num">03</span>
+      <div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">Tax Office</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">はてなベース税理士事務所</h3>
+        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">freee5つ星認定の税理士事務所。月次決算3営業日で完了する体制。</p>
       </div>
       <span class="hb-arrow" style="font-size:24px;color:#1F61AB">→</span>
     </a>
     <a href="#" class="hb-svc-block hb-up" style="border-bottom:none">
-      <span class="hb-svc-num">03</span>
+      <span class="hb-svc-num">04</span>
       <div>
-        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">Consulting</div>
-        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">経理組織設計コンサルティング</h3>
-        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">派遣人材の受け入れ体制構築・業務マニュアル整備・OJT設計まで、経理組織の「仕組み」を構築。</p>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">NTT DATA — 2026 Autumn</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">NTTデータ経由案件</h3>
+        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">約200社規模の経理BPO案件。2026年秋より受入開始予定。</p>
       </div>
       <span class="hb-arrow" style="font-size:24px;color:#1F61AB">→</span>
     </a>
   </div>
 </section>
 
-<!-- ====== PARTNERS ====== -->
-<section id="partners" class="hb-section" style="padding:80px 32px;border-top:1px solid #E8E6DF">
-  <div class="hb-section-inner">
+<!-- ====== 実績 ====== -->
+<section class="hb-section hb-section-alt">
+  <div style="max-width:1280px;margin:0 auto">
     <div class="hb-section-head">
-      <span class="hb-section-head-en">Partners</span>
-      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">パートナーシップ</span></span></span>
+      <span class="hb-section-head-en">Track Record</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">過去の取り組み事例</span></span></span>
     </div>
-    <div class="hb-partner-row" style="padding:40px 0;gap:64px">
-      <div class="hb-up" style="text-align:center">
-        <img src="images/logo_freee.svg" alt="freee" style="height:36px;opacity:.6;margin:0 auto 12px">
-        <div style="font-size:11px;color:var(--hb-muted)">公式パートナー</div>
+    <div class="hb-case-grid">
+      <div class="hb-case-card hb-up">
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--hb-muted);margin-bottom:14px">LOCAL GOVERNMENT</div>
+        <h3 style="font-weight:700;font-size:17px;margin:0 0 14px;line-height:1.5">安曇野市との四者協業</h3>
+        <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0 0 18px">安曇野市の主婦層を対象にfreee会計研修を実施。eラーニング＋実地研修で経理スキルを習得し、地域の中小企業でリモート経理として就労。</p>
+        <div style="font-size:12px;color:var(--hb-blue);font-weight:600">自治体予算を活用した人材育成モデルの実証成功</div>
       </div>
-      <div class="hb-up" style="text-align:center">
-        <span style="font-family:Inter,system-ui,sans-serif;font-size:22px;font-weight:300;color:#8A8A93;display:block;margin-bottom:12px">DIGITAL BASE</span>
-        <div style="font-size:11px;color:var(--hb-muted)">送客連携</div>
+      <div class="hb-case-card hb-up" style="background:var(--hb-blue-ghost)">
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--hb-muted);margin-bottom:14px">RESKILLING</div>
+        <h3 style="font-weight:700;font-size:17px;margin:0 0 14px;line-height:1.5">MAIA自治体リスキリング事業</h3>
+        <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0 0 18px">岩手県等の自治体と連携し、freee会計研修をリスキリングプログラムとして提供。デジタル人材育成と地域DX推進を同時に実施。</p>
+        <div style="font-size:12px;color:var(--hb-blue);font-weight:600">デジタル人材育成と地域DX推進を両立</div>
       </div>
+      <div class="hb-case-card hb-up">
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--hb-muted);margin-bottom:14px">PIPELINE</div>
+        <h3 style="font-weight:700;font-size:17px;margin:0 0 14px;line-height:1.5">メリービズとの人材パイプライン</h3>
+        <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0 0 18px">freee研修修了者をメリービズのリモート経理スタッフとして派遣。「研修→就労」一気通貫モデルを構築。</p>
+        <div style="font-size:12px;color:var(--hb-blue);font-weight:600">研修→就労の一気通貫モデル確立</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 受講者の声 ====== -->
+<section class="hb-section" style="background:#fff">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Voices</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">受講者の声</span></span></span>
+    </div>
+    <div class="hb-voices-grid">
+      <div class="hb-voice-card hb-up">
+        <span class="hb-voice-quote">"</span>
+        <div style="margin-top:36px">
+          <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.18em;color:var(--hb-muted);margin-bottom:14px">23歳 女性 / 簿記2級</div>
+          <h4 style="font-weight:700;font-size:16px;margin:0 0 14px;line-height:1.5">3ヶ月で実戦の核へ</h4>
+          <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0 0 18px">デモ環境で月次決算を回す経験ができて自信がつきました。独学では絶対に得られない実践感覚です。</p>
+          <div style="display:flex;gap:24px;font-size:11px;color:var(--hb-muted)">
+            <span>受講前: <strong style="color:#0E0E14">未経験</strong></span>
+            <span>→</span>
+            <span>現在: <strong style="color:var(--hb-blue)">経理実務</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="hb-voice-card hb-up" style="background:var(--hb-blue-ghost)">
+        <span class="hb-voice-quote">"</span>
+        <div style="margin-top:36px">
+          <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.18em;color:var(--hb-muted);margin-bottom:14px">34歳 女性 / 子育て中</div>
+          <h4 style="font-weight:700;font-size:16px;margin:0 0 14px;line-height:1.5">子育てしながら時給¥2,000のリモート経理へ</h4>
+          <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0 0 18px">フルリモートで週20時間。育児と両立しながら経理のキャリアをスタートできています。</p>
+          <div style="display:flex;gap:24px;font-size:11px;color:var(--hb-muted)">
+            <span>受講前: <strong style="color:#0E0E14">¥1,200/h</strong></span>
+            <span>→</span>
+            <span>現在: <strong style="color:var(--hb-blue)">¥2,000/h</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="hb-voice-card hb-up">
+        <span class="hb-voice-quote">"</span>
+        <div style="margin-top:36px">
+          <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.18em;color:var(--hb-muted);margin-bottom:14px">42歳 男性 / ブランク5年</div>
+          <h4 style="font-weight:700;font-size:16px;margin:0 0 14px;line-height:1.5">5年のブランクから税理士事務所の即戦力へ</h4>
+          <p style="font-size:13px;line-height:1.9;color:var(--hb-sub);margin:0 0 18px">freeeのデモ環境で手を動かしながら学べたのが大きかった。実務に直結するカリキュラムでした。</p>
+          <div style="display:flex;gap:24px;font-size:11px;color:var(--hb-muted)">
+            <span>受講前: <strong style="color:#0E0E14">離職中</strong></span>
+            <span>→</span>
+            <span>現在: <strong style="color:var(--hb-blue)">事務所勤務</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRICING ====== -->
+<section id="pricing" class="hb-section hb-section-alt">
+  <div class="hb-section-narrow">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Pricing</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">料金プラン</span></span></span>
+    </div>
+    <div class="hb-up" style="padding:28px 32px;background:var(--hb-blue-ghost);border:1px solid var(--hb-blue);margin-bottom:36px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+        <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:.22em;color:var(--hb-blue)">CASHBACK</span>
+        <span style="font-weight:700;font-size:15px">キャッシュバック制度</span>
+      </div>
+      <p style="font-size:13.5px;line-height:1.85;color:var(--hb-sub);margin:0">就労が決定した場合、研修費用を全額キャッシュバック。<strong style="color:#0E0E14">実質無料</strong>で受講可能です。</p>
+    </div>
+    <table class="hb-price-table hb-up">
+      <thead>
+        <tr>
+          <th>コース</th>
+          <th>料金（税抜）</th>
+          <th>内容</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:700">freee会計研修</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--hb-blue)">¥50,000</td>
+          <td>eラーニング 8h + 実地研修 2日間 + Slackフォロー 6ヶ月</td>
+          <td><span class="hb-training-tag individual" style="margin:0">提供中</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700">マネーフォワード研修</td>
+          <td style="color:var(--hb-muted)">準備中</td>
+          <td>eラーニング + 実地研修（詳細準備中）</td>
+          <td><span class="hb-training-tag coming" style="margin:0">2026年夏</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:700">勘定奉行クラウド研修</td>
+          <td style="color:var(--hb-muted)">準備中</td>
+          <td>eラーニング + ライブ研修（約44h）</td>
+          <td><span class="hb-training-tag coming" style="margin:0">2026年秋</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="hb-up" style="margin-top:28px;padding:24px 28px;border:1px solid var(--hb-border)">
+      <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:var(--hb-muted);margin-bottom:12px">INCLUDED</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:13px;color:var(--hb-sub)">
+        <div>- eラーニング動画（1ヶ月視聴可能）</div>
+        <div>- デモ環境アクセス</div>
+        <div>- 実地研修（2日間）</div>
+        <div>- Slackサポート（6ヶ月）</div>
+        <div>- 就労マッチング</div>
+        <div>- 修了証発行</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section id="faq" class="hb-section" style="background:#fff">
+  <div class="hb-section-narrow">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">FAQ</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">よくあるご質問</span></span></span>
+    </div>
+    <div class="hb-faq-item hb-up">
+      <div class="hb-faq-q"><span class="hb-faq-badge">Q</span>経理未経験でも受講できますか？</div>
+      <div class="hb-faq-a">はい。未経験者向けのカリキュラムです。簿記の資格がなくても受講可能です。</div>
+    </div>
+    <div class="hb-faq-item hb-up">
+      <div class="hb-faq-q"><span class="hb-faq-badge">Q</span>研修はオンラインで受講できますか？</div>
+      <div class="hb-faq-a">eラーニングは完全オンラインです。実地研修もZoomでの参加が可能です。</div>
+    </div>
+    <div class="hb-faq-item hb-up">
+      <div class="hb-faq-q"><span class="hb-faq-badge">Q</span>就労先は必ず紹介してもらえますか？</div>
+      <div class="hb-faq-a">研修修了後、希望条件に合う就労先をご紹介します。メリービズ、自社BPO、税理士事務所など多様な選択肢を用意しています。</div>
+    </div>
+    <div class="hb-faq-item hb-up">
+      <div class="hb-faq-q"><span class="hb-faq-badge">Q</span>freee以外のソフト研修はいつから受講できますか？</div>
+      <div class="hb-faq-a">マネーフォワード研修は2026年夏、勘定奉行クラウド研修は2026年秋の開講予定です。公式LINEにご登録いただくと最新情報をお届けします。</div>
+    </div>
+    <div class="hb-faq-item hb-up">
+      <div class="hb-faq-q"><span class="hb-faq-badge">Q</span>キャッシュバックの条件は？</div>
+      <div class="hb-faq-a">研修修了後、当社の紹介で提携企業への就労が決定した場合、研修費用を全額キャッシュバックします。</div>
+    </div>
+    <div class="hb-faq-item hb-up">
+      <div class="hb-faq-q"><span class="hb-faq-badge">Q</span>公式LINEに登録すると何が届きますか？</div>
+      <div class="hb-faq-a">研修スケジュール・説明会案内・キャリア情報・就労先情報をお届けします。無料カウンセリングのご予約もLINEから承ります。</div>
+    </div>
+    <div class="hb-faq-item hb-up" style="border-bottom:none">
+      <div class="hb-faq-q"><span class="hb-faq-badge">Q</span>法人として社員に受講させたいのですが？</div>
+      <div class="hb-faq-a">法人研修プランをご用意しています。人数に応じた法人価格をご提案しますので、お問い合わせください。</div>
     </div>
   </div>
 </section>
@@ -411,58 +719,35 @@
 <!-- ====== CTA ====== -->
 <section id="contact" class="hb-cta-section">
   <svg viewBox="0 0 880 880" class="hb-deco-svg" style="top:50%;left:-360px;transform:translateY(-50%);width:880px;height:880px;opacity:.22">
-    <!-- Dot matrix grid -->
     <defs>
       <pattern id="dotgrid" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse">
         <circle cx="22" cy="22" r="1.5" fill="#fff" opacity=".5"/>
       </pattern>
     </defs>
     <rect width="880" height="880" fill="url(#dotgrid)"/>
-    <!-- Accent crosshairs -->
     <line x1="440" y1="200" x2="440" y2="680" stroke="#fff" stroke-width=".5" stroke-opacity=".3"/>
     <line x1="200" y1="440" x2="680" y2="440" stroke="#fff" stroke-width=".5" stroke-opacity=".3"/>
     <circle cx="440" cy="440" r="4" fill="none" stroke="#fff" stroke-width=".8" opacity=".4"/>
   </svg>
   <div style="position:relative;max-width:1280px;margin:0 auto">
     <div class="hb-up" style="font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:500;letter-spacing:.32em;color:rgba(255,255,255,.7);margin-bottom:48px;display:flex;align-items:center;gap:10px">
-      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff"></span>CONTACT — 受講 or 人材派遣のご相談
+      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff"></span>CONTACT — まずは公式LINEに登録
     </div>
-    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:flex-end">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:center">
       <div>
         <h2 class="hb-hero-display" style="margin:0 0 32px;color:#fff;font-size:clamp(32px,5vw,56px)">
-          <div>経理DXの第一歩を、</div>
-          <div style="padding-left:1em;color:rgba(255,255,255,.78)">一緒に踏み出す。</div>
+          <div>研修スケジュール・</div>
+          <div>無料カウンセリング・</div>
+          <div style="color:rgba(255,255,255,.78)">最新情報をお届け。</div>
         </h2>
-        <p class="hb-up" style="font-size:16px;line-height:2;color:rgba(255,255,255,.85);margin:0;max-width:520px">受講を検討中の方も、研修修了者の派遣をお探しの企業様も、まずはお気軽にご相談ください。</p>
+        <p class="hb-up" style="font-size:16px;line-height:2;color:rgba(255,255,255,.85);margin:0 0 36px;max-width:520px">受講を検討中の方も、法人研修をお探しの企業様も、まずは公式LINEにご登録ください。無料カウンセリングのご予約もLINEから承ります。</p>
+        <a href="https://lin.ee/QnI7WzZ" class="hb-line-btn" style="font-size:16px;padding:18px 36px">公式LINEに登録する <span class="hb-arrow">→</span></a>
       </div>
-      <div class="hb-up" style="display:grid;gap:0;border-top:1px solid rgba(255,255,255,.3)">
-        <a href="#" style="display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:26px 4px;border-bottom:1px solid rgba(255,255,255,.3);text-decoration:none;color:#fff">
-          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:rgba(255,255,255,.55);line-height:1;min-width:48px">01</span>
-          <span>
-            <span style="display:block;font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.65);margin-bottom:6px">FOR INDIVIDUALS</span>
-            <span style="display:block;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:18px">研修に申し込む</span>
-            <span style="display:block;font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px">¥50,000・全額返金保証付き</span>
-          </span>
-          <span class="hb-arrow" style="font-size:24px">↗</span>
-        </a>
-        <a href="#" style="display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:26px 4px;border-bottom:1px solid rgba(255,255,255,.3);text-decoration:none;color:#fff">
-          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:rgba(255,255,255,.55);line-height:1;min-width:48px">02</span>
-          <span>
-            <span style="display:block;font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.65);margin-bottom:6px">FOR COMPANIES</span>
-            <span style="display:block;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:18px">人材派遣について相談する</span>
-            <span style="display:block;font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px">freee実務研修済みの即戦力人材</span>
-          </span>
-          <span class="hb-arrow" style="font-size:24px">↗</span>
-        </a>
-        <a href="mailto:info@hatenabase.com" style="display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:26px 4px;text-decoration:none;color:#fff">
-          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:rgba(255,255,255,.55);line-height:1;min-width:48px">03</span>
-          <span>
-            <span style="display:block;font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.65);margin-bottom:6px">GENERAL</span>
-            <span style="display:block;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:18px">法人研修の問い合わせ</span>
-            <span style="display:block;font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px">カスタム研修・オンサイト対応</span>
-          </span>
-          <span class="hb-arrow" style="font-size:24px">↗</span>
-        </a>
+      <div class="hb-up" style="text-align:center">
+        <div style="background:#fff;display:inline-block;padding:32px;border-radius:4px">
+          <img src="https://qr-official.line.me/gs/M_QnI7WzZ_BN.png" alt="LINE QR" style="width:200px;height:200px">
+        </div>
+        <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.7)">QRコードから友だち追加</div>
       </div>
     </div>
   </div>
@@ -472,11 +757,11 @@
 <footer class="hb-footer" style="padding:40px 32px 24px">
   <div class="hb-footer-inner">
     <div class="hb-footer-bottom">
-      <div>Copyright &copy; 2025 HatenaBase Inc.</div>
+      <div>Copyright &copy; 2026 HatenaBase Inc.</div>
       <div style="display:flex;gap:24px">
         <a href="top-preview.html" style="color:inherit;text-decoration:none">トップに戻る</a>
         <a href="accounting-preview.html" style="color:inherit;text-decoration:none">会計事業部</a>
-        <a href="#" style="color:inherit;text-decoration:none">お問い合わせ</a>
+        <a href="https://lin.ee/QnI7WzZ" style="color:inherit;text-decoration:none">公式LINE</a>
       </div>
     </div>
   </div>
