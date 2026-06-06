@@ -216,30 +216,45 @@
 
 <!-- ====== HERO ====== -->
 <section class="hb-hero" style="background:#0E0E14;color:#fff;padding:96px 32px 80px" id="top">
-  <svg viewBox="0 0 880 880" class="hb-deco-svg" style="top:20px;right:-160px;width:880px;height:880px">
-    <!-- Large arc (top) — inspired by brand "?" motif -->
-    <path d="M540,120 A220,220 0 1,1 540,560" fill="none" stroke="#5C8FDB" stroke-opacity=".18" stroke-width="1.2"/>
-    <path d="M540,120 A220,220 0 1,1 540,560" fill="#5C8FDB" fill-opacity=".04"/>
-    <!-- Inner cutout circle -->
-    <circle cx="430" cy="340" r="60" fill="#0E0E14" stroke="#5C8FDB" stroke-opacity=".22" stroke-width=".8"/>
-    <!-- Bottom accent circle (cyan) -->
-    <circle cx="540" cy="680" r="90" fill="none" stroke="#56C8E8" stroke-opacity=".25" stroke-width="1.2"/>
-    <circle cx="540" cy="680" r="90" fill="#56C8E8" fill-opacity=".06"/>
-    <!-- Grid crosshair lines -->
-    <line x1="320" y1="80" x2="320" y2="800" stroke="#5C8FDB" stroke-opacity=".08" stroke-width=".5"/>
-    <line x1="540" y1="80" x2="540" y2="800" stroke="#5C8FDB" stroke-opacity=".08" stroke-width=".5"/>
-    <line x1="760" y1="80" x2="760" y2="800" stroke="#5C8FDB" stroke-opacity=".06" stroke-width=".5"/>
-    <line x1="200" y1="340" x2="780" y2="340" stroke="#5C8FDB" stroke-opacity=".08" stroke-width=".5"/>
-    <line x1="200" y1="560" x2="780" y2="560" stroke="#5C8FDB" stroke-opacity=".06" stroke-width=".5"/>
-    <!-- Overlapping rectangle -->
-    <rect x="620" y="240" width="180" height="240" fill="none" stroke="#5C8FDB" stroke-opacity=".12" stroke-width=".8"/>
-    <!-- Corner brackets (architectural accent) -->
-    <path d="M620,240 L620,270 M620,240 L650,240" fill="none" stroke="#5C8FDB" stroke-opacity=".30" stroke-width="1.5"/>
-    <path d="M800,480 L800,450 M800,480 L770,480" fill="none" stroke="#5C8FDB" stroke-opacity=".30" stroke-width="1.5"/>
-    <!-- Small accent dots -->
-    <circle cx="540" cy="340" r="3" fill="#5C8FDB" opacity=".40"/>
-    <circle cx="540" cy="560" r="2" fill="#56C8E8" opacity=".35"/>
-    <circle cx="320" cy="340" r="2" fill="#5C8FDB" opacity=".20"/>
+  <svg viewBox="0 0 520 820" class="hb-deco-svg" style="top:-20px;right:-60px;width:580px;height:920px">
+    <defs>
+      <!-- Mask to create the "?" top shape: circle with notch + inner hole -->
+      <mask id="q-mask">
+        <rect width="520" height="820" fill="white"/>
+        <!-- Vertical notch (gap of the ?) -->
+        <rect x="225" y="330" width="70" height="200" fill="black"/>
+        <!-- Inner circle cutout (hole in the curve) -->
+        <circle cx="260" cy="345" r="38" fill="black"/>
+      </mask>
+      <!-- Clip for cyan left-half of bottom circle -->
+      <clipPath id="cyan-half">
+        <rect x="80" y="530" width="200" height="240"/>
+      </clipPath>
+    </defs>
+
+    <!-- Thin outlined rectangle (top-right, architectural grid) -->
+    <rect x="260" y="20" width="240" height="320" fill="none" stroke="rgba(255,255,255,.14)" stroke-width=".8"/>
+    <!-- Crosshair lines through rectangle -->
+    <line x1="260" y1="180" x2="500" y2="180" stroke="rgba(255,255,255,.10)" stroke-width=".5"/>
+    <line x1="380" y1="20" x2="380" y2="340" stroke="rgba(255,255,255,.10)" stroke-width=".5"/>
+
+    <!-- Large filled C-arc (top of "?") — bold -->
+    <circle cx="280" cy="230" r="210" fill="rgba(255,255,255,.13)" mask="url(#q-mask)"/>
+    <circle cx="280" cy="230" r="210" fill="none" stroke="rgba(255,255,255,.08)" stroke-width=".5" mask="url(#q-mask)"/>
+
+    <!-- Bottom dark rectangle -->
+    <rect x="100" y="530" width="190" height="210" fill="rgba(255,255,255,.09)"/>
+
+    <!-- Bottom circle (the "." of the ?) — overlaps rectangle -->
+    <circle cx="290" cy="650" r="105" fill="rgba(255,255,255,.10)"/>
+    <!-- Cyan left-half overlay -->
+    <circle cx="290" cy="650" r="105" fill="#56C8E8" fill-opacity=".18" clip-path="url(#cyan-half)"/>
+
+    <!-- Vertical connecting line (subtle) -->
+    <line x1="260" y1="440" x2="260" y2="530" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
+    <!-- Bottom crosshair -->
+    <line x1="100" y1="640" x2="395" y2="640" stroke="rgba(255,255,255,.08)" stroke-width=".5"/>
+    <line x1="290" y1="530" x2="290" y2="760" stroke="rgba(255,255,255,.06)" stroke-width=".5"/>
   </svg>
   <div style="position:relative;max-width:1280px;margin:0 auto">
     <div class="hb-hero-badge hb-up is-in" style="color:#5C8FDB">CLOUD ACCOUNTING ACADEMY — クラウド会計アカデミー</div>
