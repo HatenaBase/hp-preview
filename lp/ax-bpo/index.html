@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>経理AX BPO — AI×人のハイブリッド経理代行 | はてなベース株式会社</title>
+<meta name="description" content="AX実装後の経理業務をBPOとして継続運用。AIエージェント＋育成済みワーカーのハイブリッド体制で月次決算・記帳・請求管理を代行します。"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="stylesheet" href="../../css/miyazawa.css"/>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header class="hb-header">
+  <a href="../../index.html" class="hb-header-logo">
+    <img src="../../images/hatena_logo.svg" alt="はてなベース株式会社" style="height:28px">
+  </a>
+  <nav class="hb-pc-nav">
+    <a href="#problems" class="hb-nav-item">
+      <span class="hb-nav-en">Problems</span>
+      <span class="hb-nav-jp">課題</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#strengths" class="hb-nav-item">
+      <span class="hb-nav-en">Strengths</span>
+      <span class="hb-nav-jp">強み</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#onboarding" class="hb-nav-item">
+      <span class="hb-nav-en">Onboarding</span>
+      <span class="hb-nav-jp">導入の流れ</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#pricing" class="hb-nav-item">
+      <span class="hb-nav-en">Pricing</span>
+      <span class="hb-nav-jp">料金</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#faq" class="hb-nav-item">
+      <span class="hb-nav-en">FAQ</span>
+      <span class="hb-nav-jp">よくある質問</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <span class="hb-nav-divider"></span>
+    <a href="#contact" class="hb-contact-btn">CONTACT <span class="hb-arrow">↗</span></a>
+  </nav>
+  <button class="hb-mb-burger" aria-label="menu">
+    <div style="position:relative;width:18px;height:12px;margin:0 auto">
+      <span style="position:absolute;left:0;right:0;top:0;height:1.5px;background:#0E0E14"></span>
+      <span style="position:absolute;left:0;right:0;top:5px;height:1.5px;background:#0E0E14"></span>
+      <span style="position:absolute;left:0;right:0;top:10px;height:1.5px;background:#0E0E14"></span>
+    </div>
+  </button>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hb-hero" id="top">
+  <!-- Decorative grid lines -->
+  <svg class="hb-hero-svg" viewBox="0 0 12 100" preserveAspectRatio="none">
+    <line x1="1" y1="0" x2="1" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="2" y1="0" x2="2" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="3" y1="0" x2="3" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="4" y1="0" x2="4" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="5" y1="0" x2="5" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="6" y1="0" x2="6" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="7" y1="0" x2="7" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="8" y1="0" x2="8" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="9" y1="0" x2="9" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="10" y1="0" x2="10" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+    <line x1="11" y1="0" x2="11" y2="100" stroke="#E8E6DF" stroke-width=".02"/>
+  </svg>
+  <!-- Decorative circles -->
+  <svg viewBox="0 0 880 880" class="hb-deco-svg" style="top:60px;right:-200px;width:880px;height:880px">
+    <circle cx="440" cy="440" r="20"  fill="none" stroke="#0F4FB8" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="80"  fill="none" stroke="#0F4FB8" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="140" fill="none" stroke="#0F4FB8" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="200" fill="none" stroke="#0F4FB8" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="260" fill="none" stroke="#0F4FB8" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="320" fill="none" stroke="#0F4FB8" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="380" fill="none" stroke="#0F4FB8" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="440" fill="none" stroke="#0F4FB8" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="20"  fill="#5C8FDB" opacity=".6"/>
+  </svg>
+
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding-top:48px">
+    <div class="hb-hero-badge hb-up is-in">AX BPO — AI &times; Human Hybrid</div>
+    <h1 class="hb-hero-display hb-up is-in">
+      経理部門を「持たない」<br>
+      <em>という経営判断。</em>
+    </h1>
+    <div class="hb-hero-body">
+      <p class="hb-up is-in">
+        AIエージェントが定型業務の<strong style="color:#1F61AB;font-weight:700">80%を処理</strong>し、<br>
+        残り20%の例外処理を育成済みワーカーがカバー。<br>
+        経理の人件費を変動費に転換し、品質はプロが担保します。
+      </p>
+    </div>
+    <div class="hb-hero-actions hb-up is-in">
+      <a href="#contact" class="hb-btn-primary">無料相談を予約する <span class="hb-arrow">→</span></a>
+      <a href="#problems" class="hb-btn-outline">詳しく見る <span class="hb-arrow">↓</span></a>
+    </div>
+
+    <!-- Metrics -->
+    <div class="hb-up is-in" style="margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:720px;border:1px solid #E8E6DF">
+      <div style="padding:28px 32px;border-right:1px solid #E8E6DF">
+        <div style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:52px;color:#1F61AB;line-height:1">80<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-style:normal;font-size:18px;font-weight:500;color:#3A3A45;margin-left:4px">%</span></div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:#8A8A93;margin-top:8px">AI自動処理率</div>
+      </div>
+      <div style="padding:28px 32px;border-right:1px solid #E8E6DF">
+        <div style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:38px;color:#1F61AB;line-height:1">¥100〜300<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-style:normal;font-size:14px;font-weight:500;color:#3A3A45;margin-left:2px">万/月</span></div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:#8A8A93;margin-top:8px">月額BPO費用</div>
+      </div>
+      <div style="padding:28px 32px">
+        <div style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:52px;color:#1F61AB;line-height:1">3<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-style:normal;font-size:18px;font-weight:500;color:#3A3A45;margin-left:4px">営業日</span></div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.22em;color:#8A8A93;margin-top:8px">月次決算クローズ</div>
+      </div>
+    </div>
+  </div>
+  <div class="hb-scroll-indicator">SCROLL</div>
+</section>
+
+<!-- ====== PROBLEMS ====== -->
+<section id="problems" class="hb-issues-section">
+  <!-- Decorative circles -->
+  <svg viewBox="0 0 600 600" class="hb-deco-svg" style="bottom:-60px;left:-120px;width:600px;height:600px;opacity:.25">
+    <circle cx="300" cy="300" r="60"  fill="none" stroke="#5C8FDB" stroke-width=".8"/>
+    <circle cx="300" cy="300" r="130" fill="none" stroke="#5C8FDB" stroke-width=".8"/>
+    <circle cx="300" cy="300" r="200" fill="none" stroke="#5C8FDB" stroke-width=".8"/>
+    <circle cx="300" cy="300" r="280" fill="none" stroke="#5C8FDB" stroke-width=".8"/>
+  </svg>
+
+  <div style="position:relative;max-width:1280px;margin:0 auto">
+    <div class="hb-section-head" style="border-bottom-color:rgba(255,255,255,.15)">
+      <span class="hb-section-head-en" style="color:#5C8FDB">Problems</span>
+      <span class="hb-section-head-jp" style="color:#fff">経理部門、こんな課題を抱えていませんか</span>
+    </div>
+    <p class="hb-up" style="font-size:14px;line-height:2;color:rgba(255,255,255,.65);margin:0 0 56px;max-width:640px">
+      経理担当者の退職・採用難・属人化は、企業経営に直結するリスクです。
+    </p>
+    <div class="hb-issue-grid">
+      <!-- 01 -->
+      <div class="hb-issue-card hb-up">
+        <div class="hb-issue-num">01</div>
+        <div class="hb-issue-category">SUCCESSION RISK</div>
+        <p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 10px;line-height:1.5">経理担当が突然退職</p>
+        <p style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.65);margin:0">引き継ぎもままならず、月次決算が止まる。属人化した経理業務は、たった一人の退職で経営リスクに直結します。</p>
+      </div>
+      <!-- 02 -->
+      <div class="hb-issue-card hb-up" style="transition-delay:.1s">
+        <div class="hb-issue-num">02</div>
+        <div class="hb-issue-category">HIRING COST</div>
+        <p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 10px;line-height:1.5">正社員採用コストが重い</p>
+        <p style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.65);margin:0">年収400〜600万+社会保険料+採用費。経理1名の採用に年間700万以上のコストがかかります。</p>
+      </div>
+      <!-- 03 -->
+      <div class="hb-issue-card hb-up" style="transition-delay:.2s">
+        <div class="hb-issue-num">03</div>
+        <div class="hb-issue-category">AX OPERATION</div>
+        <p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 10px;line-height:1.5">AX実装後の運用が回らない</p>
+        <p style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.65);margin:0">AIツールは導入したものの、例外処理やイレギュラー対応で結局人手が必要。運用が定着しません。</p>
+      </div>
+      <!-- 04 -->
+      <div class="hb-issue-card hb-up" style="transition-delay:.3s">
+        <div class="hb-issue-num">04</div>
+        <div class="hb-issue-category">LEGACY BPO</div>
+        <p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 10px;line-height:1.5">従来型BPOはコストが高い</p>
+        <p style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.65);margin:0">AIを活用しないBPOは、作業員の工数がそのまま費用に跳ね返ります。品質のバラつきも課題です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== STRENGTHS ====== -->
+<section id="strengths" style="padding:112px 32px;background:#fff;border-bottom:1px solid #E8E6DF">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Strengths</span>
+      <span class="hb-section-head-jp">「AI×人」のハイブリッドBPOが選ばれる理由</span>
+    </div>
+    <p class="hb-up" style="font-size:15px;line-height:2;color:#3A3A45;margin:0 0 64px;max-width:640px">
+      従来型BPOの半分以下のコストで、プロ品質の経理運用を実現します。
+    </p>
+
+    <!-- Service blocks -->
+    <div>
+      <!-- 01 -->
+      <div class="hb-svc-block hb-up">
+        <div>
+          <div class="hb-svc-num">01</div>
+          <span class="hb-label hb-label-blue" style="margin-top:12px">AI Processing</span>
+        </div>
+        <div>
+          <p style="font-size:11px;font-family:Inter,system-ui,sans-serif;letter-spacing:.22em;color:#8A8A93;margin:0 0 10px">COST COMPRESSION</p>
+          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.02em;margin:0 0 16px;line-height:1.4;color:#0E0E14">AIが80%を自動処理し、コストを圧縮</h3>
+          <p style="font-size:14px;line-height:2;color:#3A3A45;margin:0;max-width:600px">仕訳の自動起票、請求書の読み取り・照合、経費精算の承認フロー。定型業務はAIエージェントが24時間365日処理します。人件費をBPO費用に転換し、固定費を変動費化できます。</p>
+        </div>
+        <span class="hb-arrow" style="font-size:28px;color:#8A8A93;align-self:center">→</span>
+      </div>
+      <!-- 02 -->
+      <div class="hb-svc-block hb-up" style="transition-delay:.1s">
+        <div>
+          <div class="hb-svc-num">02</div>
+          <span class="hb-label" style="margin-top:12px">Human Cover</span>
+        </div>
+        <div>
+          <p style="font-size:11px;font-family:Inter,system-ui,sans-serif;letter-spacing:.22em;color:#8A8A93;margin:0 0 10px">EXCEPTION HANDLING</p>
+          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.02em;margin:0 0 16px;line-height:1.4;color:#0E0E14">例外処理は専任ワーカーが確実にカバー</h3>
+          <p style="font-size:14px;line-height:2;color:#3A3A45;margin:0;max-width:600px">イレギュラーな取引、税務判断が必要な仕訳、取引先との調整。AIが処理しきれない20%は、研修事業で育成した経理ワーカーが対応。退職リスクゼロの安定運用を実現します。</p>
+        </div>
+        <span class="hb-arrow" style="font-size:28px;color:#8A8A93;align-self:center">→</span>
+      </div>
+      <!-- 03 -->
+      <div class="hb-svc-block hb-up" style="transition-delay:.2s;border-bottom:none">
+        <div>
+          <div class="hb-svc-num">03</div>
+          <span class="hb-label hb-label-fill" style="margin-top:12px">CPA Quality</span>
+        </div>
+        <div>
+          <p style="font-size:11px;font-family:Inter,system-ui,sans-serif;letter-spacing:.22em;color:#8A8A93;margin:0 0 10px">QUALITY ASSURANCE</p>
+          <h3 style="font-size:22px;font-weight:800;letter-spacing:-.02em;margin:0 0 16px;line-height:1.4;color:#0E0E14">会計士・税理士が品質を担保</h3>
+          <p style="font-size:14px;line-height:2;color:#3A3A45;margin:0;max-width:600px">月次決算のレビュー、税務ポジションの判断、監査対応。最終品質はトリプルライセンス保持者が責任を持ちます。「安いけど不安」というBPOの常識を覆します。</p>
+        </div>
+        <span class="hb-arrow" style="font-size:28px;color:#8A8A93;align-self:center">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ONBOARDING ====== -->
+<section id="onboarding" style="padding:112px 32px;background:#FAFAFA;border-bottom:1px solid #E8E6DF">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Onboarding</span>
+      <span class="hb-section-head-jp">導入から運用開始まで、最短1ヶ月</span>
+    </div>
+    <p class="hb-up" style="font-size:15px;line-height:2;color:#3A3A45;margin:0 0 64px;max-width:680px">
+      AX実装済みの企業は最短2週間で移行完了。未実装の場合もAX構築とBPO移行を同時並行で進めます。
+    </p>
+
+    <!-- 4-step approach grid -->
+    <div class="hb-approach-grid">
+      <!-- Step 01 -->
+      <div class="hb-approach-card hb-up">
+        <div class="hb-approach-num">01</div>
+        <div class="hb-approach-en">ASSESSMENT</div>
+        <h4 style="font-size:16px;font-weight:700;color:#0E0E14;margin:10px 0 14px;line-height:1.5">業務棚卸し・スコープ定義</h4>
+        <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0">現在の経理業務フローを可視化し、AI処理対象と人的対応領域を切り分けます。月間の仕訳件数・取引先数・例外パターンを定量化し、最適なBPO体制を設計します。</p>
+      </div>
+      <!-- Step 02 -->
+      <div class="hb-approach-card hb-up" style="transition-delay:.1s">
+        <div class="hb-approach-num">02</div>
+        <div class="hb-approach-en">BUILD</div>
+        <h4 style="font-size:16px;font-weight:700;color:#0E0E14;margin:10px 0 14px;line-height:1.5">AIエージェント構築・ワーカーアサイン</h4>
+        <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0">自動仕訳ルール、請求書処理フロー、経費精算の承認ロジックをAIエージェントに実装。並行して貴社業務に最適なワーカーをアサインし、業務マニュアルを整備します。</p>
+      </div>
+      <!-- Step 03 -->
+      <div class="hb-approach-card hb-up" style="transition-delay:.2s">
+        <div class="hb-approach-num">03</div>
+        <div class="hb-approach-en">PARALLEL RUN</div>
+        <h4 style="font-size:16px;font-weight:700;color:#0E0E14;margin:10px 0 14px;line-height:1.5">並走期間（1〜2ヶ月）</h4>
+        <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0">既存の経理体制と並行してBPO運用を開始。処理精度・スピード・例外対応フローを検証し、チューニングを重ねます。この期間で品質基準を確立します。</p>
+      </div>
+      <!-- Step 04 -->
+      <div class="hb-approach-card hb-up" style="transition-delay:.3s">
+        <div class="hb-approach-num">04</div>
+        <div class="hb-approach-en">FULL TRANSFER</div>
+        <h4 style="font-size:16px;font-weight:700;color:#0E0E14;margin:10px 0 14px;line-height:1.5">完全移行・継続運用</h4>
+        <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0">BPO体制に完全移行し、月次決算・記帳・請求管理を継続代行します。月次レポートで処理状況を可視化。業務量の増減に応じて体制を柔軟に調整します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRICING ====== -->
+<section id="pricing" style="padding:112px 32px;background:#fff;border-bottom:1px solid #E8E6DF">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Pricing</span>
+      <span class="hb-section-head-jp">経理1名の採用コスト以下で、チーム体制を構築</span>
+    </div>
+    <p class="hb-up" style="font-size:15px;line-height:2;color:#3A3A45;margin:0 0 64px;max-width:680px">
+      AIが処理量の大半をカバーするため、従来型BPOの半分以下のコストで運用できます。
+    </p>
+
+    <div class="hb-works-grid">
+      <!-- Light -->
+      <div class="hb-work-card hb-up">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <span class="hb-label">Light</span>
+          <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.18em;color:#8A8A93">300件以下/月</span>
+        </div>
+        <div style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:48px;color:#0E0E14;line-height:1;margin-bottom:4px">¥100<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-style:normal;font-size:16px;font-weight:500;color:#3A3A45;margin-left:2px">万〜/月</span></div>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:16px 0 24px">月間仕訳300件以下の企業向け。記帳・請求管理を中心としたBPO体制。</p>
+        <div style="display:grid;gap:10px;border-top:1px solid #E8E6DF;padding-top:20px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#0E0E14">
+            <span style="display:inline-block;width:5px;height:5px;background:#1F61AB;flex-shrink:0"></span>月次記帳代行（AI+ワーカー）
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#0E0E14">
+            <span style="display:inline-block;width:5px;height:5px;background:#1F61AB;flex-shrink:0"></span>請求書発行・入金消込
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#0E0E14">
+            <span style="display:inline-block;width:5px;height:5px;background:#1F61AB;flex-shrink:0"></span>経費精算処理
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#0E0E14">
+            <span style="display:inline-block;width:5px;height:5px;background:#1F61AB;flex-shrink:0"></span>月次決算クローズ
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#0E0E14">
+            <span style="display:inline-block;width:5px;height:5px;background:#1F61AB;flex-shrink:0"></span>月次レポート
+          </div>
+        </div>
+      </div>
+
+      <!-- Standard (fill = blue) -->
+      <div class="hb-work-card fill hb-up" style="transition-delay:.1s">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <span class="hb-label" style="background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.4)">Standard</span>
+          <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.65)">1,000件規模/月</span>
+        </div>
+        <div style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:48px;color:#fff;line-height:1;margin-bottom:4px">¥200<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-style:normal;font-size:16px;font-weight:500;color:rgba(255,255,255,.8);margin-left:2px">万〜/月</span></div>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.8);margin:16px 0 24px">月間仕訳1,000件規模の企業向け。管理会計・予実管理まで含むフルスコープBPO。</p>
+        <div style="display:grid;gap:10px;border-top:1px solid rgba(255,255,255,.25);padding-top:20px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff">
+            <span style="display:inline-block;width:5px;height:5px;background:#fff;flex-shrink:0"></span>Lightプランの全機能
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff">
+            <span style="display:inline-block;width:5px;height:5px;background:#fff;flex-shrink:0"></span>管理会計・部門別損益
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff">
+            <span style="display:inline-block;width:5px;height:5px;background:#fff;flex-shrink:0"></span>予実管理・KPIモニタリング
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff">
+            <span style="display:inline-block;width:5px;height:5px;background:#fff;flex-shrink:0"></span>資金繰り表の自動更新
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:#fff">
+            <span style="display:inline-block;width:5px;height:5px;background:#fff;flex-shrink:0"></span>税理士・会計士レビュー
+          </div>
+        </div>
+      </div>
+
+      <!-- Enterprise (dark) -->
+      <div class="hb-work-card dark hb-up" style="transition-delay:.2s">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <span class="hb-label" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3)">Enterprise</span>
+          <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.5)">連結・多拠点</span>
+        </div>
+        <div style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:48px;color:#fff;line-height:1;margin-bottom:4px">¥300<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-style:normal;font-size:16px;font-weight:500;color:rgba(255,255,255,.7);margin-left:2px">万〜/月</span></div>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.7);margin:16px 0 24px">連結決算・多拠点・グループ企業向け。監査対応・開示資料作成支援を含むプレミアムBPO。</p>
+        <div style="display:grid;gap:10px;border-top:1px solid rgba(255,255,255,.15);padding-top:20px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.85)">
+            <span style="display:inline-block;width:5px;height:5px;background:#5C8FDB;flex-shrink:0"></span>Standardプランの全機能
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.85)">
+            <span style="display:inline-block;width:5px;height:5px;background:#5C8FDB;flex-shrink:0"></span>連結パッケージ作成
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.85)">
+            <span style="display:inline-block;width:5px;height:5px;background:#5C8FDB;flex-shrink:0"></span>監査法人対応サポート
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.85)">
+            <span style="display:inline-block;width:5px;height:5px;background:#5C8FDB;flex-shrink:0"></span>開示資料ドラフト作成
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.85)">
+            <span style="display:inline-block;width:5px;height:5px;background:#5C8FDB;flex-shrink:0"></span>専任マネージャーアサイン
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section id="faq" style="padding:112px 32px;background:#FAFAFA;border-bottom:1px solid #E8E6DF">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">FAQ</span>
+      <span class="hb-section-head-jp">よくあるご質問</span>
+      <span class="hb-section-head-count">05 QUESTIONS</span>
+    </div>
+    <p class="hb-up" style="font-size:15px;line-height:2;color:#3A3A45;margin:0 0 48px;max-width:640px">
+      経理AX BPOの導入に際して、よくいただくご質問をまとめました。
+    </p>
+
+    <!-- FAQ rows using news-row style -->
+    <div class="hb-up">
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid #E8E6DF;align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.01</span>
+        <div>
+          <p style="font-size:14px;font-weight:700;color:#0E0E14;margin:0 0 10px;line-height:1.6">AX（AI自動化）を導入していなくても利用できますか</p>
+          <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0">はい、可能です。BPO開始と並行してAX環境を構築するプランもご用意しています。AX構築費用は別途お見積りとなりますが、BPOと同時に進めることで導入期間を短縮できます。</p>
+        </div>
+      </div>
+    </div>
+    <div class="hb-up" style="transition-delay:.08s">
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid #E8E6DF;align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.02</span>
+        <div>
+          <p style="font-size:14px;font-weight:700;color:#0E0E14;margin:0 0 10px;line-height:1.6">現在使っている会計ソフトを変更する必要はありますか</p>
+          <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0">freee会計を推奨していますが、勘定奉行・マネーフォワード等の主要会計ソフトにも対応しています。現在のソフトを活かした運用設計も可能ですので、まずはご相談ください。</p>
+        </div>
+      </div>
+    </div>
+    <div class="hb-up" style="transition-delay:.16s">
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid #E8E6DF;align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.03</span>
+        <div>
+          <p style="font-size:14px;font-weight:700;color:#0E0E14;margin:0 0 10px;line-height:1.6">機密情報のセキュリティはどのように担保されますか</p>
+          <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0">ワーカーは全員NDAを締結し、業務は当社が管理するセキュアな環境で実施します。アクセス権限は業務範囲に限定し、操作ログを全件記録しています。</p>
+        </div>
+      </div>
+    </div>
+    <div class="hb-up" style="transition-delay:.24s">
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid #E8E6DF;align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.04</span>
+        <div>
+          <p style="font-size:14px;font-weight:700;color:#0E0E14;margin:0 0 10px;line-height:1.6">月中に急な処理依頼が発生した場合、対応してもらえますか</p>
+          <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0">対応可能です。Slackやメールでご依頼いただければ、通常は翌営業日以内に対応します。決算期など繁忙期には、事前にワーカーの体制を増強して備えます。</p>
+        </div>
+      </div>
+    </div>
+    <div class="hb-up" style="transition-delay:.32s">
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid #E8E6DF;align-items:flex-start">
+        <span style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.05</span>
+        <div>
+          <p style="font-size:14px;font-weight:700;color:#0E0E14;margin:0 0 10px;line-height:1.6">契約期間の縛りはありますか</p>
+          <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0">最低契約期間は6ヶ月です。導入初期の並走期間を含め、安定運用を確認いただいたうえで継続判断が可能です。業務量の増減に応じたプラン変更も柔軟に対応します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section id="contact" class="hb-cta-section">
+  <!-- Decorative circles -->
+  <svg viewBox="0 0 700 700" class="hb-deco-svg" style="top:-100px;right:-80px;width:700px;height:700px;opacity:.18">
+    <circle cx="350" cy="350" r="60"  fill="none" stroke="#fff" stroke-width="1"/>
+    <circle cx="350" cy="350" r="140" fill="none" stroke="#fff" stroke-width="1"/>
+    <circle cx="350" cy="350" r="220" fill="none" stroke="#fff" stroke-width="1"/>
+    <circle cx="350" cy="350" r="300" fill="none" stroke="#fff" stroke-width="1"/>
+    <circle cx="350" cy="350" r="350" fill="none" stroke="#fff" stroke-width="1"/>
+  </svg>
+
+  <div style="position:relative;max-width:1280px;margin:0 auto">
+    <div style="max-width:720px">
+      <p style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.32em;color:rgba(255,255,255,.65);margin:0 0 28px">AX BPO — CONTACT</p>
+      <h2 class="hb-up" style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;line-height:1.25;color:#fff;margin:0 0 28px">
+        経理の「採用」から「調達」へ、<br>切り替えませんか
+      </h2>
+      <p class="hb-up" style="transition-delay:.1s;font-size:15px;line-height:2;color:rgba(255,255,255,.8);margin:0 0 48px;max-width:580px">
+        まずは現状の経理体制をヒアリングし、BPO移行のシミュレーションをお出しします。コスト比較・移行スケジュールを含む無料診断をご活用ください。
+      </p>
+      <div class="hb-up" style="transition-delay:.2s;display:flex;flex-wrap:wrap;gap:16px">
+        <a href="mailto:info@hatenabase.jp" class="hb-cta hb-cta-white">無料相談を予約する <span class="hb-arrow">→</span></a>
+        <a href="../../index.html" class="hb-cta" style="background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff">トップに戻る <span class="hb-arrow">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer style="padding:32px;background:#0E0E14;border-top:1px solid rgba(255,255,255,.08)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+    <span style="font-family:Inter,system-ui,sans-serif;font-size:10.5px;letter-spacing:.18em;color:rgba(255,255,255,.45)">&copy; 2026 Hatenabase, inc.</span>
+    <a href="../../index.html" style="font-family:Inter,system-ui,sans-serif;font-size:10.5px;letter-spacing:.18em;color:rgba(255,255,255,.45);text-decoration:none;transition:color .3s" onmouseover="this.style.color='rgba(255,255,255,.85)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">HatenaBase.jp ↗</a>
+  </div>
+</footer>
+
+<script>
+// Intersection observer for hb-up animations
+const upObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-in');
+      upObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.hb-up').forEach(el => {
+  // Elements already marked is-in in the hero remain visible
+  if (!el.classList.contains('is-in')) {
+    upObserver.observe(el);
+  }
+});
+
+// Header scroll state
+const header = document.querySelector('.hb-header');
+window.addEventListener('scroll', () => {
+  header.style.borderBottomColor = window.scrollY > 10 ? '#E8E6DF' : 'transparent';
+}, { passive: true });
+</script>
+</body>
+</html>

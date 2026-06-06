@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>経理AX Premium — フルスコープAX | はてなベース株式会社</title>
+<link rel="stylesheet" href="../../css/miyazawa.css"/>
+<style>
+  /* ── Page-local overrides ── */
+
+  /* Hero dark overlay variant */
+  .hb-hero-premium {
+    background: #0E0E14;
+    color: #fff;
+  }
+  .hb-hero-premium .hb-hero-display { color: #fff; }
+  .hb-hero-premium .hb-hero-display em { color: #5C8FDB; }
+  .hb-hero-premium .hb-hero-display .hb-accent { border-bottom-color: #5C8FDB; }
+  .hb-hero-premium .hb-hero-body p { color: rgba(255,255,255,.72); }
+  .hb-hero-premium .hb-scroll-indicator { color: #fff; }
+  .hb-hero-premium .hb-scroll-indicator::before { background: #fff; }
+  .hb-hero-premium .hb-hero-badge { color: #5C8FDB; }
+  .hb-hero-premium .hb-hero-badge::before { background: #5C8FDB; }
+
+  /* Metrics strip */
+  .hb-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,.15);
+    margin-top: 56px;
+  }
+  .hb-metric {
+    padding: 28px 32px;
+    border-right: 1px solid rgba(255,255,255,.15);
+  }
+  .hb-metric:last-child { border-right: none; }
+  .hb-metric-val {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-style: italic; font-weight: 300;
+    font-size: 52px; line-height: 1;
+    color: #5C8FDB; margin-bottom: 6px;
+  }
+  .hb-metric-val small {
+    font-size: .5em; font-style: normal; letter-spacing: .04em;
+    color: rgba(255,255,255,.65);
+  }
+  .hb-metric-label {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 11px; letter-spacing: .18em;
+    color: rgba(255,255,255,.55);
+  }
+
+  /* Problems section */
+  .hb-problems-section {
+    padding: 104px 32px;
+    background: #0E0E14;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .hb-problems-section .hb-section-head {
+    border-bottom-color: rgba(255,255,255,.15);
+  }
+  .hb-problems-section .hb-section-head-en { color: #5C8FDB; }
+  .hb-problems-section .hb-section-head-en::before { background: #5C8FDB; }
+  .hb-problems-section .hb-section-head-jp { color: #fff; }
+  .hb-problems-subtitle {
+    font-size: 14px; line-height: 1.9;
+    color: rgba(255,255,255,.6);
+    max-width: 560px;
+    margin-bottom: 48px;
+  }
+
+  /* Strengths numbered blocks */
+  .hb-strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid #E8E6DF;
+  }
+  .hb-strength-block {
+    padding: 48px 36px;
+    border-right: 1px solid #E8E6DF;
+    position: relative;
+  }
+  .hb-strength-block:last-child { border-right: none; }
+  .hb-strength-block-num {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-style: italic; font-weight: 300;
+    font-size: 72px; line-height: 1;
+    color: #1F61AB; opacity: .25;
+    position: absolute; top: 24px; right: 28px;
+  }
+  .hb-strength-block-en {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 9px; letter-spacing: .28em;
+    color: #8A8A93; margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hb-strength-block-title {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700; font-size: 20px;
+    letter-spacing: -.01em; color: #0E0E14;
+    margin: 0 0 16px;
+  }
+  .hb-strength-block-desc {
+    font-size: 13.5px; line-height: 2;
+    color: #3A3A45; margin: 0;
+  }
+
+  /* Services grid */
+  .hb-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid #E8E6DF;
+  }
+  .hb-service-item {
+    padding: 40px 32px;
+    border-right: 1px solid #E8E6DF;
+    border-bottom: 1px solid #E8E6DF;
+    position: relative;
+    transition: background .3s;
+  }
+  .hb-service-item:hover { background: #F4F8FD; }
+  .hb-service-item:nth-child(3n) { border-right: none; }
+  .hb-service-item:nth-child(4),
+  .hb-service-item:nth-child(5),
+  .hb-service-item:nth-child(6) { border-bottom: none; }
+  .hb-service-num {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-style: italic; font-weight: 300;
+    font-size: 36px; color: #5C8FDB;
+    line-height: 1; margin-bottom: 20px;
+  }
+  .hb-service-en {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 9px; letter-spacing: .28em;
+    color: #8A8A93; margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .hb-service-title {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700; font-size: 17px;
+    letter-spacing: -.01em; color: #0E0E14;
+    margin: 0 0 12px;
+  }
+  .hb-service-desc {
+    font-size: 13px; line-height: 1.9;
+    color: #3A3A45; margin: 0;
+  }
+
+  /* Onboarding / approach */
+  .hb-onboard-section { background: #FAFAFA; }
+
+  /* Pricing — single centered card */
+  .hb-pricing-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+  }
+  .hb-pricing-card {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #0E0E14;
+    padding: 52px 48px;
+  }
+  .hb-pricing-label {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 10px; letter-spacing: .32em;
+    color: #8A8A93; margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hb-pricing-price {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-style: italic; font-weight: 300;
+    font-size: 56px; line-height: 1;
+    color: #1F61AB; margin-bottom: 20px;
+  }
+  .hb-pricing-price small {
+    font-size: .38em; font-style: normal;
+    color: #8A8A93; letter-spacing: .06em;
+  }
+  .hb-pricing-desc {
+    font-size: 14px; line-height: 1.9;
+    color: #3A3A45; margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #E8E6DF;
+  }
+  .hb-pricing-features {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: 12px;
+  }
+  .hb-pricing-features li {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; color: #0E0E14; font-weight: 500;
+  }
+  .hb-pricing-features li::before {
+    content: '';
+    display: inline-block; width: 5px; height: 5px;
+    background: #1F61AB; flex-shrink: 0;
+  }
+
+  /* FAQ */
+  .hb-faq-list {
+    display: grid; gap: 0;
+    border-top: 1px solid #E8E6DF;
+  }
+  .hb-faq-item {
+    padding: 28px 0;
+    border-bottom: 1px solid #E8E6DF;
+  }
+  .hb-faq-q {
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 12px;
+  }
+  .hb-faq-qmark {
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-style: italic; font-weight: 300;
+    font-size: 28px; color: #1F61AB; line-height: 1;
+    flex-shrink: 0;
+  }
+  .hb-faq-question {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 700; font-size: 15px;
+    color: #0E0E14; line-height: 1.5;
+  }
+  .hb-faq-answer {
+    font-size: 13.5px; line-height: 2;
+    color: #3A3A45; margin: 0;
+    padding-left: 42px;
+  }
+
+  /* CTA section */
+  .hb-cta-prem {
+    padding: 120px 32px 132px;
+    background: #1F61AB;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hb-cta-prem-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hb-cta-prem-en {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 10px; letter-spacing: .32em;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+  .hb-cta-prem-title {
+    font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+    font-weight: 900; font-size: clamp(28px, 4.5vw, 52px);
+    line-height: 1.25; letter-spacing: -.02em;
+    color: #fff; margin: 0 0 24px;
+  }
+  .hb-cta-prem-body {
+    font-size: 15px; line-height: 1.9;
+    color: rgba(255,255,255,.8);
+    margin: 0 0 44px;
+  }
+  .hb-cta-prem-actions {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 14px;
+  }
+
+  /* compact footer */
+  .hb-footer-compact {
+    padding: 32px;
+    background: #0E0E14;
+    color: rgba(255,255,255,.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .hb-footer-compact-copy {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+  }
+  .hb-footer-compact-link {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 11px; letter-spacing: .18em;
+    color: rgba(255,255,255,.55);
+    text-decoration: none;
+    transition: color .25s;
+  }
+  .hb-footer-compact-link:hover { color: #fff; }
+
+  /* Responsive additions */
+  @media (max-width: 880px) {
+    .hb-metrics { grid-template-columns: 1fr; }
+    .hb-metric { border-right: none; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .hb-metric:last-child { border-bottom: none; }
+    .hb-strengths-grid { grid-template-columns: 1fr; }
+    .hb-strength-block { border-right: none; border-bottom: 1px solid #E8E6DF; }
+    .hb-strength-block:last-child { border-bottom: none; }
+    .hb-services-grid { grid-template-columns: 1fr; }
+    .hb-service-item { border-right: none; border-bottom: 1px solid #E8E6DF; }
+    .hb-service-item:last-child { border-bottom: none; }
+    .hb-service-item:nth-child(4),
+    .hb-service-item:nth-child(5) { border-bottom: 1px solid #E8E6DF; }
+    .hb-pricing-card { padding: 36px 24px; }
+    .hb-problems-section { padding: 64px 20px; }
+    .hb-cta-prem { padding: 72px 20px; }
+    .hb-footer-compact { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="hb-header">
+  <a href="../../index.html" class="hb-header-logo">
+    <span style="font-family:Inter,sans-serif;font-size:15px;font-weight:600;letter-spacing:.04em;color:#0E0E14;">HatenaBase</span>
+  </a>
+  <nav class="hb-pc-nav">
+    <a href="#services" class="hb-nav-item">
+      <span class="hb-nav-en">Services</span>
+      <span class="hb-nav-jp">サービス</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#onboarding" class="hb-nav-item">
+      <span class="hb-nav-en">Onboarding</span>
+      <span class="hb-nav-jp">導入ステップ</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#pricing" class="hb-nav-item">
+      <span class="hb-nav-en">Pricing</span>
+      <span class="hb-nav-jp">料金</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#faq" class="hb-nav-item">
+      <span class="hb-nav-en">FAQ</span>
+      <span class="hb-nav-jp">よくある質問</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <div class="hb-nav-divider"></div>
+    <a href="#contact" class="hb-contact-btn">
+      無料相談 <span class="hb-arrow">&rarr;</span>
+    </a>
+  </nav>
+  <button class="hb-mb-burger" aria-label="メニュー">
+    <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+      <rect width="18" height="2" fill="#0E0E14"/>
+      <rect y="6" width="18" height="2" fill="#0E0E14"/>
+      <rect y="12" width="18" height="2" fill="#0E0E14"/>
+    </svg>
+  </button>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hb-hero hb-hero-premium">
+  <!-- Decorative SVG circles -->
+  <svg class="hb-hero-svg" viewBox="0 0 1440 720" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <circle cx="1240" cy="160" r="320" stroke="rgba(92,143,219,.12)" stroke-width="1"/>
+    <circle cx="1240" cy="160" r="220" stroke="rgba(92,143,219,.1)" stroke-width="1"/>
+    <circle cx="1240" cy="160" r="120" stroke="rgba(92,143,219,.15)" stroke-width="1"/>
+    <circle cx="180" cy="580" r="240" stroke="rgba(92,143,219,.07)" stroke-width="1"/>
+    <line x1="0" y1="360" x2="1440" y2="360" stroke="rgba(255,255,255,.03)" stroke-width="1"/>
+  </svg>
+
+  <div class="hb-section-inner" style="position:relative;">
+    <div class="hb-hero-badge hb-up">Full-Scope AX for Enterprise</div>
+    <h1 class="hb-hero-display hb-up" style="transition-delay:.08s">
+      <em>上場企業の経理を、</em><br/>
+      AIで<span class="hb-accent">再定義する</span>。
+    </h1>
+    <div class="hb-hero-body hb-up" style="transition-delay:.16s">
+      <p>
+        連結決算の自動化、有報・短信・四半期報告書のAIドラフト、<br/>
+        監査対応資料の自動生成、内部統制のAI化。<br/>
+        上場企業が求められる高度な開示・監査プロセスをAIで変革します。
+      </p>
+    </div>
+    <div class="hb-hero-actions hb-up" style="transition-delay:.24s">
+      <a href="#contact" class="hb-btn-primary">無料相談を予約する <span class="hb-arrow">&rarr;</span></a>
+      <a href="#services" class="hb-btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">サービス詳細 <span class="hb-arrow">&darr;</span></a>
+    </div>
+
+    <!-- Metrics -->
+    <div class="hb-metrics hb-up" style="transition-delay:.32s">
+      <div class="hb-metric">
+        <div class="hb-metric-val">50<small>%+</small></div>
+        <div class="hb-metric-label">経理チーム工数削減</div>
+      </div>
+      <div class="hb-metric">
+        <div class="hb-metric-val">1/2</div>
+        <div class="hb-metric-label">開示リードタイム短縮</div>
+      </div>
+      <div class="hb-metric">
+        <div class="hb-metric-val">6<small>領域</small></div>
+        <div class="hb-metric-label">フルスコープ対応</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEMS ===== -->
+<section class="hb-problems-section">
+  <!-- Decorative SVG -->
+  <svg class="hb-deco-svg" style="right:-200px;top:-100px;width:600px;height:600px;opacity:.05" viewBox="0 0 600 600" aria-hidden="true">
+    <circle cx="300" cy="300" r="299" stroke="#5C8FDB" stroke-width="1" fill="none"/>
+    <circle cx="300" cy="300" r="200" stroke="#5C8FDB" stroke-width="1" fill="none"/>
+    <circle cx="300" cy="300" r="100" stroke="#5C8FDB" stroke-width="1" fill="none"/>
+  </svg>
+
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Problems</span>
+      <span class="hb-section-head-jp">構造的課題</span>
+    </div>
+    <p class="hb-problems-subtitle hb-up" style="transition-delay:.08s">
+      決算発表のたびに経理部門が疲弊する。その根本原因は、人手に依存したプロセス設計にあります。
+    </p>
+    <div class="hb-issue-grid">
+      <div class="hb-issue-card hb-up">
+        <div class="hb-issue-num">01</div>
+        <div class="hb-issue-category">TIMING</div>
+        <p style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:15px;color:#fff;margin:0 0 12px;"><strong>決算開示に45日以上</strong>かかり、投資家への適時開示が遅れている</p>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.6);margin:0;">四半期ごとに経理部門が総動員体制になり、担当者の疲弊が慢性化している。</p>
+      </div>
+      <div class="hb-issue-card hb-up" style="transition-delay:.08s">
+        <div class="hb-issue-num">02</div>
+        <div class="hb-issue-category">CONSOLIDATION</div>
+        <p style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:15px;color:#fff;margin:0 0 12px;"><strong>連結決算の手作業が膨大</strong>で、人手と時間を浪費している</p>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.6);margin:0;">子会社からのデータ収集・連結仕訳・内部取引消去が人手依存のまま。</p>
+      </div>
+      <div class="hb-issue-card hb-up" style="transition-delay:.16s">
+        <div class="hb-issue-num">03</div>
+        <div class="hb-issue-category">DISCLOSURE</div>
+        <p style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:15px;color:#fff;margin:0 0 12px;"><strong>開示資料のドラフト作成が属人化</strong>している</p>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.6);margin:0;">有報・短信・四半期報告書の作成ノウハウが特定の担当者に集中し、リスクが高い。</p>
+      </div>
+      <div class="hb-issue-card hb-up" style="transition-delay:.24s">
+        <div class="hb-issue-num">04</div>
+        <div class="hb-issue-category">AUDIT</div>
+        <p style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:15px;color:#fff;margin:0 0 12px;"><strong>監査対応資料の準備に毎期2〜3週間</strong>を要する</p>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.6);margin:0;">監査法人からの追加資料要求への対応で本来業務が圧迫されている。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRENGTHS ===== -->
+<section class="hb-section">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Strengths</span>
+      <span class="hb-section-head-jp">私たちの強み</span>
+    </div>
+    <p style="font-size:14px;line-height:1.9;color:#3A3A45;max-width:560px;margin-bottom:48px;" class="hb-up" style="transition-delay:.08s">
+      上場企業レベルの会計実務を知る専門家と、AI実装力を持つエンジニアの融合。この組み合わせは他にありません。
+    </p>
+    <div class="hb-strengths-grid">
+      <div class="hb-strength-block hb-up">
+        <div class="hb-strength-block-num">01</div>
+        <div class="hb-strength-block-en">Expertise</div>
+        <h3 class="hb-strength-block-title">上場企業会計の専門家</h3>
+        <p class="hb-strength-block-desc">Big4監査法人出身の有浦氏が、連結決算・開示実務・監査対応のプロセスを熟知。IFRS・日本基準の両方に対応可能です。</p>
+      </div>
+      <div class="hb-strength-block hb-up" style="transition-delay:.1s">
+        <div class="hb-strength-block-num">02</div>
+        <div class="hb-strength-block-en">Implementation</div>
+        <h3 class="hb-strength-block-title">AI実装力との融合</h3>
+        <p class="hb-strength-block-desc">開示書類のAIドラフト、監査証跡の自動生成、連結パッケージの自動化。会計の深い知見とAI技術の両方を持つからこそ実現できる設計です。</p>
+      </div>
+      <div class="hb-strength-block hb-up" style="transition-delay:.2s">
+        <div class="hb-strength-block-num">03</div>
+        <div class="hb-strength-block-en">Position</div>
+        <h3 class="hb-strength-block-title">市場唯一のポジション</h3>
+        <p class="hb-strength-block-desc">開示実務とAIの両方がわかるチームは市場に存在しません。コンサルファームにはAI実装力がなく、AI企業には会計の深い知見がない。その両方を兼ね備えています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="hb-section hb-section-alt">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Services</span>
+      <span class="hb-section-head-jp">6つの領域でフルスコープ対応</span>
+      <span class="hb-section-head-count">06 Areas</span>
+    </div>
+    <p style="font-size:14px;line-height:1.9;color:#3A3A45;max-width:560px;margin-bottom:48px;" class="hb-up" style="transition-delay:.08s">
+      連結決算から内部統制まで、上場企業の経理業務を包括的にAX化。個別導入も、一括導入も対応します。
+    </p>
+    <div class="hb-services-grid">
+      <div class="hb-service-item hb-up">
+        <div class="hb-service-num">01</div>
+        <div class="hb-service-en">Consolidation</div>
+        <h4 class="hb-service-title">連結決算自動化</h4>
+        <p class="hb-service-desc">子会社からの連結パッケージ収集、内部取引消去、連結仕訳の自動起票。手作業ゼロの連結決算プロセスを構築します。</p>
+      </div>
+      <div class="hb-service-item hb-up" style="transition-delay:.07s">
+        <div class="hb-service-num">02</div>
+        <div class="hb-service-en">Annual Report</div>
+        <h4 class="hb-service-title">有価証券報告書 AIドラフト</h4>
+        <p class="hb-service-desc">財務データと定性情報からAIが有報の初稿を自動生成。MD&A、リスク情報、注記の各セクションを網羅的にドラフトします。</p>
+      </div>
+      <div class="hb-service-item hb-up" style="transition-delay:.14s">
+        <div class="hb-service-num">03</div>
+        <div class="hb-service-en">Earnings Release</div>
+        <h4 class="hb-service-title">決算短信 自動生成</h4>
+        <p class="hb-service-desc">連結・単体の財務諸表データから決算短信のドラフトを自動生成。前期比較、セグメント分析、業績予想の記述も対応します。</p>
+      </div>
+      <div class="hb-service-item hb-up" style="transition-delay:.07s">
+        <div class="hb-service-num">04</div>
+        <div class="hb-service-en">Audit Support</div>
+        <h4 class="hb-service-title">監査対応資料 自動生成</h4>
+        <p class="hb-service-desc">監査法人の要求に応じた証跡資料を自動生成。PBC資料の整備、勘定明細の自動作成、監査調書との突合を効率化します。</p>
+      </div>
+      <div class="hb-service-item hb-up" style="transition-delay:.14s">
+        <div class="hb-service-num">05</div>
+        <div class="hb-service-en">Internal Control</div>
+        <h4 class="hb-service-title">内部統制のAI化</h4>
+        <p class="hb-service-desc">J-SOX対応の内部統制をAIで高度化。統制テストの自動実行、証跡の自動収集、不備の自動検知で統制品質を向上させます。</p>
+      </div>
+      <div class="hb-service-item hb-up" style="transition-delay:.21s">
+        <div class="hb-service-num">06</div>
+        <div class="hb-service-en">Group Design</div>
+        <h4 class="hb-service-title">グループ全体のAX設計</h4>
+        <p class="hb-service-desc">親会社・子会社を横断した経理AXのグランドデザインを策定。グループ共通の会計基盤とAIエージェント網を構築します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ONBOARDING ===== -->
+<section id="onboarding" class="hb-section">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Onboarding</span>
+      <span class="hb-section-head-jp">4ステップで経理AXを実装する</span>
+    </div>
+    <p style="font-size:14px;line-height:1.9;color:#3A3A45;max-width:560px;margin-bottom:56px;" class="hb-up" style="transition-delay:.08s">
+      現状診断から運用定着まで、6〜12ヶ月で上場企業の経理をAXに変革します。
+    </p>
+    <div class="hb-approach-grid">
+      <div class="hb-approach-card hb-up">
+        <div class="hb-approach-num">01</div>
+        <div class="hb-approach-en">Diagnosis</div>
+        <h4 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:16px;color:#0E0E14;margin:10px 0 12px;">AX診断・現状分析</h4>
+        <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0;">連結決算フロー、開示プロセス、監査対応の現状を可視化。AI自動化の余地と優先順位を特定し、ROIシミュレーションを実施します。</p>
+      </div>
+      <div class="hb-approach-card hb-up" style="transition-delay:.08s">
+        <div class="hb-approach-num">02</div>
+        <div class="hb-approach-en">Grand Design</div>
+        <h4 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:16px;color:#0E0E14;margin:10px 0 12px;">グランドデザイン設計</h4>
+        <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0;">グループ全体のAXアーキテクチャを設計。連結決算自動化、開示AIドラフト、監査対応自動化の各モジュールの仕様を策定します。</p>
+      </div>
+      <div class="hb-approach-card hb-up" style="transition-delay:.16s">
+        <div class="hb-approach-num">03</div>
+        <div class="hb-approach-en">Implementation</div>
+        <h4 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:16px;color:#0E0E14;margin:10px 0 12px;">AIエージェント実装</h4>
+        <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0;">設計に基づきAIエージェントを実装。連結パッケージの自動収集、開示ドラフト生成、監査証跡の自動整備を段階的にリリースします。</p>
+      </div>
+      <div class="hb-approach-card hb-up" style="transition-delay:.24s">
+        <div class="hb-approach-num">04</div>
+        <div class="hb-approach-en">Continuous Ops</div>
+        <h4 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:16px;color:#0E0E14;margin:10px 0 12px;">運用定着・継続改善</h4>
+        <p style="font-size:13px;line-height:1.9;color:#3A3A45;margin:0;">決算期を通じた実運用でAIの精度を検証・改善。経理チームへのトレーニングと、四半期ごとのAXレベル評価を実施します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="hb-section hb-section-alt">
+  <div class="hb-section-inner hb-section-narrow">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Pricing</span>
+      <span class="hb-section-head-jp">料金体系</span>
+    </div>
+    <p style="font-size:14px;line-height:1.9;color:#3A3A45;max-width:480px;margin-bottom:0;" class="hb-up" style="transition-delay:.08s">
+      企業規模・グループ構成・対応範囲に応じて個別にお見積りします。
+    </p>
+    <div class="hb-pricing-wrap">
+      <div class="hb-pricing-card hb-up">
+        <div class="hb-pricing-label">Full-Scope AX</div>
+        <div class="hb-pricing-price">¥3,000〜5,000<small>万（税別）</small></div>
+        <p class="hb-pricing-desc">連結決算自動化から開示AI・監査対応・内部統制まで、フルスコープで経理AXを実装するプロジェクト型プラン。</p>
+        <ul class="hb-pricing-features">
+          <li>プロジェクト期間 6〜12ヶ月</li>
+          <li>連結決算自動化</li>
+          <li>有報・短信 AIドラフト</li>
+          <li>監査対応資料 自動生成</li>
+          <li>内部統制AI化（J-SOX対応）</li>
+          <li>グループAXグランドデザイン</li>
+          <li>経理チームトレーニング</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="hb-section">
+  <div class="hb-section-inner hb-section-narrow">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">FAQ</span>
+      <span class="hb-section-head-jp">よくある質問</span>
+    </div>
+    <div class="hb-faq-list">
+      <div class="hb-faq-item hb-up">
+        <div class="hb-faq-q">
+          <span class="hb-faq-qmark">Q.</span>
+          <span class="hb-faq-question">導入期間はどの程度かかりますか。</span>
+        </div>
+        <p class="hb-faq-answer">グループ構成や対象範囲によりますが、標準的には6〜12ヶ月です。連結子会社が多い場合や、IFRS対応を含む場合はやや長くなる傾向があります。まず診断フェーズ（1〜2ヶ月）で全体像を把握し、段階的に実装を進めます。</p>
+      </div>
+      <div class="hb-faq-item hb-up" style="transition-delay:.06s">
+        <div class="hb-faq-q">
+          <span class="hb-faq-qmark">Q.</span>
+          <span class="hb-faq-question">既存の会計システムを入れ替える必要はありますか。</span>
+        </div>
+        <p class="hb-faq-answer">基本的に既存システムをそのまま活用します。AIエージェントは既存の会計システム・連結システムとAPI連携する形で構築するため、大規模なシステム刷新は不要です。</p>
+      </div>
+      <div class="hb-faq-item hb-up" style="transition-delay:.12s">
+        <div class="hb-faq-q">
+          <span class="hb-faq-qmark">Q.</span>
+          <span class="hb-faq-question">AIが生成した開示資料の正確性はどのように担保しますか。</span>
+        </div>
+        <p class="hb-faq-answer">AIはドラフト生成と整合性チェックを担当し、最終的な判断と承認は人間が行うワークフローを構築します。AI生成物には自動で根拠データとの突合結果が付与され、レビュー工数を最小化しつつ品質を担保します。</p>
+      </div>
+      <div class="hb-faq-item hb-up" style="transition-delay:.18s">
+        <div class="hb-faq-q">
+          <span class="hb-faq-qmark">Q.</span>
+          <span class="hb-faq-question">IFRS適用企業にも対応できますか。</span>
+        </div>
+        <p class="hb-faq-answer">対応可能です。日本基準・IFRS・米国基準のいずれにも対応したAIモデルを構築します。基準間の差異分析や組替仕訳の自動生成にも対応しています。</p>
+      </div>
+      <div class="hb-faq-item hb-up" style="transition-delay:.24s">
+        <div class="hb-faq-q">
+          <span class="hb-faq-qmark">Q.</span>
+          <span class="hb-faq-question">監査法人との関係に影響はありますか。</span>
+        </div>
+        <p class="hb-faq-answer">むしろ監査法人との関係改善に寄与します。PBC資料の品質向上、提出スピードの改善、証跡の網羅的な整備により、監査の効率化と監査報酬の適正化につながるケースが多くあります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="contact" class="hb-cta-prem">
+  <!-- Decorative SVG -->
+  <svg class="hb-deco-svg" style="left:-180px;top:-120px;width:520px;height:520px;opacity:.1" viewBox="0 0 520 520" aria-hidden="true">
+    <circle cx="260" cy="260" r="259" stroke="#fff" stroke-width="1" fill="none"/>
+    <circle cx="260" cy="260" r="180" stroke="#fff" stroke-width="1" fill="none"/>
+  </svg>
+  <svg class="hb-deco-svg" style="right:-100px;bottom:-80px;width:400px;height:400px;opacity:.08" viewBox="0 0 400 400" aria-hidden="true">
+    <circle cx="200" cy="200" r="199" stroke="#fff" stroke-width="1" fill="none"/>
+  </svg>
+
+  <div class="hb-cta-prem-inner">
+    <div class="hb-cta-prem-en hb-up">Call to Action</div>
+    <h2 class="hb-cta-prem-title hb-up" style="transition-delay:.08s">
+      決算開示のリードタイムを、半分にする
+    </h2>
+    <p class="hb-cta-prem-body hb-up" style="transition-delay:.16s">
+      上場企業の経理AXについて、まずは現状診断から始めてみませんか。<br/>
+      貴社の決算プロセスを分析し、AI自動化の可能性をご提案します。
+    </p>
+    <div class="hb-cta-prem-actions hb-up" style="transition-delay:.24s">
+      <a href="mailto:info@hatenabase.jp" class="hb-cta hb-cta-white">
+        無料相談を予約する <span class="hb-arrow">&rarr;</span>
+      </a>
+      <a href="../../accounting/index.html" class="hb-cta" style="background:rgba(255,255,255,.15);color:#fff;border-radius:999px;">
+        <span class="hb-arrow">&larr;</span> ソリューション一覧に戻る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="hb-footer-compact">
+  <span class="hb-footer-compact-copy">&copy; 2026 Hatenabase, inc.</span>
+  <a href="../../accounting/index.html" class="hb-footer-compact-link">
+    ソリューション一覧 <span class="hb-arrow">&rarr;</span>
+  </a>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-in');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.hb-up').forEach(function (el) {
+    observer.observe(el);
+  });
+}());
+</script>
+</body>
+</html>

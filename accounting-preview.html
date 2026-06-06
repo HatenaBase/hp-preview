@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会計コンサルティング事業部 | はてなベース株式会社</title>
+<link rel="stylesheet" href="../css/miyazawa.css">
+<style>
+/* Solution card grid — accounting page specific */
+.hb-sol-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:0; }
+.hb-sol-card {
+  padding:32px 28px; border:1px solid var(--hb-border); margin:-1px 0 0 -1px;
+  display:flex; flex-direction:column; text-decoration:none; color:inherit;
+  transition: background .35s cubic-bezier(.16,.88,.2,1), border-color .35s;
+}
+.hb-sol-card:hover { background:var(--hb-blue-ghost); border-color:var(--hb-blue); }
+.hb-sol-tag {
+  font-family:Inter,system-ui,sans-serif; font-size:10px; font-weight:500;
+  letter-spacing:.18em; display:inline-flex; align-items:center;
+  height:22px; padding:0 10px; margin-bottom:16px; line-height:1;
+}
+.hb-sol-tag.sme  { background:#E8F5E9; color:#2E7D32; border:1px solid #C8E6C9; }
+.hb-sol-tag.mid  { background:#E3F2FD; color:#1565C0; border:1px solid #BBDEFB; }
+.hb-sol-tag.ent  { background:#FFF3E0; color:#E65100; border:1px solid #FFE0B2; }
+.hb-sol-tag.cross { background:#F3E5F5; color:#7B1FA2; border:1px solid #E1BEE7; }
+.hb-sol-title {
+  font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+  font-weight:700; font-size:17px; color:#0E0E14; margin-bottom:10px; line-height:1.5;
+}
+.hb-sol-desc { font-size:13px; line-height:1.9; color:var(--hb-sub); margin-bottom:16px; flex:1; }
+.hb-sol-price {
+  font-family:"JetBrains Mono",monospace; font-size:12px; font-weight:600;
+  color:var(--hb-blue); letter-spacing:.02em;
+}
+.hb-sol-arrow { margin-top:14px; font-family:Inter,system-ui,sans-serif; font-size:10px; letter-spacing:.18em; color:var(--hb-blue); font-weight:600; }
+
+/* Tier header */
+.hb-tier-header {
+  display:flex; align-items:baseline; gap:14px;
+  padding-bottom:16px; border-bottom:1px solid var(--hb-border); margin-bottom:28px;
+}
+.hb-tier-num {
+  font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:300;
+  font-size:36px; color:var(--hb-blue); line-height:1;
+}
+.hb-tier-label {
+  font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+  font-weight:700; font-size:22px; letter-spacing:-.01em;
+}
+.hb-tier-en {
+  font-family:Inter,system-ui,sans-serif; font-size:10px; letter-spacing:.28em;
+  color:var(--hb-muted); margin-left:auto;
+}
+.hb-tier-section { margin-bottom:64px; }
+
+/* Metrics */
+.hb-metrics {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+  margin-top:48px; padding-top:32px; border-top:1px solid rgba(255,255,255,.25);
+}
+.hb-metric-val {
+  font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:300;
+  font-size:56px; color:#fff; line-height:1; margin-bottom:8px;
+}
+.hb-metric-val small { font-size:.45em; font-style:normal; opacity:.7; }
+.hb-metric-label { font-size:12px; color:rgba(255,255,255,.7); letter-spacing:.04em; }
+
+/* Partners row */
+.hb-partner-row {
+  display:flex; flex-wrap:wrap; gap:40px; align-items:center;
+  justify-content:center; padding:32px 0;
+}
+.hb-partner-row img { height:32px; opacity:.5; transition:opacity .3s; }
+.hb-partner-row img:hover { opacity:1; }
+
+@media (max-width:880px) {
+  .hb-sol-grid { grid-template-columns:1fr; }
+  .hb-metrics { grid-template-columns:1fr; gap:24px; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header class="hb-header">
+  <a href="../index.html" class="hb-header-logo"><img src="../images/hatena_logo.svg" alt="はてなベース株式会社" style="height:28px"></a>
+  <nav class="hb-pc-nav">
+    <a href="../index.html" class="hb-nav-item">
+      <span class="hb-nav-en">Top</span>
+      <span class="hb-nav-jp">トップ</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#solutions" class="hb-nav-item active">
+      <span class="hb-nav-en">Solutions</span>
+      <span class="hb-nav-jp">ソリューション</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#partners" class="hb-nav-item">
+      <span class="hb-nav-en">Partners</span>
+      <span class="hb-nav-jp">パートナー</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <span class="hb-nav-divider"></span>
+    <a href="#contact" class="hb-contact-btn">CONTACT <span class="hb-arrow">↗</span></a>
+  </nav>
+  <button class="hb-mb-burger" aria-label="menu">
+    <div style="position:relative;width:18px;height:12px;margin:0 auto">
+      <span style="position:absolute;left:0;right:0;top:0;height:1.5px;background:#0E0E14"></span>
+      <span style="position:absolute;left:0;right:0;top:5px;height:1.5px;background:#0E0E14"></span>
+      <span style="position:absolute;left:0;right:0;top:10px;height:1.5px;background:#0E0E14"></span>
+    </div>
+  </button>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hb-hero" style="padding:96px 32px 80px;background:var(--hb-blue);color:#fff;min-height:auto">
+  <!-- Decorative circles -->
+  <svg viewBox="0 0 880 880" class="hb-deco-svg" style="top:50%;right:-280px;transform:translateY(-50%);width:880px;height:880px;opacity:.18">
+    <circle cx="440" cy="440" r="40" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="100" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="160" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="220" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="280" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="340" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="400" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="40" fill="#fff" opacity=".15"/>
+  </svg>
+  <div style="position:relative;max-width:1280px;margin:0 auto">
+    <div class="hb-hero-badge hb-up is-in" style="color:rgba(255,255,255,.7)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff"></span>Accounting Consulting Division</div>
+    <h1 class="hb-hero-display" style="color:#fff">
+      <div><span class="hb-chars is-in"><span class="hb-line">経理を、AIで</span></span></div>
+      <div><span class="hb-accent" style="border-color:rgba(255,255,255,.5)"><span class="hb-chars is-in"><span class="hb-line">再発明する。</span></span></span></div>
+      <div style="margin-top:20px"><em style="color:rgba(255,255,255,.7)"><span class="hb-chars is-in"><span class="hb-line">Accounting, reinvented.</span></span></em></div>
+    </h1>
+    <div class="hb-hero-body" style="max-width:640px">
+      <p class="hb-up is-in" style="font-size:15px;line-height:2;color:rgba(255,255,255,.85);margin:0">
+        記帳代行から上場企業の連結決算まで。<br>
+        会計士・税理士・社労士のトリプルライセンスとAIエージェントの融合で、<br>
+        企業規模を問わず最適な経理体制を構築します。
+      </p>
+    </div>
+    <div class="hb-hero-actions hb-up is-in" style="margin-top:36px">
+      <a href="#contact" class="hb-btn-primary" style="background:#fff;color:var(--hb-blue)">無料相談を予約する <span class="hb-arrow">→</span></a>
+      <a href="#solutions" class="hb-btn-outline" style="border-color:rgba(255,255,255,.5);color:#fff">ソリューション一覧 <span class="hb-arrow">↗</span></a>
+    </div>
+    <!-- Metrics -->
+    <div class="hb-metrics hb-up is-in">
+      <div>
+        <div class="hb-metric-val">17<small>本</small></div>
+        <div class="hb-metric-label">ソリューション</div>
+      </div>
+      <div>
+        <div class="hb-metric-val">50<small>%+</small></div>
+        <div class="hb-metric-label">経理工数削減</div>
+      </div>
+      <div>
+        <div class="hb-metric-val">3<small>資格</small></div>
+        <div class="hb-metric-label">会計士・税理士・社労士</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PARTNERS ====== -->
+<section id="partners" style="padding:32px 32px;border-bottom:1px solid var(--hb-border);background:#fff">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:32px;justify-content:center;flex-wrap:wrap">
+      <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted)">PARTNERS</span>
+      <div class="hb-partner-row">
+        <img src="../images/logo_freee.svg" alt="freee">
+        <img src="../images/logo_obc.svg" alt="勘定奉行">
+        <img src="../images/logo_moneyforward.svg" alt="マネーフォワード">
+        <img src="../images/logo_layerx.svg" alt="LayerX">
+        <img src="../images/logo_cybozu.svg" alt="サイボウズ">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SOLUTIONS ====== -->
+<section id="solutions" class="hb-section" style="background:#fff">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Solutions</span>
+      <span class="hb-section-head-jp"><span class="hb-chars is-in"><span class="hb-line">企業規模に応じた17のソリューション</span></span></span>
+      <span class="hb-section-head-count">17 SOLUTIONS</span>
+    </div>
+    <p class="hb-up" style="font-size:15px;line-height:2;color:var(--hb-sub);margin:0 0 56px;max-width:680px">
+      中小企業の記帳代行から上場企業のフルスコープAXまで。<br>経営ステージに最適な支援を選択できます。
+    </p>
+
+    <!-- ===== Tier 1: 中小企業向け ===== -->
+    <div class="hb-tier-section">
+      <div class="hb-tier-header hb-up">
+        <span class="hb-tier-num">01</span>
+        <span class="hb-tier-label">中小企業向け</span>
+        <span class="hb-tier-en">SME / STARTUP</span>
+      </div>
+      <div class="hb-sol-grid">
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag sme">SME</span>
+          <h4 class="hb-sol-title">記帳代行</h4>
+          <p class="hb-sol-desc">AI+ワーカーのハイブリッド体制で月次記帳を代行。freee会計を軸に最短3営業日で月次決算完了。</p>
+          <p class="hb-sol-price">月額 ¥30,000〜</p>
+        </div>
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag sme">SME</span>
+          <h4 class="hb-sol-title">税務顧問</h4>
+          <p class="hb-sol-desc">創業期から成長期まで伴走する税務顧問。節税・資金繰り・融資支援も対応。</p>
+          <p class="hb-sol-price">月額 ¥50,000〜</p>
+        </div>
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag sme">SME</span>
+          <h4 class="hb-sol-title">資金調達支援</h4>
+          <p class="hb-sol-desc">創業融資から補助金申請まで。50社超の支援実績と3億円超の総調達額。</p>
+          <p class="hb-sol-price">成功報酬型</p>
+        </div>
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag sme">SME</span>
+          <h4 class="hb-sol-title">経理AX Starter（AX診断）</h4>
+          <p class="hb-sol-desc">現状の経理業務を可視化し、AI自動化の余地を診断。導入ロードマップを策定。</p>
+          <p class="hb-sol-price">¥300,000〜（スポット）</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Tier 2: 中堅企業向け ===== -->
+    <div class="hb-tier-section">
+      <div class="hb-tier-header hb-up">
+        <span class="hb-tier-num">02</span>
+        <span class="hb-tier-label">中堅企業向け</span>
+        <span class="hb-tier-en">MID-MARKET</span>
+      </div>
+      <div class="hb-sol-grid">
+        <a href="../lp/kaikei-bugyou/index.html" class="hb-sol-card hb-up">
+          <span class="hb-sol-tag mid">MID</span>
+          <h4 class="hb-sol-title">システム導入支援 — 勘定奉行</h4>
+          <p class="hb-sol-desc">勘定奉行クラウドの導入設計・初期設定・マスタ設計・データ移行・運用定着。freeeと奉行の両方に対応。</p>
+          <p class="hb-sol-price">要見積（プロジェクト型）</p>
+          <div class="hb-sol-arrow">VIEW DETAIL <span class="hb-arrow">↗</span></div>
+        </a>
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag mid">MID</span>
+          <h4 class="hb-sol-title">システム導入支援 — マネーフォワード</h4>
+          <p class="hb-sol-desc">マネーフォワードクラウドの導入設計・運用定着支援。会計・経費・給与の一体運用を構築。</p>
+          <p class="hb-sol-price">要見積（プロジェクト型）</p>
+        </div>
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag mid">MID</span>
+          <h4 class="hb-sol-title">経理業務のDX支援</h4>
+          <p class="hb-sol-desc">業務フロー分析からSaaS選定・導入・定着まで。属人化した経理を仕組み化。</p>
+          <p class="hb-sol-price">¥500,000〜</p>
+        </div>
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag mid">MID</span>
+          <h4 class="hb-sol-title">財務顧問・管理会計支援</h4>
+          <p class="hb-sol-desc">予実管理・KPI設計・管理会計の導入。経営判断に使えるデータ基盤を構築。</p>
+          <p class="hb-sol-price">月額 ¥200,000〜</p>
+        </div>
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag mid">MID</span>
+          <h4 class="hb-sol-title">経理AX Standard（経理DX実装）</h4>
+          <p class="hb-sol-desc">AIエージェントによる経理業務の自動化を実装。仕訳自動起票・請求書処理・月次自動クローズ。</p>
+          <p class="hb-sol-price">¥500〜2,000万</p>
+        </div>
+        <a href="../lp/ax-bpo/index.html" class="hb-sol-card hb-up">
+          <span class="hb-sol-tag cross">CROSS</span>
+          <h4 class="hb-sol-title">経理AX BPO（AX運用）</h4>
+          <p class="hb-sol-desc">AX実装後の経理業務をBPOとして継続運用。AI+育成済みワーカーのハイブリッド体制。</p>
+          <p class="hb-sol-price">月額 ¥100〜300万</p>
+          <div class="hb-sol-arrow">VIEW DETAIL <span class="hb-arrow">↗</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== Tier 3: 上場企業・IPO準備企業向け ===== -->
+    <div class="hb-tier-section">
+      <div class="hb-tier-header hb-up">
+        <span class="hb-tier-num">03</span>
+        <span class="hb-tier-label">上場企業・IPO準備企業向け</span>
+        <span class="hb-tier-en">ENTERPRISE / IPO</span>
+      </div>
+      <div class="hb-sol-grid">
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag ent">ENT</span>
+          <h4 class="hb-sol-title">上場企業税務顧問</h4>
+          <p class="hb-sol-desc">プライム基準に対応した上場企業向け税務顧問。連結税効果・組織再編税務・移転価格に対応。</p>
+          <p class="hb-sol-price">月額 ¥300,000〜</p>
+        </div>
+        <div class="hb-sol-card hb-up">
+          <span class="hb-sol-tag ent">ENT</span>
+          <h4 class="hb-sol-title">FAS（DD / バリュエーション）</h4>
+          <p class="hb-sol-desc">M&amp;A時の財務デューデリジェンスと企業価値算定。AI活用で分析精度とスピードを両立。</p>
+          <p class="hb-sol-price">¥300〜1,000万（案件型）</p>
+        </div>
+        <a href="../lp/ipo/index.html" class="hb-sol-card hb-up">
+          <span class="hb-sol-tag ent">IPO</span>
+          <h4 class="hb-sol-title">IPO支援</h4>
+          <p class="hb-sol-desc">N-3〜N期の上場準備を会計・税務・労務の全面から支援。freee等のSaaS基盤構築も同時実行。</p>
+          <p class="hb-sol-price">¥500〜3,000万</p>
+          <div class="hb-sol-arrow">VIEW DETAIL <span class="hb-arrow">↗</span></div>
+        </a>
+        <a href="../lp/zencom/index.html" class="hb-sol-card hb-up">
+          <span class="hb-sol-tag ent">ENT</span>
+          <h4 class="hb-sol-title">全コミュニケーション対応（Zencom）</h4>
+          <p class="hb-sol-desc">監査法人・証券・税務当局・投資家との会計コミュニケーションを一元マネジメント。CFO代行。</p>
+          <p class="hb-sol-price">月額 ¥100〜300万</p>
+          <div class="hb-sol-arrow">VIEW DETAIL <span class="hb-arrow">↗</span></div>
+        </a>
+        <a href="../lp/ax-premium/index.html" class="hb-sol-card hb-up">
+          <span class="hb-sol-tag ent">ENT</span>
+          <h4 class="hb-sol-title">経理AX Premium（フルスコープAX）</h4>
+          <p class="hb-sol-desc">連結決算自動化・開示資料AIドラフト・監査対応資料の自動生成。グループ全体の経理AX設計。</p>
+          <p class="hb-sol-price">¥3,000〜5,000万</p>
+          <div class="hb-sol-arrow">VIEW DETAIL <span class="hb-arrow">↗</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA / CONTACT ====== -->
+<section id="contact" class="hb-cta-section">
+  <svg viewBox="0 0 880 880" class="hb-deco-svg" style="top:50%;left:-360px;transform:translateY(-50%);width:880px;height:880px;opacity:.22">
+    <circle cx="440" cy="440" r="40" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="100" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="160" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="220" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="280" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="340" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="40" fill="#fff" opacity=".18"/>
+  </svg>
+  <div style="position:relative;max-width:1280px;margin:0 auto">
+    <div class="hb-up" style="font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:500;letter-spacing:.32em;color:rgba(255,255,255,.7);margin-bottom:48px;display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff"></span>CONTACT — 最適なソリューションをご提案します
+    </div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:flex-end">
+      <div>
+        <h2 class="hb-hero-display" style="margin:0 0 32px;color:#fff;font-size:56px">
+          <div>経理の「？」を、</div>
+          <div style="padding-left:1em;color:rgba(255,255,255,.78)">仕組みの「！」へ。</div>
+        </h2>
+        <p class="hb-up" style="font-size:16px;line-height:2;color:rgba(255,255,255,.85);margin:0;max-width:520px">
+          企業規模・課題に応じて、17のソリューションから最適な組み合わせをご提案。<br>まずはお気軽にご相談ください。
+        </p>
+      </div>
+      <div class="hb-up" style="display:grid;gap:0;border-top:1px solid rgba(255,255,255,.3)">
+        <a href="mailto:info@hatenabase.com" style="display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:26px 4px;border-bottom:1px solid rgba(255,255,255,.3);text-decoration:none;color:#fff">
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:rgba(255,255,255,.55);line-height:1;min-width:48px">01</span>
+          <span>
+            <span style="display:block;font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.65);margin-bottom:6px">CONSULT</span>
+            <span style="display:block;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:18px">30分・無料で相談する</span>
+            <span style="display:block;font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px">課題のヒアリングから最適なソリューションをご提案。</span>
+          </span>
+          <span class="hb-arrow" style="font-size:24px">↗</span>
+        </a>
+        <a href="../index.html" style="display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:26px 4px;border-bottom:1px solid rgba(255,255,255,.3);text-decoration:none;color:#fff">
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:rgba(255,255,255,.55);line-height:1;min-width:48px">02</span>
+          <span>
+            <span style="display:block;font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.65);margin-bottom:6px">TOP PAGE</span>
+            <span style="display:block;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:18px">トップに戻る</span>
+            <span style="display:block;font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px">全事業部の情報はトップページをご覧ください。</span>
+          </span>
+          <span class="hb-arrow" style="font-size:24px">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="hb-up" style="margin-top:64px;padding-top:24px;border-top:1px solid rgba(255,255,255,.3);display:flex;flex-wrap:wrap;gap:32px;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.7);letter-spacing:.04em">
+      <span>● 平日 9:00-18:00</span>
+      <span>● 初回相談 30分・無料</span>
+      <span>● TEL 03-4500-2647</span>
+      <span style="margin-left:auto">RESPONSE WITHIN 1 BUSINESS DAY</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="hb-footer">
+  <svg viewBox="0 0 560 560" class="hb-deco-svg" style="bottom:-200px;right:-200px;width:560px;height:560px;opacity:.15">
+    <circle cx="280" cy="280" r="40" fill="none" stroke="#E8EFF8" stroke-opacity=".4" stroke-width=".7"/>
+    <circle cx="280" cy="280" r="80" fill="none" stroke="#E8EFF8" stroke-opacity=".4" stroke-width=".7"/>
+    <circle cx="280" cy="280" r="120" fill="none" stroke="#E8EFF8" stroke-opacity=".4" stroke-width=".7"/>
+    <circle cx="280" cy="280" r="160" fill="none" stroke="#E8EFF8" stroke-opacity=".4" stroke-width=".7"/>
+    <circle cx="280" cy="280" r="200" fill="none" stroke="#E8EFF8" stroke-opacity=".4" stroke-width=".7"/>
+  </svg>
+  <div class="hb-footer-inner">
+    <div class="hb-footer-top">
+      <div>
+        <div class="hb-footer-brand">HatenaBase<span class="hb-footer-brand-dot">.</span></div>
+        <div class="hb-footer-tagline">Backoffice, redesigned.</div>
+      </div>
+      <a href="#top" style="display:inline-flex;align-items:center;gap:10px;font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.32em;color:rgba(255,255,255,.6);text-decoration:none;padding:14px 18px;border:1px solid rgba(255,255,255,.25)">GO TO TOP <span class="hb-arrow">↑</span></a>
+    </div>
+    <div class="hb-footer-grid">
+      <div>
+        <img src="../images/hatena_logo.svg" alt="はてなベース株式会社" style="height:28px;filter:brightness(0) invert(1);display:block">
+        <p class="hb-footer-desc">スタートアップ・中小企業の<br>バックオフィスを伸び代に変えるパートナー。</p>
+        <div class="hb-footer-address">東京都新宿区愛住町23-1<br>woody21 6階<br>TEL  03-4500-2647<br>MAIL info@hatenabase.com</div>
+      </div>
+      <div>
+        <div class="hb-footer-heading">SERVICE</div>
+        <a href="../index.html#structure" class="hb-footer-link">Hatena, DX.</a>
+        <a href="../index.html#structure" class="hb-footer-link">Hatena, Content.</a>
+        <a href="../index.html#structure" class="hb-footer-link">Hatena, BI.</a>
+      </div>
+      <div>
+        <div class="hb-footer-heading">INFORMATION</div>
+        <a href="../index.html#works" class="hb-footer-link">導入事例・実績</a>
+        <a href="../index.html#news" class="hb-footer-link">お知らせ</a>
+        <a href="../index.html#blog" class="hb-footer-link">ブログ</a>
+        <a href="../index.html#contact" class="hb-footer-link">お問い合わせ</a>
+      </div>
+      <div>
+        <div class="hb-footer-heading">GROUP</div>
+        <a href="#" class="hb-footer-link">はてなベース株式会社</a>
+        <a href="#" class="hb-footer-link">はてなベース税理士事務所</a>
+        <a href="#" class="hb-footer-link">はてなベース社労士事務所</a>
+      </div>
+      <div>
+        <div class="hb-footer-heading">OTHER</div>
+        <a href="#" class="hb-footer-link">利用規約</a>
+        <a href="#" class="hb-footer-link">資料請求</a>
+      </div>
+    </div>
+    <div class="hb-footer-bottom">
+      <div>Copyright &copy; 2025 HatenaBase Inc.</div>
+      <div style="display:flex;gap:24px">
+        <a href="#" style="color:inherit;text-decoration:none">利用規約</a>
+        <a href="#contact" style="color:inherit;text-decoration:none">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.hb-up, .hb-chars').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+  document.querySelector('.hb-header').style.background =
+    window.scrollY > 10 ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.94)';
+});
+</script>
+
+</body>
+</html>

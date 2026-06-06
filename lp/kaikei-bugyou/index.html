@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>勘定奉行クラウド導入支援 | はてなベース株式会社</title>
+<meta name="description" content="勘定奉行クラウドの導入設計・初期設定・マスタ設計・データ移行・運用定着を、会計のプロが一気通貫で支援。freeeと奉行の両方に精通した稀有なパートナーが、中堅企業に最適な会計基盤を構築します。"/>
+<link rel="stylesheet" href="../../css/miyazawa.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hb-header">
+  <a href="../../index.html" class="hb-header-logo">
+    <img src="../../images/hatena_logo.svg" alt="はてなベース株式会社" style="height:28px">
+  </a>
+  <nav class="hb-pc-nav">
+    <a href="#problems" class="hb-nav-item">
+      <span class="hb-nav-en">Problems</span>
+      <span class="hb-nav-jp">課題</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#strengths" class="hb-nav-item">
+      <span class="hb-nav-en">Strengths</span>
+      <span class="hb-nav-jp">強み</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#onboarding" class="hb-nav-item">
+      <span class="hb-nav-en">Onboarding</span>
+      <span class="hb-nav-jp">導入の流れ</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#services" class="hb-nav-item">
+      <span class="hb-nav-en">Services</span>
+      <span class="hb-nav-jp">サービス</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#faq" class="hb-nav-item">
+      <span class="hb-nav-en">FAQ</span>
+      <span class="hb-nav-jp">よくある質問</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <span class="hb-nav-divider"></span>
+    <a href="#contact" class="hb-contact-btn">CONTACT <span class="hb-arrow">↗</span></a>
+  </nav>
+  <button class="hb-mb-burger" aria-label="menu">
+    <div style="position:relative;width:18px;height:12px;margin:0 auto">
+      <span style="position:absolute;left:0;right:0;top:0;height:1.5px;background:#0E0E14"></span>
+      <span style="position:absolute;left:0;right:0;top:5px;height:1.5px;background:#0E0E14"></span>
+      <span style="position:absolute;left:0;right:0;top:10px;height:1.5px;background:#0E0E14"></span>
+    </div>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hb-hero" id="top">
+  <!-- Decorative SVG circles -->
+  <svg viewBox="0 0 880 880" class="hb-deco-svg" style="top:40px;right:-200px;width:820px;height:820px;opacity:.55">
+    <circle cx="440" cy="440" r="420" fill="none" stroke="#1F61AB" stroke-width="1" opacity=".18"/>
+    <circle cx="440" cy="440" r="340" fill="none" stroke="#1F61AB" stroke-width="1" opacity=".22"/>
+    <circle cx="440" cy="440" r="260" fill="none" stroke="#5C8FDB" stroke-width="1.5" opacity=".28"/>
+    <circle cx="440" cy="440" r="180" fill="none" stroke="#5C8FDB" stroke-width="1.5" opacity=".32"/>
+    <circle cx="440" cy="440" r="100" fill="none" stroke="#1F61AB" stroke-width="2" opacity=".22"/>
+    <circle cx="440" cy="440" r="40"  fill="#1F61AB" opacity=".08"/>
+  </svg>
+
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding-top:48px">
+    <div class="hb-hero-badge hb-up is-in">System Implementation — Kanjo Bugyo</div>
+
+    <h1 class="hb-hero-display hb-up is-in" style="max-width:780px;line-height:1.2">
+      勘定奉行クラウドの導入を、<br>
+      <em>会計のプロが設計する。</em>
+    </h1>
+
+    <div class="hb-hero-body hb-up is-in">
+      <p>中堅企業に選ばれ続ける奉行シリーズ。<br>
+      導入設計・マスタ構築・データ移行・運用定着まで、<br>
+      会計士が一気通貫で伴走します。</p>
+    </div>
+
+    <div class="hb-hero-actions hb-up is-in">
+      <a href="#contact" class="hb-btn-primary">無料相談を予約する <span class="hb-arrow">→</span></a>
+      <a href="#services" class="hb-btn-outline">サービス詳細 <span class="hb-arrow">↓</span></a>
+    </div>
+
+    <!-- Hero Metrics -->
+    <div class="hb-up is-in" style="margin-top:64px;display:flex;gap:0;border-top:1px solid #E8E6DF;border-left:1px solid #E8E6DF">
+      <div style="padding:28px 36px;border-right:1px solid #E8E6DF;border-bottom:1px solid #E8E6DF;min-width:220px">
+        <div style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:64px;color:#1F61AB;line-height:1">2<span style="font-size:22px;letter-spacing:.04em;margin-left:4px">製品</span></div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.22em;color:#8A8A93;margin-top:8px">freee &amp; 奉行 両対応</div>
+      </div>
+      <div style="padding:28px 36px;border-right:1px solid #E8E6DF;border-bottom:1px solid #E8E6DF;min-width:220px">
+        <div style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:64px;color:#1F61AB;line-height:1">50<span style="font-size:22px;letter-spacing:.04em;margin-left:4px">%+</span></div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.22em;color:#8A8A93;margin-top:8px">移行後の経理工数削減</div>
+      </div>
+      <div style="padding:28px 36px;border-right:1px solid #E8E6DF;border-bottom:1px solid #E8E6DF;min-width:220px">
+        <div style="font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:300;font-size:64px;color:#1F61AB;line-height:1">3<span style="font-size:22px;letter-spacing:.04em;margin-left:4px">資格</span></div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.22em;color:#8A8A93;margin-top:8px">会計士・税理士・社労士</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="hb-issues-section" id="problems">
+  <!-- subtle background circles -->
+  <svg viewBox="0 0 600 600" class="hb-deco-svg" style="bottom:-100px;left:-150px;width:600px;height:600px;opacity:.25">
+    <circle cx="300" cy="300" r="280" fill="none" stroke="#5C8FDB" stroke-width="1"/>
+    <circle cx="300" cy="300" r="200" fill="none" stroke="#5C8FDB" stroke-width="1"/>
+    <circle cx="300" cy="300" r="120" fill="none" stroke="#5C8FDB" stroke-width="1"/>
+  </svg>
+
+  <div style="max-width:1280px;margin:0 auto;position:relative">
+    <div class="hb-section-head" style="border-bottom-color:rgba(255,255,255,.15);margin-bottom:48px">
+      <span class="hb-section-head-en" style="color:#5C8FDB">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#5C8FDB;margin-right:10px"></span>
+        Problems
+      </span>
+      <span class="hb-section-head-jp" style="color:#fff;font-size:28px">こんな課題ありませんか？</span>
+    </div>
+    <p class="hb-up" style="font-size:14px;line-height:1.9;color:rgba(255,255,255,.6);margin:0 0 48px;max-width:640px">勘定奉行の導入・移行で、多くの企業がつまずくポイントがあります。</p>
+
+    <div class="hb-issue-grid">
+      <!-- Card 1 -->
+      <div class="hb-issue-card hb-up">
+        <div class="hb-issue-num">01</div>
+        <div class="hb-issue-category">MIGRATION</div>
+        <p style="font-weight:700;font-size:15px;color:#fff;margin:0 0 12px;line-height:1.5">オンプレ奉行のサポート終了が迫っている</p>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.65);margin:0">クラウド移行の段取りがわからず手つかずのまま。データ移行やマスタ再設計の影響範囲が読めない。</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="hb-issue-card hb-up">
+        <div class="hb-issue-num">02</div>
+        <div class="hb-issue-category">MANAGEMENT ACCOUNTING</div>
+        <p style="font-weight:700;font-size:15px;color:#fff;margin:0 0 12px;line-height:1.5">部門別・セグメント別の管理会計を実現したい</p>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.65);margin:0">勘定科目体系やマスタ設計の最適解がわからない。現場と経営のニーズをどう両立させるか悩んでいる。</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="hb-issue-card hb-up">
+        <div class="hb-issue-num">03</div>
+        <div class="hb-issue-category">IMPLEMENTATION</div>
+        <p style="font-weight:700;font-size:15px;color:#fff;margin:0 0 12px;line-height:1.5">ベンダー任せの導入で、現場に定着しなかった</p>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.65);margin:0">設定は終わったが業務フローに合わず、結局Excelに戻ってしまった経験がある。</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="hb-issue-card hb-up">
+        <div class="hb-issue-num">04</div>
+        <div class="hb-issue-category">SELECTION</div>
+        <p style="font-weight:700;font-size:15px;color:#fff;margin:0 0 12px;line-height:1.5">freeeと勘定奉行、どちらが自社に合うのか判断できない</p>
+        <p style="font-size:13px;line-height:1.85;color:rgba(255,255,255,.65);margin:0">それぞれの強み・弱みを理解した上で、客観的な比較提案がほしい。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="hb-section" id="strengths">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Why HatenaBase</span>
+      <span class="hb-section-head-jp">選ばれる3つの理由</span>
+    </div>
+    <p class="hb-up" style="font-size:14px;line-height:1.9;color:#3A3A45;margin:0 0 64px;max-width:600px">SIerでもソフトウェアベンダーでもない。会計のプロだからこそできる導入支援があります。</p>
+
+    <!-- Strength 01 -->
+    <div class="hb-svc-block hb-up">
+      <div class="hb-svc-num">01</div>
+      <div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:10px">DUAL EXPERTISE</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:22px;margin:0 0 14px;letter-spacing:-.01em">freeeと奉行の<br>両方に精通</h3>
+        <p style="font-size:14px;line-height:1.9;color:#3A3A45;margin:0;max-width:640px">freeeと勘定奉行の両方を深く理解しているパートナーは市場にほぼ存在しません。企業規模・業種・成長フェーズに応じて、製品選定の段階からフラットにご提案します。</p>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:.18em;color:#1F61AB;white-space:nowrap;align-self:center">VIEW MORE <span class="hb-arrow">→</span></div>
+    </div>
+
+    <!-- Strength 02 -->
+    <div class="hb-svc-block hb-up">
+      <div class="hb-svc-num">02</div>
+      <div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:10px">MASTER DESIGN</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:22px;margin:0 0 14px;letter-spacing:-.01em">会計士による<br>マスタ・科目設計</h3>
+        <p style="font-size:14px;line-height:1.9;color:#3A3A45;margin:0;max-width:640px">勘定科目体系・補助科目・部門コード・セグメントの設計を、会計基準と実務の両面から最適化。管理会計と制度会計を両立するマスタを構築します。</p>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:.18em;color:#1F61AB;white-space:nowrap;align-self:center">VIEW MORE <span class="hb-arrow">→</span></div>
+    </div>
+
+    <!-- Strength 03 -->
+    <div class="hb-svc-block hb-up">
+      <div class="hb-svc-num">03</div>
+      <div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:10px">END-TO-END</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:22px;margin:0 0 14px;letter-spacing:-.01em">導入後の定着まで<br>一気通貫で伴走</h3>
+        <p style="font-size:14px;line-height:1.9;color:#3A3A45;margin:0;max-width:640px">設定して終わりではありません。経理担当者のオペレーション研修、月次決算フローの再設計、運用ルールの策定まで、業務が回る状態をゴールに設定します。</p>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:.18em;color:#1F61AB;white-space:nowrap;align-self:center">VIEW MORE <span class="hb-arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ONBOARDING -->
+<section class="hb-section hb-section-alt" id="onboarding">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Onboarding Flow</span>
+      <span class="hb-section-head-jp">導入の流れ</span>
+    </div>
+    <p class="hb-up" style="font-size:14px;line-height:1.9;color:#3A3A45;margin:0 0 64px;max-width:600px">ヒアリングからシステム稼働・定着まで、4つのフェーズで進行します。</p>
+
+    <div class="hb-approach-grid">
+      <!-- Step 01 -->
+      <div class="hb-approach-card hb-up">
+        <div class="hb-approach-num">01</div>
+        <div class="hb-approach-en">ANALYSIS</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:12px 0 14px;line-height:1.45">現状分析・要件定義<br><span style="font-size:13px;font-weight:400;color:#8A8A93">（2〜4週間）</span></h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0">現行の会計業務フロー・システム環境・帳票を棚卸しし、課題を可視化。勘定奉行クラウドへの移行要件を整理し、プロジェクト計画を策定します。freeeとの比較検討もこの段階で実施可能です。</p>
+      </div>
+      <!-- Step 02 -->
+      <div class="hb-approach-card hb-up">
+        <div class="hb-approach-num">02</div>
+        <div class="hb-approach-en">DESIGN</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:12px 0 14px;line-height:1.45">マスタ設計・初期設定<br><span style="font-size:13px;font-weight:400;color:#8A8A93">（4〜8週間）</span></h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0">勘定科目体系・補助科目・部門コード・プロジェクトコード・消費税区分などのマスタを設計。管理会計の要件を反映した科目体系を構築し、自動仕訳ルール・承認ワークフローを設定します。</p>
+      </div>
+      <!-- Step 03 -->
+      <div class="hb-approach-card hb-up">
+        <div class="hb-approach-num">03</div>
+        <div class="hb-approach-en">MIGRATION</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:12px 0 14px;line-height:1.45">データ移行・並行稼働<br><span style="font-size:13px;font-weight:400;color:#8A8A93">（4〜6週間）</span></h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0">旧システムの残高・仕訳データを移行し、テスト環境で検証。1〜2ヶ月の並行稼働期間を設け、新旧システムの整合性を確認した上で本番切替を実施します。</p>
+      </div>
+      <!-- Step 04 -->
+      <div class="hb-approach-card hb-up">
+        <div class="hb-approach-num">04</div>
+        <div class="hb-approach-en">TRAINING</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:12px 0 14px;line-height:1.45">研修・運用定着<br><span style="font-size:13px;font-weight:400;color:#8A8A93">（2〜4週間）</span></h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0">経理担当者向けのオペレーション研修を実施。月次決算フロー・日次業務フローを再設計し、運用マニュアルを整備。稼働後3ヶ月間のQAサポートで定着を支援します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="hb-section" id="services">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Services</span>
+      <span class="hb-section-head-jp">提供サービス詳細</span>
+      <span class="hb-section-head-count">06 items</span>
+    </div>
+    <p class="hb-up" style="font-size:14px;line-height:1.9;color:#3A3A45;margin:0 0 56px;max-width:600px">勘定奉行クラウドの導入に必要なすべてを、ワンストップで提供します。</p>
+
+    <div class="hb-blog-grid">
+      <!-- Service 01 -->
+      <div class="hb-blog-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:#1F61AB;line-height:1;margin-bottom:20px;font-weight:300">01</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:9px;letter-spacing:.28em;color:#8A8A93;margin-bottom:14px">CONSULTING</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:0 0 14px;line-height:1.45">導入設計・製品選定支援</h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0 0 24px;flex:1">現行業務の分析をもとに、勘定奉行クラウドの最適なエディション（i / A / S / Jシステム）を選定。freeeや他製品との比較表も提供し、意思決定を支援します。</p>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.18em;color:#1F61AB;border-top:1px solid #E8E6DF;padding-top:16px;margin-top:auto">LEARN MORE <span class="hb-arrow">→</span></div>
+      </div>
+      <!-- Service 02 -->
+      <div class="hb-blog-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:#1F61AB;line-height:1;margin-bottom:20px;font-weight:300">02</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:9px;letter-spacing:.28em;color:#8A8A93;margin-bottom:14px">MASTER DESIGN</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:0 0 14px;line-height:1.45">マスタ設計・科目体系構築</h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0 0 24px;flex:1">勘定科目・補助科目・部門・セグメント・プロジェクトコードを、制度会計と管理会計の両面から設計。経営レポートに直結する科目体系を構築します。</p>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.18em;color:#1F61AB;border-top:1px solid #E8E6DF;padding-top:16px;margin-top:auto">LEARN MORE <span class="hb-arrow">→</span></div>
+      </div>
+      <!-- Service 03 -->
+      <div class="hb-blog-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:#1F61AB;line-height:1;margin-bottom:20px;font-weight:300">03</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:9px;letter-spacing:.28em;color:#8A8A93;margin-bottom:14px">DATA MIGRATION</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:0 0 14px;line-height:1.45">データ移行・旧システム連携</h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0 0 24px;flex:1">オンプレ奉行・弥生・PCA・勘定科目内訳書からのデータ移行を実施。残高移行・仕訳移行・マスタ変換のすべてを会計士が検証し、移行精度を担保します。</p>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.18em;color:#1F61AB;border-top:1px solid #E8E6DF;padding-top:16px;margin-top:auto">LEARN MORE <span class="hb-arrow">→</span></div>
+      </div>
+      <!-- Service 04 -->
+      <div class="hb-blog-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:#1F61AB;line-height:1;margin-bottom:20px;font-weight:300">04</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:9px;letter-spacing:.28em;color:#8A8A93;margin-bottom:14px">WORKFLOW</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:0 0 14px;line-height:1.45">初期設定・ワークフロー構築</h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0 0 24px;flex:1">自動仕訳ルール・仕訳辞書・承認フロー・権限設定を構築。銀行明細の自動取込、請求書の自動起票など、奉行クラウドの自動化機能をフル活用します。</p>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.18em;color:#1F61AB;border-top:1px solid #E8E6DF;padding-top:16px;margin-top:auto">LEARN MORE <span class="hb-arrow">→</span></div>
+      </div>
+      <!-- Service 05 -->
+      <div class="hb-blog-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:#1F61AB;line-height:1;margin-bottom:20px;font-weight:300">05</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:9px;letter-spacing:.28em;color:#8A8A93;margin-bottom:14px">REPORTING</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:0 0 14px;line-height:1.45">管理会計・レポート設計</h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0 0 24px;flex:1">部門別損益・セグメント別損益・プロジェクト別原価管理など、経営判断に必要なレポートを設計。奉行クラウドのレポート機能と連携し、月次レポートの自動出力を実現します。</p>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.18em;color:#1F61AB;border-top:1px solid #E8E6DF;padding-top:16px;margin-top:auto">LEARN MORE <span class="hb-arrow">→</span></div>
+      </div>
+      <!-- Service 06 -->
+      <div class="hb-blog-card hb-up">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:#1F61AB;line-height:1;margin-bottom:20px;font-weight:300">06</div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:9px;letter-spacing:.28em;color:#8A8A93;margin-bottom:14px">TRAINING</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:17px;margin:0 0 14px;line-height:1.45">研修・運用定着支援</h3>
+        <p style="font-size:13px;line-height:1.85;color:#3A3A45;margin:0 0 24px;flex:1">経理担当者向けのハンズオン研修、管理者向けの設定変更研修を実施。運用マニュアルの整備、月次決算チェックリストの策定まで対応します。</p>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.18em;color:#1F61AB;border-top:1px solid #E8E6DF;padding-top:16px;margin-top:auto">LEARN MORE <span class="hb-arrow">→</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="hb-section hb-section-alt" id="faq">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">FAQ</span>
+      <span class="hb-section-head-jp">よくあるご質問</span>
+      <span class="hb-section-head-count">05 items</span>
+    </div>
+    <p class="hb-up" style="font-size:14px;line-height:1.9;color:#3A3A45;margin:0 0 48px;max-width:600px">導入を検討中の方からよくいただくご質問をまとめました。</p>
+
+    <div>
+      <!-- FAQ 01 -->
+      <div class="hb-up" style="padding:28px 0;border-bottom:1px solid #E8E6DF">
+        <div style="display:grid;grid-template-columns:60px 1fr;gap:24px;align-items:baseline">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.</div>
+          <div>
+            <p style="font-weight:700;font-size:15px;color:#0E0E14;margin:0 0 14px;line-height:1.5">導入にかかる期間はどのくらいですか？</p>
+            <p style="font-size:13.5px;line-height:1.9;color:#3A3A45;margin:0">標準的なプロジェクトで3〜5ヶ月です。現行システムの複雑さやデータ移行の規模によって変動しますが、初回ヒアリング時に概算スケジュールをご提示します。並行稼働期間を含めて、期末・期首に合わせた切替計画を策定します。</p>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ 02 -->
+      <div class="hb-up" style="padding:28px 0;border-bottom:1px solid #E8E6DF">
+        <div style="display:grid;grid-template-columns:60px 1fr;gap:24px;align-items:baseline">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.</div>
+          <div>
+            <p style="font-weight:700;font-size:15px;color:#0E0E14;margin:0 0 14px;line-height:1.5">freeeと勘定奉行、どちらが自社に合うか相談できますか？</p>
+            <p style="font-size:13.5px;line-height:1.9;color:#3A3A45;margin:0">はい。freeeと勘定奉行の両方に精通しているため、製品選定の段階からフラットにご相談いただけます。企業規模・業種・内部統制の要件・既存システム連携などを総合的に評価し、最適な製品をご提案します。</p>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ 03 -->
+      <div class="hb-up" style="padding:28px 0;border-bottom:1px solid #E8E6DF">
+        <div style="display:grid;grid-template-columns:60px 1fr;gap:24px;align-items:baseline">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.</div>
+          <div>
+            <p style="font-weight:700;font-size:15px;color:#0E0E14;margin:0 0 14px;line-height:1.5">オンプレの奉行からクラウドへの移行は対応できますか？</p>
+            <p style="font-size:13.5px;line-height:1.9;color:#3A3A45;margin:0">対応可能です。勘定奉行のオンプレ版からクラウド版への移行は最も多いご依頼パターンの一つです。残高・仕訳履歴・マスタデータの移行に加え、クラウド化に伴う業務フローの再設計も含めてご支援します。</p>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ 04 -->
+      <div class="hb-up" style="padding:28px 0;border-bottom:1px solid #E8E6DF">
+        <div style="display:grid;grid-template-columns:60px 1fr;gap:24px;align-items:baseline">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.</div>
+          <div>
+            <p style="font-weight:700;font-size:15px;color:#0E0E14;margin:0 0 14px;line-height:1.5">導入後のサポートはありますか？</p>
+            <p style="font-size:13.5px;line-height:1.9;color:#3A3A45;margin:0">はい。本番稼働後3ヶ月間のQAサポートを標準で提供しています。月次決算の初回クローズまで伴走し、運用上の疑問点やマスタの微調整に対応します。継続的な顧問契約での運用支援も可能です。</p>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ 05 -->
+      <div class="hb-up" style="padding:28px 0;border-bottom:1px solid #E8E6DF">
+        <div style="display:grid;grid-template-columns:60px 1fr;gap:24px;align-items:baseline">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:#1F61AB;line-height:1">Q.</div>
+          <div>
+            <p style="font-weight:700;font-size:15px;color:#0E0E14;margin:0 0 14px;line-height:1.5">費用の目安を教えてください。</p>
+            <p style="font-size:13.5px;line-height:1.9;color:#3A3A45;margin:0">プロジェクトの規模・要件に応じた個別見積りとなります。初回のヒアリング（無料）で業務内容とご要望をお伺いした上で、スコープと概算費用をご提示します。マスタ設計のみ、データ移行のみなど、部分的なご支援も承っています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="hb-cta-section" id="contact">
+  <!-- Decorative circles -->
+  <svg viewBox="0 0 700 700" class="hb-deco-svg" style="top:-120px;right:-100px;width:700px;height:700px;opacity:.2">
+    <circle cx="350" cy="350" r="340" fill="none" stroke="#fff" stroke-width="1"/>
+    <circle cx="350" cy="350" r="260" fill="none" stroke="#fff" stroke-width="1"/>
+    <circle cx="350" cy="350" r="180" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="350" cy="350" r="100" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="350" cy="350" r="40" fill="#fff" opacity=".15"/>
+  </svg>
+
+  <div style="max-width:1280px;margin:0 auto;position:relative">
+    <div class="hb-up" style="font-family:Inter,system-ui,sans-serif;font-size:11px;letter-spacing:.36em;color:rgba(255,255,255,.7);margin-bottom:28px;display:flex;align-items:center;gap:12px">
+      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.7)"></span>
+      GET STARTED
+    </div>
+    <h2 class="hb-up" style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(28px,4vw,52px);color:#fff;margin:0 0 24px;letter-spacing:-.02em;line-height:1.2">
+      勘定奉行の導入、<br>まずはご相談ください
+    </h2>
+    <p class="hb-up" style="font-size:15px;line-height:1.9;color:rgba(255,255,255,.8);margin:0 0 48px;max-width:560px">
+      製品選定の段階からでも構いません。freeeと奉行の両方を熟知した会計士が、貴社に最適な会計基盤をご提案します。
+    </p>
+    <div class="hb-up" style="display:flex;flex-wrap:wrap;gap:16px">
+      <a href="mailto:info@hatenabase.jp" class="hb-cta hb-cta-white">
+        無料相談を予約する <span class="hb-arrow">→</span>
+      </a>
+      <a href="../../index.html" class="hb-cta" style="background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff">
+        トップに戻る <span class="hb-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="hb-footer" style="padding:40px 32px 24px">
+  <div class="hb-footer-inner">
+    <div class="hb-footer-bottom">
+      <div>Copyright &copy; 2025 HatenaBase Inc.</div>
+      <div style="display:flex;gap:24px">
+        <a href="../../index.html" style="color:inherit;text-decoration:none">トップに戻る</a>
+        <a href="../../accounting/index.html" style="color:inherit;text-decoration:none">ソリューション一覧</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.hb-up, .hb-chars').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+  document.querySelector('.hb-header').style.background =
+    window.scrollY > 10 ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.94)';
+});
+</script>
+</body>
+</html>

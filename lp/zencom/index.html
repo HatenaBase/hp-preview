@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>全コミュニケーション対応（Zencom） | はてなベース株式会社</title>
+<meta name="description" content="監査法人・証券・税務当局・投資家・取締役会との会計コミュニケーションを一元マネジメント。CFO不在企業のためのCFO-as-a-Service。"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link rel="stylesheet" href="../../css/miyazawa.css"/>
+<style>
+/* ===== Page-specific additions ===== */
+
+/* Hero metrics row */
+.zc-metrics {
+  display: flex; gap: 48px; margin-top: 52px;
+  padding-top: 36px; border-top: 1px solid var(--hb-border);
+  flex-wrap: wrap;
+}
+.zc-metric-val {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-style: italic; font-weight: 300;
+  font-size: 56px; line-height: 1; color: #1F61AB;
+}
+.zc-metric-val small {
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: 16px; font-weight: 500; font-style: normal;
+  margin-left: 4px; color: #0E0E14;
+}
+.zc-metric-label {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 11px; letter-spacing: .18em; color: var(--hb-muted);
+  margin-top: 6px;
+}
+
+/* Problems — dark section */
+.zc-problems {
+  padding: 104px 32px; background: #0E0E14; color: #fff;
+  position: relative; overflow: hidden;
+}
+.zc-problems .hb-section-head { border-bottom-color: rgba(255,255,255,.15); }
+.zc-problems .hb-section-head-jp { color: #fff; }
+.zc-problems .hb-section-head-en { color: var(--hb-blue-light); }
+.zc-problems .hb-section-head-en::before { background: var(--hb-blue-light); }
+.zc-sub { font-size: 14px; line-height: 1.9; color: rgba(255,255,255,.6); margin: 0 0 48px; max-width: 640px; }
+
+.zc-problems-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+.zc-problem-card {
+  padding: 36px 28px; border: 1px solid rgba(255,255,255,.12);
+  margin: -1px 0 0 -1px;
+  transition: background .35s, border-color .35s;
+}
+.zc-problem-card:hover { background: rgba(31,97,171,.18); border-color: rgba(255,255,255,.25); }
+.zc-problem-num {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-weight: 300; font-size: 36px; color: var(--hb-blue-light);
+  line-height: 1; margin-bottom: 18px;
+}
+.zc-problem-cat {
+  font-family: Inter, system-ui, sans-serif; font-size: 9px;
+  letter-spacing: .22em; color: var(--hb-blue-light); margin-bottom: 14px;
+}
+.zc-problem-title {
+  font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 10px; line-height: 1.5;
+}
+.zc-problem-desc { font-size: 13px; line-height: 1.85; color: rgba(255,255,255,.65); margin: 0; }
+
+/* Strengths — white, numbered blocks */
+.zc-strengths-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  border: 1px solid var(--hb-border);
+}
+.zc-strength-card {
+  padding: 48px 36px; border-right: 1px solid var(--hb-border);
+  position: relative; overflow: hidden;
+}
+.zc-strength-card:last-child { border-right: none; }
+.zc-strength-num {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-weight: 300; font-size: 64px; color: #E8E6DF;
+  line-height: 1; position: absolute; top: 24px; right: 28px;
+}
+.zc-strength-label {
+  font-family: Inter, system-ui, sans-serif; font-size: 9px;
+  letter-spacing: .28em; color: var(--hb-blue); margin-bottom: 14px;
+}
+.zc-strength-title {
+  font-size: 19px; font-weight: 800; color: #0E0E14;
+  margin: 0 0 16px; letter-spacing: -.01em; line-height: 1.4;
+}
+.zc-strength-desc {
+  font-size: 13.5px; line-height: 2; color: var(--hb-sub); margin: 0;
+}
+
+/* Target cards */
+.zc-target-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  border: 1px solid var(--hb-border);
+}
+.zc-target-card {
+  padding: 40px 32px; border-right: 1px solid var(--hb-border);
+}
+.zc-target-card:last-child { border-right: none; }
+.zc-target-label {
+  font-family: Inter, system-ui, sans-serif; font-size: 9px;
+  letter-spacing: .28em; color: var(--hb-blue); margin-bottom: 16px;
+}
+.zc-target-title {
+  font-size: 17px; font-weight: 800; color: #0E0E14;
+  margin: 0 0 14px; line-height: 1.4;
+}
+.zc-target-desc { font-size: 13.5px; line-height: 2; color: var(--hb-sub); margin: 0; }
+
+/* Services — 6-card grid 2×3 */
+.zc-services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  border: 1px solid var(--hb-border);
+}
+.zc-service-card {
+  padding: 36px 30px; border-right: 1px solid var(--hb-border);
+  border-bottom: 1px solid var(--hb-border);
+  transition: background .3s;
+}
+.zc-service-card:hover { background: var(--hb-blue-ghost); }
+.zc-service-card:nth-child(3n) { border-right: none; }
+.zc-service-card:nth-child(4),
+.zc-service-card:nth-child(5),
+.zc-service-card:nth-child(6) { border-bottom: none; }
+
+.zc-service-stakeholder {
+  font-family: Inter, system-ui, sans-serif; font-size: 9px;
+  letter-spacing: .28em; color: var(--hb-blue); margin-bottom: 8px;
+}
+.zc-service-title {
+  font-size: 16px; font-weight: 800; color: #0E0E14;
+  margin: 0 0 10px; line-height: 1.4;
+}
+.zc-service-desc { font-size: 13px; line-height: 1.85; color: var(--hb-sub); margin: 0 0 16px; }
+.zc-service-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.zc-service-list li {
+  font-size: 12px; color: var(--hb-sub);
+  display: flex; align-items: flex-start; gap: 8px; line-height: 1.6;
+}
+.zc-service-list li::before {
+  content: ''; display: inline-block; width: 5px; height: 5px;
+  background: var(--hb-blue); flex-shrink: 0; margin-top: 5px;
+}
+
+/* Pricing — centered single card */
+.zc-pricing-wrap {
+  max-width: 600px; margin: 0 auto;
+}
+.zc-pricing-card {
+  border: 1px solid var(--hb-border); padding: 52px 48px;
+  position: relative; background: #fff;
+}
+.zc-pricing-card-label {
+  font-family: Inter, system-ui, sans-serif; font-size: 10px;
+  letter-spacing: .28em; color: var(--hb-blue); margin-bottom: 20px;
+}
+.zc-pricing-price {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-weight: 300; font-size: 56px; color: #0E0E14;
+  line-height: 1; margin-bottom: 6px;
+}
+.zc-pricing-price small {
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: 18px; font-weight: 500; font-style: normal;
+  color: var(--hb-muted); margin-left: 4px;
+}
+.zc-pricing-desc {
+  font-size: 13.5px; line-height: 2; color: var(--hb-sub);
+  margin: 16px 0 28px;
+}
+.zc-pricing-features { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.zc-pricing-features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13.5px; color: #0E0E14; line-height: 1.7;
+}
+.zc-pricing-features li::before {
+  content: ''; display: inline-block; width: 5px; height: 5px;
+  background: var(--hb-blue); flex-shrink: 0; margin-top: 6px;
+}
+
+/* FAQ */
+.zc-faq-list { display: grid; gap: 0; border: 1px solid var(--hb-border); }
+.zc-faq-item {
+  padding: 32px 36px; border-bottom: 1px solid var(--hb-border);
+}
+.zc-faq-item:last-child { border-bottom: none; }
+.zc-faq-q {
+  font-size: 15px; font-weight: 700; color: #0E0E14;
+  margin: 0 0 12px; display: flex; gap: 14px; align-items: flex-start;
+}
+.zc-faq-qm {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-weight: 300; font-size: 22px; color: var(--hb-blue);
+  line-height: 1.2; flex-shrink: 0;
+}
+.zc-faq-a {
+  font-size: 13.5px; line-height: 2; color: var(--hb-sub);
+  margin: 0; padding-left: 36px;
+}
+
+/* Footer compact */
+.zc-footer {
+  padding: 36px 32px; background: #0E0E14; color: #fff;
+}
+.zc-footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.zc-footer-brand {
+  font-family: Inter, system-ui, sans-serif; font-size: 13px;
+  font-weight: 500; letter-spacing: .06em;
+}
+.zc-footer-copy {
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px;
+  color: rgba(255,255,255,.45);
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .zc-problems { padding: 64px 20px; }
+  .zc-problems-grid { grid-template-columns: repeat(2, 1fr); }
+  .zc-strengths-grid { grid-template-columns: 1fr; }
+  .zc-strength-card { border-right: none; border-bottom: 1px solid var(--hb-border); }
+  .zc-strength-card:last-child { border-bottom: none; }
+  .zc-target-grid { grid-template-columns: 1fr; }
+  .zc-target-card { border-right: none; border-bottom: 1px solid var(--hb-border); }
+  .zc-target-card:last-child { border-bottom: none; }
+  .zc-services-grid { grid-template-columns: 1fr; }
+  .zc-service-card { border-right: none !important; border-bottom: 1px solid var(--hb-border) !important; }
+  .zc-service-card:last-child { border-bottom: none !important; }
+  .zc-pricing-card { padding: 36px 28px; }
+  .zc-faq-item { padding: 24px 22px; }
+  .zc-metrics { gap: 28px; }
+}
+@media (max-width: 480px) {
+  .zc-problems-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hb-header">
+  <a href="../../index.html" class="hb-header-logo" aria-label="HatenaBase">
+    <span style="font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:600;letter-spacing:.04em;color:#0E0E14;">HatenaBase</span>
+  </a>
+  <nav class="hb-pc-nav">
+    <a href="#problems" class="hb-nav-item">
+      <span class="hb-nav-en">Problems</span>
+      <span class="hb-nav-jp">課題</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#services" class="hb-nav-item">
+      <span class="hb-nav-en">Services</span>
+      <span class="hb-nav-jp">対応領域</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#pricing" class="hb-nav-item">
+      <span class="hb-nav-en">Pricing</span>
+      <span class="hb-nav-jp">料金</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#faq" class="hb-nav-item">
+      <span class="hb-nav-en">FAQ</span>
+      <span class="hb-nav-jp">よくある質問</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <div class="hb-nav-divider"></div>
+    <a href="#contact" class="hb-contact-btn">無料相談 <span class="hb-arrow">→</span></a>
+  </nav>
+  <button class="hb-mb-burger" aria-label="メニュー">
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+      <rect width="18" height="1.5" fill="#0E0E14"/>
+      <rect y="5.25" width="18" height="1.5" fill="#0E0E14"/>
+      <rect y="10.5" width="18" height="1.5" fill="#0E0E14"/>
+    </svg>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hb-hero" style="min-height:88vh;display:flex;align-items:center;">
+  <!-- Decorative SVG circles -->
+  <svg class="hb-hero-svg" aria-hidden="true" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+    <circle cx="1180" cy="160" r="340" fill="none" stroke="#1F61AB" stroke-width="1" opacity=".08"/>
+    <circle cx="1260" cy="200" r="200" fill="none" stroke="#5C8FDB" stroke-width="1" opacity=".10"/>
+    <circle cx="1100" cy="300" r="480" fill="none" stroke="#1F61AB" stroke-width=".5" opacity=".05"/>
+    <circle cx="120" cy="680" r="180" fill="none" stroke="#5C8FDB" stroke-width="1" opacity=".07"/>
+  </svg>
+
+  <div style="max-width:1280px;margin:0 auto;width:100%;position:relative;">
+    <div class="hb-hero-badge hb-up">CFO-as-a-Service</div>
+    <h1 class="hb-hero-display hb-up" style="max-width:820px;">
+      <em>すべてのステークホルダー対話を、</em><br/>
+      一つの窓口に。
+    </h1>
+    <div class="hb-hero-body hb-up">
+      <p>
+        監査法人・主幹事証券・税務当局・投資家・取締役会・社外役員。<br/>
+        上場企業・IPO準備企業に求められる会計コミュニケーションを、<br/>
+        月額顧問として包括的にマネジメントします。
+      </p>
+    </div>
+    <div class="hb-hero-actions hb-up">
+      <a href="#contact" class="hb-btn-primary">無料相談を予約する <span class="hb-arrow">→</span></a>
+      <a href="#services" class="hb-btn-outline">対応領域を見る <span class="hb-arrow">↓</span></a>
+    </div>
+    <div class="zc-metrics hb-up">
+      <div>
+        <div class="zc-metric-val">6<small>領域</small></div>
+        <div class="zc-metric-label">ステークホルダー対応</div>
+      </div>
+      <div>
+        <div class="zc-metric-val">1<small>窓口</small></div>
+        <div class="zc-metric-label">ワンストップ対応</div>
+      </div>
+      <div>
+        <div class="zc-metric-val">365<small>日</small></div>
+        <div class="zc-metric-label">常時カバー体制</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section id="problems" class="zc-problems">
+  <!-- Decorative circles -->
+  <svg class="hb-deco-svg" style="top:-120px;right:-180px;width:500px;height:500px;" aria-hidden="true" viewBox="0 0 500 500">
+    <circle cx="350" cy="200" r="280" fill="none" stroke="#5C8FDB" stroke-width="1" opacity=".08"/>
+    <circle cx="400" cy="180" r="150" fill="none" stroke="#5C8FDB" stroke-width="1" opacity=".06"/>
+  </svg>
+  <div style="max-width:1280px;margin:0 auto;position:relative;">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Problems</span>
+      <span class="hb-section-head-jp">CFO不在が引き起こす4つのリスク</span>
+    </div>
+    <p class="zc-sub hb-up">経理部長やCFOが不在・兼務の状態では、各ステークホルダーとの対話品質が低下し、企業価値を毀損しかねません。</p>
+    <div class="zc-problems-grid">
+      <div class="zc-problem-card hb-up">
+        <div class="zc-problem-num">01</div>
+        <div class="zc-problem-cat">AUDIT DELAY</div>
+        <p class="zc-problem-title">監査対応が後手に回る</p>
+        <p class="zc-problem-desc">監査法人からの質問対応が遅延し、監査報告書の発行スケジュールに影響。決算発表が遅れるリスクが常態化する。</p>
+      </div>
+      <div class="zc-problem-card hb-up">
+        <div class="zc-problem-num">02</div>
+        <div class="zc-problem-cat">SECURITIES REVIEW</div>
+        <p class="zc-problem-title">証券審査で指摘が頻発する</p>
+        <p class="zc-problem-desc">主幹事証券からの照会対応が属人化し、回答の一貫性が失われる。IPO審査の長期化や上場時期の後ろ倒しにつながる。</p>
+      </div>
+      <div class="zc-problem-card hb-up">
+        <div class="zc-problem-num">03</div>
+        <div class="zc-problem-cat">IR QUALITY</div>
+        <p class="zc-problem-title">IR対応の質が不安定になる</p>
+        <p class="zc-problem-desc">投資家・アナリストからの問い合わせに的確な財務説明ができず、企業価値の適切な評価を受けられない。</p>
+      </div>
+      <div class="zc-problem-card hb-up">
+        <div class="zc-problem-num">04</div>
+        <div class="zc-problem-cat">TAX INVESTIGATION</div>
+        <p class="zc-problem-title">税務調査に自社で対応できない</p>
+        <p class="zc-problem-desc">税務当局からの調査対応を場当たり的に処理した結果、本来不要な追徴課税が発生する。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="hb-section" style="background:#fff;">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Strengths</span>
+      <span class="hb-section-head-jp">Zencomが選ばれる3つの理由</span>
+    </div>
+    <p style="font-size:14px;line-height:1.9;color:var(--hb-sub);margin:0 0 40px;max-width:640px;" class="hb-up">スポットDDや顧問契約では対応しきれない「日常的なステークホルダー対話」を、月額顧問として常時カバーします。</p>
+    <div class="zc-strengths-grid">
+      <div class="zc-strength-card hb-up">
+        <span class="zc-strength-num">01</span>
+        <div class="zc-strength-label">ONE-STOP</div>
+        <h3 class="zc-strength-title">ワンストップの窓口機能</h3>
+        <p class="zc-strength-desc">監査法人・証券・税務当局・投資家・取締役会・社外役員。6つのステークホルダーとの対話窓口を一本化。回答の一貫性と対応スピードを担保します。</p>
+      </div>
+      <div class="zc-strength-card hb-up">
+        <span class="zc-strength-num">02</span>
+        <div class="zc-strength-label">EXPERTISE</div>
+        <h3 class="zc-strength-title">CFO代行としての専門性</h3>
+        <p class="zc-strength-desc">会計士・税理士のダブルライセンスと上場企業支援の実務経験を持つ専門家が、経理部門に代わってCFOレベルの会計コミュニケーションを遂行します。</p>
+      </div>
+      <div class="zc-strength-card hb-up">
+        <span class="zc-strength-num">03</span>
+        <div class="zc-strength-label">AI / DX</div>
+        <h3 class="zc-strength-title">AI/DXによる資料作成効率化</h3>
+        <p class="zc-strength-desc">開示資料・回答書・論点整理メモなどの定型ドキュメントをAIで効率的に生成。人的リソースは高度な判断・交渉に集中させます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET -->
+<section class="hb-section hb-section-alt">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Target</span>
+      <span class="hb-section-head-jp">このような企業に最適です</span>
+    </div>
+    <p style="font-size:14px;line-height:1.9;color:var(--hb-sub);margin:0 0 40px;max-width:640px;" class="hb-up">CFOや管理部長が不在・兼務の状態でも、上場企業品質のステークホルダー対応を実現します。</p>
+    <div class="zc-target-grid">
+      <div class="zc-target-card hb-up">
+        <div class="zc-target-label">IPO PREPARATION</div>
+        <h3 class="zc-target-title">IPO準備企業</h3>
+        <p class="zc-target-desc">N-2〜N期のIPO準備中でCFOが未採用。主幹事証券・監査法人との対話窓口が経営者に集中し、本業に割く時間がない。</p>
+      </div>
+      <div class="zc-target-card hb-up">
+        <div class="zc-target-label">LISTED COMPANY</div>
+        <h3 class="zc-target-title">上場企業（管理部門が少人数）</h3>
+        <p class="zc-target-desc">上場後もCFOや管理部長が不在のまま。開示業務・監査対応・IR対応を経理担当が兼務し、品質とスピードが両立できない。</p>
+      </div>
+      <div class="zc-target-card hb-up">
+        <div class="zc-target-label">CFO TRANSITION</div>
+        <h3 class="zc-target-title">CFOが退任・交代した企業</h3>
+        <p class="zc-target-desc">CFOの退任や異動でステークホルダー対応の引き継ぎが不十分。暫定的に対応窓口を外部に委託し、組織体制を立て直したい。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="hb-section" style="background:#fff;">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Services</span>
+      <span class="hb-section-head-jp">6つのステークホルダー対応</span>
+      <span class="hb-section-head-count">06 areas</span>
+    </div>
+    <p style="font-size:14px;line-height:1.9;color:var(--hb-sub);margin:0 0 40px;max-width:640px;" class="hb-up">上場企業・IPO準備企業が対話すべき全ステークホルダーに対し、会計コミュニケーションを代行します。</p>
+    <div class="zc-services-grid">
+      <div class="zc-service-card hb-up">
+        <div class="zc-service-stakeholder">Audit Firm</div>
+        <h3 class="zc-service-title">監査法人対応</h3>
+        <p class="zc-service-desc">期末監査・四半期レビューの窓口対応。質問回答書の作成、論点整理、監査スケジュール管理を代行。</p>
+        <ul class="zc-service-list">
+          <li>監査質問対応・回答書作成</li>
+          <li>会計処理の論点整理メモ</li>
+          <li>監査スケジュール調整</li>
+        </ul>
+      </div>
+      <div class="zc-service-card hb-up">
+        <div class="zc-service-stakeholder">Securities</div>
+        <h3 class="zc-service-title">主幹事証券対応</h3>
+        <p class="zc-service-desc">IPO審査・引受審査における照会対応。一貫した回答方針の策定と資料作成を担います。</p>
+        <ul class="zc-service-list">
+          <li>審査照会への回答作成</li>
+          <li>内部管理体制の資料整備</li>
+          <li>証券会社との定例対応</li>
+        </ul>
+      </div>
+      <div class="zc-service-card hb-up">
+        <div class="zc-service-stakeholder">Tax Authority</div>
+        <h3 class="zc-service-title">税務当局対応</h3>
+        <p class="zc-service-desc">税務調査の立会い・事前準備から回答書作成まで。追徴リスクを最小化する交渉を代行します。</p>
+        <ul class="zc-service-list">
+          <li>税務調査の立会い・対応</li>
+          <li>税務意見書・回答書の作成</li>
+          <li>移転価格文書の整備</li>
+        </ul>
+      </div>
+      <div class="zc-service-card hb-up">
+        <div class="zc-service-stakeholder">Investors / IR</div>
+        <h3 class="zc-service-title">投資家・IR対応</h3>
+        <p class="zc-service-desc">決算説明資料の作成、投資家からの質問対応、財務数値に関するIRコミュニケーションを支援します。</p>
+        <ul class="zc-service-list">
+          <li>決算説明資料の作成支援</li>
+          <li>投資家質問への回答ドラフト</li>
+          <li>KPI・財務指標の可視化</li>
+        </ul>
+      </div>
+      <div class="zc-service-card hb-up">
+        <div class="zc-service-stakeholder">Board of Directors</div>
+        <h3 class="zc-service-title">取締役会対応</h3>
+        <p class="zc-service-desc">取締役会への財務報告資料の作成、経営判断に必要な会計論点の整理と説明を支援します。</p>
+        <ul class="zc-service-list">
+          <li>取締役会向け財務報告資料</li>
+          <li>会計方針変更の影響分析</li>
+          <li>予実差異の要因説明</li>
+        </ul>
+      </div>
+      <div class="zc-service-card hb-up">
+        <div class="zc-service-stakeholder">Outside Directors</div>
+        <h3 class="zc-service-title">社外役員対応</h3>
+        <p class="zc-service-desc">社外取締役・監査役への財務状況の説明、ガバナンス観点での会計レポーティングを提供します。</p>
+        <ul class="zc-service-list">
+          <li>社外役員向けブリーフィング</li>
+          <li>内部統制報告の説明支援</li>
+          <li>コンプライアンス関連報告</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="hb-section hb-section-alt">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">Pricing</span>
+      <span class="hb-section-head-jp">料金体系</span>
+    </div>
+    <p style="font-size:14px;line-height:1.9;color:var(--hb-sub);margin:0 0 40px;max-width:640px;" class="hb-up">対応するステークホルダーの範囲と頻度に応じて、月額料金を設定します。</p>
+    <div class="zc-pricing-wrap hb-up">
+      <div class="zc-pricing-card">
+        <div class="zc-pricing-card-label">Zencom Monthly Retainer</div>
+        <div class="zc-pricing-price">¥100〜300万<small>/月</small></div>
+        <p class="zc-pricing-desc">対応範囲・ステークホルダー数・開示頻度に応じてお見積り。初月は現状分析とスコープ設計を実施します。</p>
+        <ul class="zc-pricing-features">
+          <li>監査法人・証券・税務当局の窓口対応</li>
+          <li>投資家・IR対応の財務コミュニケーション</li>
+          <li>取締役会・社外役員向け報告資料作成</li>
+          <li>AI活用による開示資料・回答書の効率生成</li>
+          <li>月次定例ミーティング（対面/オンライン）</li>
+          <li>Slack/Chatwork等での常時相談対応</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="hb-section" style="background:#fff;">
+  <div class="hb-section-inner">
+    <div class="hb-section-head hb-up">
+      <span class="hb-section-head-en">FAQ</span>
+      <span class="hb-section-head-jp">よくある質問</span>
+      <span class="hb-section-head-count">05 questions</span>
+    </div>
+    <p style="font-size:14px;line-height:1.9;color:var(--hb-sub);margin:0 0 40px;max-width:640px;" class="hb-up">Zencomに関してお寄せいただく代表的なご質問をまとめました。</p>
+    <div class="zc-faq-list hb-section-narrow">
+      <div class="zc-faq-item hb-up">
+        <p class="zc-faq-q"><span class="zc-faq-qm">Q.</span>顧問税理士・顧問弁護士がいますが、併用は可能ですか。</p>
+        <p class="zc-faq-a">可能です。既存の顧問先と連携しながら、会計コミュニケーションの窓口機能を担います。税務判断は顧問税理士と協議のうえ進めますので、二重対応にはなりません。</p>
+      </div>
+      <div class="zc-faq-item hb-up">
+        <p class="zc-faq-q"><span class="zc-faq-qm">Q.</span>CFOを採用するまでの暫定利用は可能ですか。</p>
+        <p class="zc-faq-a">多くのお客様がCFO採用までのブリッジとしてご利用いただいています。CFO着任後は引き継ぎ支援を行い、スムーズに内製化へ移行できます。</p>
+      </div>
+      <div class="zc-faq-item hb-up">
+        <p class="zc-faq-q"><span class="zc-faq-qm">Q.</span>対応可能な会計基準を教えてください。</p>
+        <p class="zc-faq-a">日本基準（J-GAAP）を中心に、IFRS適用企業の支援実績もあります。会計基準の移行に伴うステークホルダーへの説明対応も可能です。</p>
+      </div>
+      <div class="zc-faq-item hb-up">
+        <p class="zc-faq-q"><span class="zc-faq-qm">Q.</span>「スポットDD + 顧問契約」との違いは何ですか。</p>
+        <p class="zc-faq-a">スポット対応では、監査対応や証券審査の合間に発生する日常的な質問・資料依頼に対応しきれません。Zencomは月額顧問として常時カバーし、ステークホルダーとの対話の一貫性と即応性を担保します。</p>
+      </div>
+      <div class="zc-faq-item hb-up">
+        <p class="zc-faq-q"><span class="zc-faq-qm">Q.</span>契約開始までの流れを教えてください。</p>
+        <p class="zc-faq-a">初回面談でステークホルダーの現状と課題をヒアリングし、対応スコープと料金をご提案します。ご契約後、初月は現状分析と体制構築を行い、翌月から本格稼働となります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="hb-cta-section" style="position:relative;overflow:hidden;">
+  <!-- Decorative circles -->
+  <svg class="hb-deco-svg" style="top:-80px;right:-60px;width:420px;height:420px;" aria-hidden="true" viewBox="0 0 420 420">
+    <circle cx="300" cy="160" r="220" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+    <circle cx="340" cy="200" r="120" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+  </svg>
+  <div style="max-width:1280px;margin:0 auto;position:relative;">
+    <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.6);margin-bottom:20px;" class="hb-up">CONTACT</div>
+    <h2 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:clamp(24px,3.5vw,42px);line-height:1.35;letter-spacing:-.01em;color:#fff;margin:0 0 18px;" class="hb-up">
+      まずは現状のステークホルダー対応を<br/>整理しませんか
+    </h2>
+    <p style="font-size:15px;line-height:1.9;color:rgba(255,255,255,.75);max-width:540px;margin:0 0 40px;" class="hb-up">
+      貴社の対応状況をヒアリングし、Zencomで解決できる領域をご提案します。初回面談は無料です。
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;" class="hb-up">
+      <a href="mailto:info@hatenabase.jp" class="hb-cta hb-cta-white">
+        無料相談を予約する <span class="hb-arrow">→</span>
+      </a>
+      <a href="../../index.html" class="hb-cta" style="background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff;">
+        <span class="hb-arrow">←</span> トップに戻る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="zc-footer">
+  <div class="zc-footer-inner">
+    <span class="zc-footer-brand">HatenaBase</span>
+    <span class="zc-footer-copy">&copy; 2026 Hatenabase, inc.</span>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-in');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.hb-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

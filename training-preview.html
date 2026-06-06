@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>研修事業部 | はてなベース株式会社</title>
+<meta name="description" content="freee会計の実務スキルを短期集中で習得する研修プログラム。未経験者を即戦力に育て、派遣先企業への就業まで一気通貫で支援します。"/>
+<link rel="stylesheet" href="../css/miyazawa.css">
+<style>
+/* Training page specific */
+.hb-training-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:0; }
+.hb-training-card {
+  padding:32px 28px; border:1px solid var(--hb-border); margin:-1px 0 0 -1px;
+  display:flex; flex-direction:column; text-decoration:none; color:inherit;
+  transition: background .35s cubic-bezier(.16,.88,.2,1), border-color .35s;
+}
+.hb-training-card:hover { background:var(--hb-blue-ghost); border-color:var(--hb-blue); }
+.hb-training-tag {
+  font-family:Inter,system-ui,sans-serif; font-size:10px; font-weight:500;
+  letter-spacing:.18em; display:inline-flex; align-items:center;
+  height:22px; padding:0 10px; margin-bottom:16px; line-height:1;
+}
+.hb-training-tag.individual { background:#E8F5E9; color:#2E7D32; border:1px solid #C8E6C9; }
+.hb-training-tag.corporate  { background:#E3F2FD; color:#1565C0; border:1px solid #BBDEFB; }
+.hb-training-tag.dispatch   { background:#FFF3E0; color:#E65100; border:1px solid #FFE0B2; }
+.hb-training-title {
+  font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+  font-weight:700; font-size:17px; color:#0E0E14; margin-bottom:10px; line-height:1.5;
+}
+.hb-training-desc { font-size:13px; line-height:1.9; color:var(--hb-sub); margin-bottom:16px; flex:1; }
+.hb-training-price {
+  font-family:"JetBrains Mono",monospace; font-size:12px; font-weight:600;
+  color:var(--hb-blue); letter-spacing:.02em;
+}
+.hb-training-arrow { margin-top:14px; font-family:Inter,system-ui,sans-serif; font-size:10px; letter-spacing:.18em; color:var(--hb-blue); font-weight:600; }
+
+.hb-tier-header {
+  display:flex; align-items:baseline; gap:14px;
+  padding-bottom:16px; border-bottom:1px solid var(--hb-border); margin-bottom:28px;
+}
+.hb-tier-num {
+  font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:300;
+  font-size:36px; color:var(--hb-blue); line-height:1;
+}
+.hb-tier-label {
+  font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+  font-weight:700; font-size:22px; letter-spacing:-.01em;
+}
+.hb-tier-en {
+  font-family:Inter,system-ui,sans-serif; font-size:10px; letter-spacing:.28em;
+  color:var(--hb-muted); margin-left:auto;
+}
+.hb-tier-section { margin-bottom:64px; }
+
+.hb-metrics {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+  margin-top:48px; padding-top:32px; border-top:1px solid rgba(255,255,255,.25);
+}
+.hb-metric-val {
+  font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:300;
+  font-size:56px; color:#fff; line-height:1; margin-bottom:8px;
+}
+.hb-metric-val small { font-size:.45em; font-style:normal; opacity:.7; }
+.hb-metric-label { font-size:12px; color:rgba(255,255,255,.7); letter-spacing:.04em; }
+
+.hb-partner-row {
+  display:flex; flex-wrap:wrap; gap:40px; align-items:center;
+  justify-content:center; padding:32px 0;
+}
+
+@media (max-width:880px) {
+  .hb-training-grid { grid-template-columns:1fr; }
+  .hb-metrics { grid-template-columns:1fr; gap:24px; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header class="hb-header">
+  <a href="../index.html" class="hb-header-logo"><img src="../images/hatena_logo.svg" alt="はてなベース株式会社" style="height:28px"></a>
+  <nav class="hb-pc-nav">
+    <a href="#programs" class="hb-nav-item active">
+      <span class="hb-nav-en">Programs</span>
+      <span class="hb-nav-jp">研修プログラム</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#for-candidates" class="hb-nav-item">
+      <span class="hb-nav-en">For Candidates</span>
+      <span class="hb-nav-jp">受講者の方</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#for-companies" class="hb-nav-item">
+      <span class="hb-nav-en">For Companies</span>
+      <span class="hb-nav-jp">企業の方</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <a href="#partners" class="hb-nav-item">
+      <span class="hb-nav-en">Partners</span>
+      <span class="hb-nav-jp">パートナー</span>
+      <span class="hb-nav-underline"></span>
+    </a>
+    <span class="hb-nav-divider"></span>
+    <a href="#contact" class="hb-contact-btn">CONTACT <span class="hb-arrow">↗</span></a>
+  </nav>
+  <button class="hb-mb-burger" aria-label="menu">
+    <div style="position:relative;width:18px;height:12px;margin:0 auto">
+      <span style="position:absolute;left:0;right:0;top:0;height:1.5px;background:#0E0E14"></span>
+      <span style="position:absolute;left:0;right:0;top:5px;height:1.5px;background:#0E0E14"></span>
+      <span style="position:absolute;left:0;right:0;top:10px;height:1.5px;background:#0E0E14"></span>
+    </div>
+  </button>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hb-hero" style="background:#0E0E14;color:#fff;padding:96px 32px 80px" id="top">
+  <svg viewBox="0 0 880 880" class="hb-deco-svg" style="top:40px;right:-220px;width:880px;height:880px">
+    <circle cx="440" cy="440" r="20" fill="none" stroke="#5C8FDB" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="80" fill="none" stroke="#5C8FDB" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="140" fill="none" stroke="#5C8FDB" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="200" fill="none" stroke="#5C8FDB" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="260" fill="none" stroke="#5C8FDB" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="320" fill="none" stroke="#5C8FDB" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="380" fill="none" stroke="#5C8FDB" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="440" fill="none" stroke="#5C8FDB" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="440" cy="440" r="20" fill="#5C8FDB" opacity=".5"/>
+  </svg>
+  <div style="position:relative;max-width:1280px;margin:0 auto">
+    <div class="hb-hero-badge hb-up is-in" style="color:#5C8FDB">TRAINING DIVISION — 研修事業部</div>
+    <h1 class="hb-hero-display" style="color:#fff">
+      <div><span class="hb-chars is-in"><span class="hb-line">人を育て、</span></span></div>
+      <div><span class="hb-accent" style="border-bottom-color:#5C8FDB"><span class="hb-chars is-in"><span class="hb-line">現場を変える。</span></span></span></div>
+      <div style="margin-top:24px"><em style="color:#5C8FDB"><span class="hb-chars is-in"><span class="hb-line">Train.&nbsp;Deploy.&nbsp;Transform.</span></span></em></div>
+    </h1>
+    <div class="hb-hero-body" style="margin-top:32px;max-width:640px">
+      <p class="hb-up is-in" style="font-size:16px;line-height:1.9;color:rgba(255,255,255,.8);margin:0">
+        <span style="color:#5C8FDB;font-weight:600">freee × 実務研修 × 派遣</span> の一気通貫モデルで、<br>
+        未経験者を<strong style="font-weight:600;color:#fff">即戦力の経理人材</strong>に育成し、<br>
+        企業の経理DX推進を人材面から支えるパートナー。
+      </p>
+    </div>
+    <div class="hb-hero-actions hb-up is-in" style="margin-top:36px">
+      <a href="#contact" class="hb-btn-primary" style="background:#5C8FDB">受講を申し込む <span class="hb-arrow">→</span></a>
+      <a href="#programs" class="hb-btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4)">プログラムを見る <span class="hb-arrow">↗</span></a>
+    </div>
+    <div class="hb-metrics">
+      <div class="hb-up is-in">
+        <div class="hb-metric-val">10<small>日間</small></div>
+        <div class="hb-metric-label">短期集中プログラム</div>
+      </div>
+      <div class="hb-up is-in">
+        <div class="hb-metric-val">¥50,000</div>
+        <div class="hb-metric-label">全額返金保証付き</div>
+      </div>
+      <div class="hb-up is-in">
+        <div class="hb-metric-val">100<small>%</small></div>
+        <div class="hb-metric-label">修了後の就業支援</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PARTNER LOGOS ====== -->
+<section style="padding:28px 32px;border-bottom:1px solid var(--hb-border);background:#fff">
+  <div class="hb-partner-row" style="max-width:1280px;margin:0 auto">
+    <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted);margin-right:24px">OFFICIAL PARTNERS</div>
+    <img src="../images/logo_freee.svg" alt="freee" style="height:28px;opacity:.5">
+    <span style="font-family:Inter,system-ui,sans-serif;font-size:16px;font-weight:300;color:#8A8A93;letter-spacing:.04em">DIGITAL BASE</span>
+  </div>
+</section>
+
+<!-- ====== MODEL ====== -->
+<section class="hb-section" style="background:#fff">
+  <div class="hb-section-narrow">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Model</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">研修→派遣→定着のワンストップ</span></span></span>
+    </div>
+    <p class="hb-up" style="font-size:15px;line-height:2.1;color:#3A3A45;margin:0 0 48px;max-width:680px">
+      はてなベースの研修事業は、単なるスキル研修ではありません。<br>
+      <span style="color:#1F61AB;font-weight:700">「育てる → 届ける → 定着させる」</span>の一貫体制で、<br>
+      企業の経理DXを「人材」の側面から加速させます。
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--hb-border)">
+      <div class="hb-up" style="padding:48px 36px;border-right:1px solid var(--hb-border)">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:28px">
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:42px;color:var(--hb-blue);line-height:1">01</span>
+          <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted)">TRAIN</span>
+        </div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:24px;line-height:1.3;margin:0 0 18px">育てる</h3>
+        <p style="font-size:13.5px;line-height:2;color:var(--hb-sub);margin:0">eラーニング＋対面研修の短期集中プログラム。freee会計の実務オペレーションを10日間で完全習得。模擬月次決算で実践力を担保。</p>
+      </div>
+      <div class="hb-up" style="padding:48px 36px;border-right:1px solid var(--hb-border);background:var(--hb-blue-ghost)">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:28px">
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:42px;color:var(--hb-blue);line-height:1">02</span>
+          <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted)">DEPLOY</span>
+        </div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:24px;line-height:1.3;margin:0 0 18px">届ける</h3>
+        <p style="font-size:13.5px;line-height:2;color:var(--hb-sub);margin:0">修了者を経理DX人材として派遣先企業にマッチング。freee導入済み・導入予定の企業を中心に、即戦力として配置。</p>
+      </div>
+      <div class="hb-up" style="padding:48px 36px">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:28px">
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:42px;color:var(--hb-blue);line-height:1">03</span>
+          <span style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--hb-muted)">SUPPORT</span>
+        </div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:800;font-size:24px;line-height:1.3;margin:0 0 18px">定着させる</h3>
+        <p style="font-size:13.5px;line-height:2;color:var(--hb-sub);margin:0">就業後6ヶ月間のSlackフォローアップ。業務上の疑問や応用スキルのサポートで、現場への定着と成長を支え続ける。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PROGRAMS ====== -->
+<section id="programs" class="hb-section hb-section-alt">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Programs</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">研修プログラム</span></span></span>
+      <span class="hb-section-head-count">03 PROGRAMS</span>
+    </div>
+
+    <!-- Tier 1: Individual -->
+    <div class="hb-tier-section">
+      <div class="hb-tier-header hb-up">
+        <span class="hb-tier-num">01</span>
+        <span class="hb-tier-label">個人向け研修</span>
+        <span class="hb-tier-en">FOR INDIVIDUALS</span>
+      </div>
+      <div class="hb-training-grid">
+        <a href="../lp/freee-training/index.html" class="hb-training-card hb-up">
+          <span class="hb-training-tag individual">FLAGSHIP</span>
+          <div class="hb-training-title">速習freee会計研修</div>
+          <div class="hb-training-desc">eラーニング8h＋対面研修2日間で、freee会計の実務オペレーションを完全習得。模擬月次決算演習付き。修了後は派遣先企業への就業まで一気通貫で支援。</div>
+          <div class="hb-training-price">¥50,000（全額返金保証付き）</div>
+          <div class="hb-training-arrow">VIEW PROGRAM <span class="hb-arrow">↗</span></div>
+        </a>
+        <a href="#" class="hb-training-card hb-up">
+          <span class="hb-training-tag individual">ADVANCED</span>
+          <div class="hb-training-title">freee会計アドバンス研修</div>
+          <div class="hb-training-desc">速習研修修了者向け。管理会計・部門別損益・予実管理・API連携など、freeeの応用機能をマスターする上級プログラム。</div>
+          <div class="hb-training-price">¥80,000</div>
+          <div class="hb-training-arrow">COMING SOON</div>
+        </a>
+        <a href="#" class="hb-training-card hb-up">
+          <span class="hb-training-tag individual">CAREER</span>
+          <div class="hb-training-title">経理キャリアブートキャンプ</div>
+          <div class="hb-training-desc">未経験から経理職へのキャリアチェンジを目指す方向け。簿記基礎＋freee実務＋ビジネスマナーの3本柱で、就業準備を完了。</div>
+          <div class="hb-training-price">¥120,000</div>
+          <div class="hb-training-arrow">COMING SOON</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Tier 2: Corporate -->
+    <div class="hb-tier-section">
+      <div class="hb-tier-header hb-up">
+        <span class="hb-tier-num">02</span>
+        <span class="hb-tier-label">法人向け研修</span>
+        <span class="hb-tier-en">FOR COMPANIES</span>
+      </div>
+      <div class="hb-training-grid">
+        <a href="#" class="hb-training-card hb-up">
+          <span class="hb-training-tag corporate">ONBOARDING</span>
+          <div class="hb-training-title">freee導入研修（オンサイト）</div>
+          <div class="hb-training-desc">freee導入済み企業の経理チーム向け。操作研修・月次決算フロー設計・運用ルール策定をオンサイトで実施。チーム全体のスキル底上げ。</div>
+          <div class="hb-training-price">個別見積り</div>
+          <div class="hb-training-arrow">VIEW PROGRAM <span class="hb-arrow">↗</span></div>
+        </a>
+        <a href="#" class="hb-training-card hb-up">
+          <span class="hb-training-tag corporate">AI</span>
+          <div class="hb-training-title">生成AI × 経理DX研修</div>
+          <div class="hb-training-desc">ChatGPT・Claudeを経理業務に活用するための実践研修。仕訳推論・レポート生成・データ分析の自動化スキルを習得。</div>
+          <div class="hb-training-price">個別見積り</div>
+          <div class="hb-training-arrow">VIEW PROGRAM <span class="hb-arrow">↗</span></div>
+        </a>
+        <a href="#" class="hb-training-card hb-up">
+          <span class="hb-training-tag corporate">CUSTOM</span>
+          <div class="hb-training-title">カスタム研修プログラム</div>
+          <div class="hb-training-desc">企業の課題に合わせたオーダーメイド研修。kintone・Salesforce等のSaaS研修、業務フロー設計研修なども対応。</div>
+          <div class="hb-training-price">個別見積り</div>
+          <div class="hb-training-arrow">VIEW PROGRAM <span class="hb-arrow">↗</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Tier 3: Dispatch -->
+    <div class="hb-tier-section" style="margin-bottom:0">
+      <div class="hb-tier-header hb-up">
+        <span class="hb-tier-num">03</span>
+        <span class="hb-tier-label">人材派遣</span>
+        <span class="hb-tier-en">STAFFING</span>
+      </div>
+      <div class="hb-training-grid">
+        <a href="../lp/training-candidate/index.html" class="hb-training-card hb-up">
+          <span class="hb-training-tag dispatch">FOR CANDIDATES</span>
+          <div class="hb-training-title">研修修了者向け 就業サポート</div>
+          <div class="hb-training-desc">研修修了後、freee導入企業への派遣をサポート。スキルマッチング・面談調整・就業後フォローまで無料で対応。</div>
+          <div class="hb-training-price">無料</div>
+          <div class="hb-training-arrow">VIEW DETAILS <span class="hb-arrow">↗</span></div>
+        </a>
+        <a href="../lp/training-dispatch/index.html" class="hb-training-card hb-up">
+          <span class="hb-training-tag dispatch">FOR COMPANIES</span>
+          <div class="hb-training-title">企業向け 経理DX人材派遣</div>
+          <div class="hb-training-desc">freee実務研修を修了した即戦力人材を派遣。経理採用に苦戦する企業に、教育コスト不要で経理DX人材を提供。</div>
+          <div class="hb-training-price">月額派遣料（個別見積り）</div>
+          <div class="hb-training-arrow">VIEW DETAILS <span class="hb-arrow">↗</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOR CANDIDATES ====== -->
+<section id="for-candidates" class="hb-vision" style="background:#1F61AB">
+  <svg viewBox="0 0 780 780" class="hb-deco-svg" style="top:50%;left:-200px;transform:translateY(-50%);width:780px;height:780px;opacity:.18">
+    <circle cx="390" cy="390" r="80" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="390" cy="390" r="160" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="390" cy="390" r="240" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="390" cy="390" r="320" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width=".7"/>
+    <circle cx="390" cy="390" r="20" fill="#fff" opacity=".6"/>
+  </svg>
+  <div class="hb-vision-inner">
+    <div>
+      <div class="hb-up" style="font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:500;letter-spacing:.32em;opacity:.85;margin-bottom:32px;display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff"></span>FOR CANDIDATES</div>
+      <h2 class="hb-vision-display" style="font-size:clamp(64px,8vw,120px)">
+        <div><span class="hb-chars is-in"><span class="hb-line">未経験</span></span></div>
+        <div style="padding-left:.3em"><span class="hb-chars is-in"><span class="hb-line">から</span></span></div>
+        <div style="padding-left:.5em"><span class="hb-chars is-in"><span class="hb-line">即戦力</span></span></div>
+      </h2>
+    </div>
+    <div>
+      <h3 class="hb-up" style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:28px;line-height:1.55;margin:0 0 24px">経理未経験でも、<br>10日間でfreeeが使えるようになる。</h3>
+      <p class="hb-up" style="font-size:14px;line-height:2.1;opacity:.9;margin:0 0 28px">「経理をやってみたいけど経験がない」「freeeを使ったことがない」。そんな方のための研修プログラムです。修了後は派遣先企業での就業まで、無料でサポートします。</p>
+      <a href="../lp/training-candidate/index.html" class="hb-cta hb-cta-white hb-up"><span>受講者向け詳細を見る</span><span class="hb-arrow" style="font-size:18px">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOR COMPANIES ====== -->
+<section id="for-companies" class="hb-section" style="background:#fff">
+  <div class="hb-section-narrow">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">For Companies</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">経理人材の「育成済み調達」</span></span></span>
+    </div>
+    <p class="hb-up" style="font-size:15px;line-height:2.1;color:#3A3A45;margin:0 0 48px;max-width:680px">
+      経理の採用に苦戦していませんか。はてなベースが育成した<span style="color:#1F61AB;font-weight:700">freee実務スキル保有者</span>を、即戦力として御社に派遣します。教育コスト・ミスマッチリスクを最小化。
+    </p>
+    <a href="../lp/training-dispatch/index.html" class="hb-svc-block hb-up">
+      <span class="hb-svc-num">01</span>
+      <div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">Staffing</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">freee経理人材の派遣</h3>
+        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">研修修了者をfreee導入企業に派遣。freee操作・月次決算・請求管理を即日対応可能な即戦力。</p>
+      </div>
+      <span class="hb-arrow" style="font-size:24px;color:#1F61AB">→</span>
+    </a>
+    <a href="#" class="hb-svc-block hb-up">
+      <span class="hb-svc-num">02</span>
+      <div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">In-house Training</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">法人向けオンサイト研修</h3>
+        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">御社の経理チームにfreee・生成AI・業務DXの実務研修を出張で実施。チーム全体のスキル底上げ。</p>
+      </div>
+      <span class="hb-arrow" style="font-size:24px;color:#1F61AB">→</span>
+    </a>
+    <a href="#" class="hb-svc-block hb-up" style="border-bottom:none">
+      <span class="hb-svc-num">03</span>
+      <div>
+        <div style="font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:#8A8A93;margin-bottom:6px">Consulting</div>
+        <h3 style="font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:22px;margin:0 0 10px">経理組織設計コンサルティング</h3>
+        <p style="font-size:13.5px;line-height:1.85;color:#3A3A45;margin:0">派遣人材の受け入れ体制構築・業務マニュアル整備・OJT設計まで、経理組織の「仕組み」を構築。</p>
+      </div>
+      <span class="hb-arrow" style="font-size:24px;color:#1F61AB">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ====== PARTNERS ====== -->
+<section id="partners" class="hb-section" style="padding:80px 32px;border-top:1px solid #E8E6DF">
+  <div class="hb-section-inner">
+    <div class="hb-section-head">
+      <span class="hb-section-head-en">Partners</span>
+      <span class="hb-section-head-jp"><span class="hb-chars"><span class="hb-line">パートナーシップ</span></span></span>
+    </div>
+    <div class="hb-partner-row" style="padding:40px 0;gap:64px">
+      <div class="hb-up" style="text-align:center">
+        <img src="../images/logo_freee.svg" alt="freee" style="height:36px;opacity:.6;margin:0 auto 12px">
+        <div style="font-size:11px;color:var(--hb-muted)">公式パートナー</div>
+      </div>
+      <div class="hb-up" style="text-align:center">
+        <span style="font-family:Inter,system-ui,sans-serif;font-size:22px;font-weight:300;color:#8A8A93;display:block;margin-bottom:12px">DIGITAL BASE</span>
+        <div style="font-size:11px;color:var(--hb-muted)">送客連携</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section id="contact" class="hb-cta-section">
+  <svg viewBox="0 0 880 880" class="hb-deco-svg" style="top:50%;left:-360px;transform:translateY(-50%);width:880px;height:880px;opacity:.22">
+    <circle cx="440" cy="440" r="40" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="100" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="160" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="220" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="280" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="340" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="400" fill="none" stroke="#fff" stroke-width=".6"/>
+    <circle cx="440" cy="440" r="40" fill="#fff" opacity=".18"/>
+  </svg>
+  <div style="position:relative;max-width:1280px;margin:0 auto">
+    <div class="hb-up" style="font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:500;letter-spacing:.32em;color:rgba(255,255,255,.7);margin-bottom:48px;display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff"></span>CONTACT — 受講 or 人材派遣のご相談
+    </div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:flex-end">
+      <div>
+        <h2 class="hb-hero-display" style="margin:0 0 32px;color:#fff;font-size:clamp(32px,5vw,56px)">
+          <div>経理DXの第一歩を、</div>
+          <div style="padding-left:1em;color:rgba(255,255,255,.78)">一緒に踏み出す。</div>
+        </h2>
+        <p class="hb-up" style="font-size:16px;line-height:2;color:rgba(255,255,255,.85);margin:0;max-width:520px">受講を検討中の方も、研修修了者の派遣をお探しの企業様も、まずはお気軽にご相談ください。</p>
+      </div>
+      <div class="hb-up" style="display:grid;gap:0;border-top:1px solid rgba(255,255,255,.3)">
+        <a href="#" style="display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:26px 4px;border-bottom:1px solid rgba(255,255,255,.3);text-decoration:none;color:#fff">
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:rgba(255,255,255,.55);line-height:1;min-width:48px">01</span>
+          <span>
+            <span style="display:block;font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.65);margin-bottom:6px">FOR INDIVIDUALS</span>
+            <span style="display:block;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:18px">研修に申し込む</span>
+            <span style="display:block;font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px">¥50,000・全額返金保証付き</span>
+          </span>
+          <span class="hb-arrow" style="font-size:24px">↗</span>
+        </a>
+        <a href="#" style="display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:26px 4px;border-bottom:1px solid rgba(255,255,255,.3);text-decoration:none;color:#fff">
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:rgba(255,255,255,.55);line-height:1;min-width:48px">02</span>
+          <span>
+            <span style="display:block;font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.65);margin-bottom:6px">FOR COMPANIES</span>
+            <span style="display:block;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:18px">人材派遣について相談する</span>
+            <span style="display:block;font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px">freee実務研修済みの即戦力人材</span>
+          </span>
+          <span class="hb-arrow" style="font-size:24px">↗</span>
+        </a>
+        <a href="mailto:info@hatenabase.com" style="display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:26px 4px;text-decoration:none;color:#fff">
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:32px;color:rgba(255,255,255,.55);line-height:1;min-width:48px">03</span>
+          <span>
+            <span style="display:block;font-family:Inter,system-ui,sans-serif;font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.65);margin-bottom:6px">GENERAL</span>
+            <span style="display:block;font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;font-weight:700;font-size:18px">法人研修の問い合わせ</span>
+            <span style="display:block;font-size:11.5px;color:rgba(255,255,255,.65);margin-top:6px">カスタム研修・オンサイト対応</span>
+          </span>
+          <span class="hb-arrow" style="font-size:24px">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="hb-footer" style="padding:40px 32px 24px">
+  <div class="hb-footer-inner">
+    <div class="hb-footer-bottom">
+      <div>Copyright &copy; 2025 HatenaBase Inc.</div>
+      <div style="display:flex;gap:24px">
+        <a href="../index.html" style="color:inherit;text-decoration:none">トップに戻る</a>
+        <a href="../accounting/index.html" style="color:inherit;text-decoration:none">会計事業部</a>
+        <a href="#" style="color:inherit;text-decoration:none">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.hb-up, .hb-chars').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+  document.querySelector('.hb-header').style.background =
+    window.scrollY > 10 ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.94)';
+});
+</script>
+
+</body>
+</html>
