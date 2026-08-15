@@ -1,0 +1,246 @@
+/* ============================================================
+   hb-geo.css — はてなベース株式会社 コーポレートサイト 幾何学デザイン
+   ------------------------------------------------------------
+   トークンの正本: HatenaBase Design System / colors_and_type.css
+   事務所HP (tax.hatenabase.jp) の tax-geo.css と同一トークン・同一モチーフ。
+   両サイトで値がズレたら colors_and_type.css を正とする。
+
+   レスポンシブ方針:
+     マークアップは1系統のみ。PC版・SP版のHTMLを分けない。
+     表示差分はすべてこのファイルのメディアクエリで吸収する。
+     → 現行 variant-d.jsx の VariantDPC / VariantDMobile 二重実装を廃止するため。
+   ============================================================ */
+
+:root{
+  --navy:#0A2846;   /* --color-primary     */
+  --navy7:#0E365E;  /* --color-primary-700 hover */
+  --navy9:#061B30;  /* --color-primary-900 press/footer */
+  --blu:#2D5FA8;
+  --sky:#A9C4E4;
+  --pale:#DCE6F2;
+  --ink:#191919;    /* --color-text        */
+  --mute:#555B63;   /* --color-text-mute   */
+  --line:#E0E4E8;   /* --color-border      */
+  --sub:#F5F7FA;    /* --color-bg-sub      */
+  --sub2:#EEF1F6;   /* --color-bg-sub-2    */
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:'Zen Kaku Gothic New','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;color:var(--ink);background:#fff;line-height:1.8;-webkit-font-smoothing:antialiased}
+a{color:var(--navy);text-decoration:none}
+a:hover{color:var(--blu)}
+img{max-width:100%}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.sec{padding:104px 0}
+.secsub{background:var(--sub)}
+.secdark{background:var(--navy);color:#fff}
+
+/* ---- セクション見出し（リーフ + 英字ラベル + 和文H2）---- */
+.sh{display:flex;align-items:baseline;gap:20px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:64px;position:relative}
+.leaf{width:12px;height:12px;background:var(--navy);border-radius:0 100% 0 100%;align-self:center;flex-shrink:0}
+.en{font-size:12px;letter-spacing:.26em;font-weight:700;color:var(--navy)}
+.sh h2{margin:0;font-size:32px;font-weight:700;letter-spacing:.06em;line-height:1.4}
+.rleaf{position:absolute;right:0;bottom:-30px;width:9px;height:9px;background:var(--blu);border-radius:0 100% 0 100%}
+.secdark .sh{border-color:rgba(255,255,255,.18)}
+.secdark .en{color:var(--sky)}
+.secdark .leaf{background:var(--sky)}
+.secdark .rleaf{background:var(--sky)}
+
+/* ---- 幾何学モザイク ---- */
+.geo{display:grid;grid-template-columns:26px 26px;grid-template-rows:26px 26px;gap:3px;margin-bottom:30px}
+.geo i{display:block}
+.gl{grid-template-columns:34px 34px;grid-template-rows:34px 34px}
+.n{background:var(--navy)}.b{background:var(--blu)}.s{background:var(--sky)}.p{background:var(--pale)}
+.o{border-radius:50%}.tl{border-radius:100% 0 0 0}.tr{border-radius:0 100% 0 0}.bl{border-radius:0 0 0 100%}.br{border-radius:0 0 100% 0}
+
+/* ---- ヘッダー ---- */
+.hd{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50}
+.hdw{display:flex;align-items:center;justify-content:space-between;height:72px}
+.hlogo{height:34px;display:block}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-size:12px;letter-spacing:.14em;font-weight:700}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;cursor:pointer;padding:0;align-items:center;justify-content:center}
+.burger span{display:block;width:18px;height:1.5px;background:var(--navy);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--navy)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+
+/* ---- ボタン ---- */
+.cta{display:inline-block;background:var(--navy);color:#fff;font-weight:700;border-radius:8px;padding:12px 28px;font-size:14px;letter-spacing:.06em;transition:transform .2s,box-shadow .2s}
+.cta:hover{color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(10,40,70,.25)}
+.cta.gh{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.cta.gh:hover{color:var(--navy);background:rgba(10,40,70,.04);box-shadow:none;transform:none}
+.tcta{font-weight:700;font-size:14px;letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px}
+.tcta em{font-style:normal;transition:transform .2s}
+.tcta:hover em{transform:translateX(4px)}
+
+/* ---- ヒーロー ---- */
+.hero{padding:96px 0 110px;border-bottom:1px solid var(--line)}
+.herog{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center}
+.crumb{font-size:11px;letter-spacing:.2em;color:var(--mute);margin-bottom:28px}
+.hero h1{font-size:44px;font-weight:700;line-height:1.5;letter-spacing:.04em;margin:0 0 32px;color:var(--navy)}
+.hero .sub{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;font-size:19px;color:var(--blu);letter-spacing:.02em;display:block;margin-top:14px}
+.hero p{font-size:15px;color:var(--mute);margin:0 0 18px;max-width:600px}
+.heroart{display:grid;grid-template-columns:repeat(4,72px);grid-template-rows:repeat(4,72px);gap:6px;justify-content:center}
+.heroart i{display:block}
+.herobtn{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+
+/* ---- サービス3カード ---- */
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sc{border:1px solid var(--line);background:#fff;border-radius:12px;padding:40px 32px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+a.sc:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(10,40,70,.1);color:inherit}
+.snum{font-size:12px;letter-spacing:.22em;font-weight:700;color:var(--blu);margin-bottom:22px}
+.sc h3{margin:0 0 16px;font-size:19px;font-weight:700;line-height:1.55;letter-spacing:.04em;color:var(--navy)}
+.sc p{margin:0 0 24px;font-size:13.5px;color:var(--mute);flex:1}
+.rm{font-size:12px;letter-spacing:.18em;font-weight:700;color:var(--navy)}
+
+/* ---- 事業部3列（罫線グリッド）---- */
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+.dc{padding:48px 36px;display:flex;flex-direction:column;border-right:1px solid var(--line)}
+.dc:last-child{border-right:none}
+.dc.alt{background:var(--sub)}
+.dno{font-size:12px;letter-spacing:.22em;font-weight:700;color:var(--blu);margin-bottom:18px}
+.dc h3{margin:0 0 16px;font-size:20px;font-weight:700;letter-spacing:.04em;line-height:1.5;color:var(--navy)}
+.dc p{margin:0 0 26px;font-size:13.5px;color:var(--mute)}
+.dpts{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.dpts li{font-size:13px;padding:11px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center}
+.dpts li::before{content:"";width:8px;height:8px;background:var(--blu);border-radius:0 100% 0 100%;flex-shrink:0}
+
+/* ---- 16の課題 ---- */
+.igrid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.15);border-left:1px solid rgba(255,255,255,.15)}
+.ic{padding:24px 22px;border-right:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15);min-height:140px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;transition:background .2s}
+.ic:hover{background:rgba(255,255,255,.06);color:#fff}
+.ictag{font-size:10.5px;letter-spacing:.18em;font-weight:700;color:var(--sky)}
+.ic p{margin:12px 0 0;font-size:13.5px;line-height:1.75;font-weight:500}
+.secdark .lead{color:rgba(255,255,255,.72)}
+
+/* ---- 帯（研修 / hatena pro）---- */
+.band{border:1px solid var(--line);border-radius:12px;background:#fff;padding:48px 52px;display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center}
+.band.dark{background:var(--navy);border-color:var(--navy);color:#fff}
+.band.dark h3,.band.dark .bandttl{color:#fff}
+.band.dark p{color:#C6D4E4}
+.band.dark .cta{background:#fff;color:var(--navy)}
+.bandttl{font-size:12px;letter-spacing:.22em;font-weight:700;color:var(--blu);margin-bottom:12px}
+.band h3{margin:0 0 14px;font-size:22px;font-weight:700;line-height:1.5;letter-spacing:.04em;color:var(--navy)}
+.band p{margin:0;font-size:13.5px;color:var(--mute)}
+.bandfacts{display:flex;gap:28px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.band.dark .bandfacts{border-color:rgba(255,255,255,.18)}
+.bandfacts div{font-size:12.5px}
+.bandfacts dt{font-size:10.5px;letter-spacing:.16em;font-weight:700;color:var(--blu);margin-bottom:4px}
+.band.dark .bandfacts dt{color:var(--sky)}
+.bandfacts dd{margin:0;font-weight:500}
+.bandnote{font-size:11.5px;color:var(--mute);margin-top:18px;line-height:1.9}
+.band.dark .bandnote{color:#9FB4CB}
+
+/* ---- 事例カード ---- */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cc{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+a.cc:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(10,40,70,.1);color:inherit}
+.ccimg{aspect-ratio:16/9;background:var(--sub2);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.16em;color:var(--mute)}
+.ccbody{padding:26px 28px 30px;display:flex;flex-direction:column;flex:1}
+.cctag{display:inline-block;border:1px solid var(--navy);color:var(--navy);border-radius:4px;font-size:11px;padding:2px 12px;margin-bottom:14px;font-weight:700;letter-spacing:.06em;align-self:flex-start}
+.cc h3{margin:0 0 12px;font-size:16px;font-weight:700;line-height:1.6;letter-spacing:.03em}
+.cc p{margin:0;font-size:13px;color:var(--mute);flex:1}
+
+/* ---- お客様の声 ---- */
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.vc{border:1px solid var(--line);border-radius:12px;background:#fff;padding:40px 40px 36px}
+.vtag{display:inline-block;font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--blu);margin-bottom:12px}
+.vc h3{margin:0 0 18px;font-size:18px;font-weight:700;letter-spacing:.04em}
+.vc p{margin:0;font-size:13.5px;color:var(--mute)}
+
+/* ---- お知らせ / ブログ ---- */
+.nlist{border-top:1px solid var(--line)}
+.nlist a{display:grid;grid-template-columns:120px 130px 1fr;gap:24px;align-items:center;padding:20px 4px;border-bottom:1px solid var(--line)}
+.ndate{font-size:12px;letter-spacing:.1em;color:var(--mute)}
+.ncat{font-size:11px;letter-spacing:.12em;font-weight:700;color:var(--blu)}
+.ntitle{font-size:14px;font-weight:500}
+
+/* ---- 採用 ---- */
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.rc{border:1px solid var(--line);border-radius:12px;padding:32px 28px;background:#fff}
+.rc h3{margin:0 0 10px;font-size:16px;font-weight:700;letter-spacing:.04em}
+.rc p{margin:0;font-size:12.5px;color:var(--mute)}
+
+/* ---- CTA帯 ---- */
+.cband{text-align:center;padding:110px 24px}
+.cband .en{display:block;margin-bottom:26px}
+.cband h2{font-size:38px;font-weight:700;letter-spacing:.08em;line-height:1.6;margin:0 0 20px;color:var(--navy)}
+.cband p{color:var(--mute);font-size:14px;margin:0 0 44px}
+
+/* ---- フッター ---- */
+.ft{background:var(--navy);color:#fff;padding:80px 0 36px}
+.ft a{color:#C6D4E4;font-size:13px}
+.ft a:hover{color:#fff}
+.ftg{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.16)}
+.fth{font-size:12px;letter-spacing:.2em;font-weight:700;color:var(--sky);margin-bottom:18px}
+.ftcol{display:flex;flex-direction:column;gap:10px}
+.gco{margin-bottom:16px}
+.gco b{display:block;font-size:13px;font-weight:700}
+.gco span{font-size:11.5px;color:#9FB4CB}
+.ftlogo{height:32px;filter:brightness(0) invert(1);margin-bottom:20px}
+.ftbtm{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:11.5px;color:#9FB4CB;gap:20px;flex-wrap:wrap}
+.lead{font-size:15px;color:var(--mute);margin:0 0 48px;max-width:780px}
+
+/* ============================================================
+   レスポンシブ — ここだけで PC / タブレット / SP を吸収する
+   ============================================================ */
+@media(max-width:1040px){
+  .sec{padding:80px 0}
+  .sh h2{font-size:28px}
+  .herog{grid-template-columns:1fr;gap:48px}
+  .hero h1{font-size:36px}
+  .heroart{grid-template-columns:repeat(4,60px);grid-template-rows:repeat(4,60px)}
+  .sgrid,.cgrid{grid-template-columns:1fr 1fr}
+  .dgrid{grid-template-columns:1fr}
+  .dc{border-right:none;border-bottom:1px solid var(--line)}
+  .dc:last-child{border-bottom:none}
+  .igrid{grid-template-columns:repeat(2,1fr)}
+  .band{grid-template-columns:1fr;gap:28px;padding:40px 36px}
+  .rgrid{grid-template-columns:1fr 1fr}
+  .ftg{grid-template-columns:1fr 1fr;gap:40px}
+}
+
+@media(max-width:720px){
+  .wrap{padding:0 20px}
+  .sec{padding:64px 0}
+  .nav{display:none}
+  .nav.open{display:flex;position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px}
+  .nav.open a{padding:16px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .nav.open a.cta{margin-top:16px;text-align:center;border-bottom:none}
+  .burger{display:flex}
+
+  .sh{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:40px;padding-bottom:18px}
+  .sh h2{font-size:23px;letter-spacing:.04em}
+  .en{font-size:11px}
+  .rleaf{bottom:-24px}
+
+  .hero{padding:56px 0 64px}
+  .hero h1{font-size:27px;line-height:1.55;margin-bottom:24px}
+  .hero .sub{font-size:15px}
+  .hero p{font-size:14px}
+  .heroart{grid-template-columns:repeat(4,44px);grid-template-rows:repeat(4,44px);gap:4px;justify-content:start}
+  .herobtn{margin-top:32px}
+  .herobtn .cta{flex:1;text-align:center;padding:14px 18px;font-size:13px}
+
+  .sgrid,.cgrid,.vgrid,.rgrid{grid-template-columns:1fr;gap:16px}
+  .sc{padding:32px 26px}
+  .sc h3{font-size:17px}
+  .dc{padding:36px 26px}
+  .igrid{grid-template-columns:1fr}
+  .ic{min-height:0;padding:20px}
+  .band{padding:32px 26px}
+  .band h3{font-size:18px}
+  .bandfacts{gap:20px}
+  .vc{padding:32px 26px}
+
+  .nlist a{grid-template-columns:1fr;gap:6px;padding:18px 2px}
+  .ndate,.ncat{font-size:11px}
+
+  .cband{padding:72px 20px}
+  .cband h2{font-size:25px}
+
+  .ft{padding:56px 0 28px}
+  .ftg{grid-template-columns:1fr;gap:36px;padding-bottom:36px}
+  .ftbtm{flex-direction:column;align-items:flex-start;gap:10px}
+}

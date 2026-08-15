@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>はてなベース株式会社｜幾何学デザイン リニューアル案 — トップページ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="hb-geo.css">
+</head>
+<body>
+
+<!-- ============================================================
+     ヘッダー — 6項目・順序固定（事務所HPの統一形に準拠）
+     SP はバーガー → 同一の <nav> を展開する。ナビの実体は1つ。
+     ============================================================ -->
+<header class="hd"><div class="wrap hdw">
+  <a href="geo-top.html"><img class="hlogo" src="../images/hatenabase_logo.png" alt="はてなベース株式会社"></a>
+  <button class="burger" aria-label="メニュー" onclick="document.querySelector('.nav').classList.toggle('open')"><span></span></button>
+  <nav class="nav">
+    <a href="#service">SERVICE</a>
+    <a href="#achievements">ACHIEVEMENTS</a>
+    <a href="#blog">BLOG</a>
+    <a href="#about">ABOUT US</a>
+    <a href="#recruit">RECRUIT</a>
+    <a class="cta" href="#contact">CONTACT</a>
+  </nav>
+</div></header>
+
+<!-- ============================================================
+     ヒーロー
+     現行 PC 版のコピーを正として採用（SP 版は情報量が 6 割だったため）。
+     .hb-accent の青 3px アンダーバーは撤去した。
+     ============================================================ -->
+<section class="hero"><div class="wrap herog">
+  <div>
+    <div class="crumb">HOME　—　HatenaBase Inc., Shinjuku Tokyo</div>
+    <h1>攻めのバックオフィスを構築し、<br>経済OSをアップデートする。
+      <span class="sub">Implementing the offensive backoffice.</span>
+    </h1>
+    <p>DX × 会計 × AI の交点で、戦略設計から現場の導入・運用・改善まで。スタートアップ・中小企業のバックオフィスを、伸び代に変えるパートナーです。</p>
+    <p>BIG4にはない開発力、SIerにはない会計知見、現場に入り込むBPR推進力。この3つを内製で持つ体制で、業務基盤そのものを設計し直します。</p>
+    <div class="herobtn">
+      <a class="cta" href="#contact">お問い合わせはこちら →</a>
+      <a class="cta gh" href="#document">会社紹介資料をダウンロード</a>
+    </div>
+  </div>
+  <div class="heroart">
+    <i class="n tl"></i><i class="s o"></i><i class="p"></i><i class="b br"></i>
+    <i class="p o"></i><i class="b"></i><i class="n bl"></i><i class="s tr"></i>
+    <i class="s tl"></i><i></i><i class="p o"></i><i class="n tr"></i>
+    <i class="b o"></i><i class="p bl"></i><i class="n"></i><i class="s br"></i>
+  </div>
+</div></section>
+
+<!-- ============================================================ SERVICE ============================================================ -->
+<section class="sec" id="service"><div class="wrap">
+  <div class="sh"><span class="leaf"></span><span class="en">SERVICE</span><h2>3つの事業</h2><span class="rleaf"></span></div>
+  <p class="lead">バックオフィスを単独の最適化ではなく、事業の意思決定スピードそのものとして再設計します。</p>
+  <div class="sgrid">
+    <a class="sc" href="/hatena-dx/">
+      <span class="geo"><i class="n tl"></i><i class="s o"></i><i class="b"></i><i></i></span>
+      <div class="snum">01　DX / BPR</div>
+      <h3>バックオフィスBPR</h3>
+      <p>kintone・Salesforce・会計ソフトの導入から、業務プロセス再設計（BPR）まで内製チームで一貫対応。事業の意思決定スピードを上げる業務基盤を構築する。</p>
+      <span class="rm">READ MORE ↗</span>
+    </a>
+    <a class="sc" href="/hatena-account/">
+      <span class="geo"><i class="b br"></i><i class="n o"></i><i></i><i class="s tl"></i></span>
+      <div class="snum">02　FINANCE</div>
+      <h3>会計業務のAX化支援</h3>
+      <p>手作業の経理を、クラウド会計ソフト＋BIで再設計。月次決算の高速化・管理会計・IPO準備まで、経理・会計の実務専門家チームが伴走する。</p>
+      <span class="rm">READ MORE ↗</span>
+    </a>
+    <a class="sc" href="/hatena-content/">
+      <span class="geo"><i class="s o"></i><i class="b tr"></i><i class="n"></i><i class="p o"></i></span>
+      <div class="snum">03　AI / TALENT</div>
+      <h3>経理人材からクラウド会計人材への育成</h3>
+      <p>速習freee会計研修・kintone速習・生成AI業務適用研修。「使える人」を組織に増やすことから業務改革を始める。</p>
+      <span class="rm">READ MORE ↗</span>
+    </a>
+  </div>
+</div></section>
+
+<!-- ============================================================ DIVISIONS ============================================================ -->
+<section class="sec secsub" id="about"><div class="wrap">
+  <div class="sh"><span class="leaf"></span><span class="en">DIVISIONS</span><h2>3つの専門性が交差する場所</h2><span class="rleaf"></span></div>
+  <div class="dgrid">
+    <div class="dc">
+      <span class="geo gl"><i class="n tl"></i><i class="s"></i><i class="b o"></i><i class="p"></i></span>
+      <div class="dno">01　DX DIVISION</div>
+      <h3>業務とシステムを再設計する。</h3>
+      <p>kintone・Salesforce・会計ソフトをはじめとするSaaSの設計・導入・定着、業務フローの可視化と再構築。「ツールを入れて終わり」ではなく、現場の運用が変わるところまで伴走します。</p>
+      <ul class="dpts">
+        <li>業務フロー設計・標準化</li><li>SaaS導入・連携</li><li>内製化支援・運用定着</li><li>ノーコード／ローコード開発</li>
+      </ul>
+    </div>
+    <div class="dc alt">
+      <span class="geo gl"><i class="b o"></i><i class="n tr"></i><i class="p"></i><i class="s bl"></i></span>
+      <div class="dno">02　ACCOUNTING DIVISION</div>
+      <h3>数字で事業を支える。</h3>
+      <p>クラウド会計の導入支援を起点に、既存システム連携、管理会計、資金調達、IT導入補助金、経理事務代行までを一気通貫で伴走。税務顧問は はてなベース税理士事務所 と連携します。</p>
+      <ul class="dpts">
+        <li>会計ソフト導入支援</li><li>管理会計／月次レポート</li><li>資金調達 ／ IT導入補助金</li><li>経理事務代行</li>
+      </ul>
+    </div>
+    <div class="dc">
+      <span class="geo gl"><i class="p tl"></i><i class="b"></i><i class="s o"></i><i class="n br"></i></span>
+      <div class="dno">03　AI DIVISION</div>
+      <h3>生成AIを組織に組み込む。</h3>
+      <p>生成AI／LLMを「PoCで終わらせない」ための導入設計と内製化支援。社内ナレッジRAG、AIエージェント、業務自動化、社員向けAIリテラシー研修まで、組織への定着を一気通貫で。</p>
+      <ul class="dpts">
+        <li>生成AI導入設計</li><li>RAG／AIエージェント開発</li><li>業務自動化の実装</li><li>AIリテラシー研修</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============================================================
+     ISSUES — 16項目
+     現行は PC 版にしか存在しなかったセクション。SP でも同じ 16 項目を出す。
+     ============================================================ -->
+<section class="sec secdark"><div class="wrap">
+  <div class="sh"><span class="leaf"></span><span class="en">ISSUES</span><h2>こんな課題、ありませんか？</h2><span class="rleaf"></span></div>
+  <p class="lead">会計・経理・組織・テクノロジーの現場で、私たちが何度も出会ってきた課題を16個に整理しました。ひとつでも当てはまるものがあれば、AX（AI Transformation）で解けるかもしれません。</p>
+  <div class="igrid">
+    <a class="ic" href="#contact"><span class="ictag">FINANCE</span><p>月次決算が常に20日以上かかっている</p></a>
+    <a class="ic" href="#contact"><span class="ictag">FINANCE</span><p>経営数字が見えるのが、月遅れになっている</p></a>
+    <a class="ic" href="#contact"><span class="ictag">FINANCE</span><p>インボイス・電帳法対応の運用が回っていない</p></a>
+    <a class="ic" href="#contact"><span class="ictag">FINANCE</span><p>IPO準備で、何から手を付けるべきか分からない</p></a>
+    <a class="ic" href="#contact"><span class="ictag">OPS</span><p>同じ作業を、複数のSaaSに重複入力している</p></a>
+    <a class="ic" href="#contact"><span class="ictag">OPS</span><p>kintoneやfreeeを入れたが、定着していない</p></a>
+    <a class="ic" href="#contact"><span class="ictag">OPS</span><p>業務マニュアルがエクセルで属人化している</p></a>
+    <a class="ic" href="#contact"><span class="ictag">OPS</span><p>部署間で数字の定義がバラバラで、議論が噛み合わない</p></a>
+    <a class="ic" href="#contact"><span class="ictag">AI</span><p>生成AIをどう業務に組み込めばいいか分からない</p></a>
+    <a class="ic" href="#contact"><span class="ictag">AI</span><p>社員に生成AIを使わせたいが、教育が追いつかない</p></a>
+    <a class="ic" href="#contact"><span class="ictag">AI</span><p>AIエージェントで、社内業務を自動化したい</p></a>
+    <a class="ic" href="#contact"><span class="ictag">AI</span><p>PoCで終わらない、AIの本格導入を進めたい</p></a>
+    <a class="ic" href="#contact"><span class="ictag">TEAM</span><p>バックオフィスが慢性的な人手不足で、攻めに回せない</p></a>
+    <a class="ic" href="#contact"><span class="ictag">TEAM</span><p>BPOを使っているが、業務がブラックボックス化している</p></a>
+    <a class="ic" href="#contact"><span class="ictag">TEAM</span><p>採用してもバックオフィス人材がすぐに辞めてしまう</p></a>
+    <a class="ic" href="#contact"><span class="ictag">TEAM</span><p>CFOやCTOがいないが、相談できる相手が欲しい</p></a>
+  </div>
+</div></section>
+
+<!-- ============================================================ TRAINING ============================================================ -->
+<section class="sec"><div class="wrap">
+  <div class="sh"><span class="leaf"></span><span class="en">TRAINING</span><h2>速習freee会計研修</h2><span class="rleaf"></span></div>
+  <div class="band">
+    <span class="geo gl" style="margin:0"><i class="n tl"></i><i class="s o"></i><i class="b"></i><i class="p br"></i></span>
+    <div>
+      <div class="bandttl">FREEE CERTIFIED PROGRAM</div>
+      <h3>クラウド会計を「使える人」を、組織に増やす。</h3>
+      <p>eラーニング8時間と実地研修2日間の短期集中プログラム。freee会計の実務スキルを、演習ベースで習得します。</p>
+    </div>
+    <a class="cta" href="/hatena-content/">研修の詳細を見る →</a>
+  </div>
+</div></section>
+
+<!-- ============================================================
+     HATENA PRO — 速習研修の直下（ご指示どおりの配置）
+
+     【文言の出典】すべて hatena-pro 側のレビュー済みコピーからの転記。
+       ・見出し    = issue #7 A-2 の修正案（実装済み）
+       ・リード    = issue #7 A-1 の修正案（実装済み）
+       ・契約の説明 = web/templates/home/index.tmpl:224 そのまま
+       ・3つの条件 = 同 hp-home-trust そのまま
+       ・CTA      = 同 hp-home-actions の企業側導線そのまま
+
+     【意図的に載せていないもの】
+       ・紹介／マッチング／仲介／あっせん／案件を探す／指揮命令（issue #7 の不使用語）
+       ・プロ人材側の登録導線（募集情報等提供事業と読まれうるため企業側1本に限定）
+       ・料金レンジ・成果報酬（issue #7 A-10 / A-21 が C-1 合意待ちのため）
+     ============================================================ -->
+<section class="sec secsub" id="pro"><div class="wrap">
+  <div class="sh"><span class="leaf"></span><span class="en">HATENA PRO</span><h2>バックオフィス業務の受託</h2><span class="rleaf"></span></div>
+  <div class="band dark">
+    <span class="geo gl" style="margin:0"><i class="s o"></i><i class="b tr"></i><i class="p"></i><i class="s bl"></i></span>
+    <div>
+      <div class="bandttl">pro.hatenabase.jp</div>
+      <h3>AI時代のバックオフィス業務を、<br>設計から実務までまるごと受託します。</h3>
+      <p>経理・バックオフィス業務を、審査を通過した委託先とともに受託します。契約は御社と hatena-pro の間で締結し、実務は再委託により遂行します。</p>
+      <dl class="bandfacts">
+        <div><dt>初期費用</dt><dd>0円です</dd></div>
+        <div><dt>契約期間</dt><dd>最短1か月からです</dd></div>
+        <div><dt>契約・請求</dt><dd>運営が代行します</dd></div>
+      </dl>
+      <p class="bandnote">月次決算・管理会計、人事労務の業務設計、freee・マネーフォワード・kintoneなどの導入、生成AIを含むDX・AX推進までご相談いただけます。</p>
+    </div>
+    <a class="cta" href="https://pro.hatenabase.jp/consult">業務を任せたい企業の方はこちら →</a>
+  </div>
+</div></section>
+
+<!-- ============================================================ ACHIEVEMENTS ============================================================ -->
+<section class="sec" id="achievements"><div class="wrap">
+  <div class="sh"><span class="leaf"></span><span class="en">ACHIEVEMENTS</span><h2>支援事例・製品パッケージ</h2><span class="rleaf"></span></div>
+  <p class="lead">本番では achievements カスタム投稿タイプから最新6件を自動取得します。以下は現行サイト掲載分からの抜粋です。</p>
+  <div class="cgrid">
+    <a class="cc" href="/achievements/">
+      <div class="ccimg">ACHIEVEMENT IMAGE</div>
+      <div class="ccbody"><span class="cctag">会計コンサルティング</span><h3>月次決算期間を15日から7日へ短縮</h3><p>クラウド会計への移行と自動仕訳ルールの設計により、締めのリードタイムを半減させました。</p></div>
+    </a>
+    <a class="cc" href="/achievements/">
+      <div class="ccimg">ACHIEVEMENT IMAGE</div>
+      <div class="ccbody"><span class="cctag">DX / BPR</span><h3>税理士法人の引継ぎ時間を50%短縮</h3><p>業務フローの棚卸しと標準化、ナレッジのSaaS集約によって属人化を解消しました。</p></div>
+    </a>
+    <a class="cc" href="/achievements/">
+      <div class="ccimg">ACHIEVEMENT IMAGE</div>
+      <div class="ccbody"><span class="cctag">データ / BI</span><h3>製造業向けBI基盤の構築</h3><p>散在していた実績データを統合し、経営判断に使えるダッシュボードを整備しました。</p></div>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:48px"><a class="tcta" href="/achievements/">支援事例・製品パッケージをすべて見る <em>→</em></a></div>
+</div></section>
+
+<!-- ============================================================ VOICE ============================================================ -->
+<section class="sec secsub"><div class="wrap">
+  <div class="sh"><span class="leaf"></span><span class="en">VOICE</span><h2>クライアントの声</h2><span class="rleaf"></span></div>
+  <div class="vgrid">
+    <div class="vc"><div class="vtag">SES事業</div><h3>株式会社オーガイ</h3><p>資金繰りの不安から解放され、“攻め”の経理・財務戦略を確立できました。freee記帳の構築、複数回の融資獲得、Looker StudioでのBI分析まで——経理業務の時間を40時間から10時間に削減できたのは大きいです。</p></div>
+    <div class="vc"><div class="vtag">BtoBマーケティング支援</div><h3>株式会社グロースソイル</h3><p>社員雇用後に毎月100万円の赤字で倒産の危機に。資金調達支援と財務再建を依頼し、公庫融資の実行・コスト削減・売上拡大を並行して進めた結果、支援開始3カ月で単月黒字化を達成できました。</p></div>
+  </div>
+</div></section>
+
+<!-- ============================================================ NEWS / BLOG ============================================================ -->
+<section class="sec" id="blog"><div class="wrap">
+  <div class="sh"><span class="leaf"></span><span class="en">NEWS &amp; BLOG</span><h2>お知らせ・記事</h2><span class="rleaf"></span></div>
+  <p class="lead">本番では news / blog カスタム投稿タイプから最新分を自動取得します。</p>
+  <div class="nlist">
+    <a href="/news/"><span class="ndate">2026.08.12</span><span class="ncat">NEWS</span><span class="ntitle">夏季休業のお知らせ（8月13日〜17日）</span></a>
+    <a href="/blog/"><span class="ndate">2026.08.05</span><span class="ncat">BLOG</span><span class="ntitle">n8nで請求書処理を自動化する実装ガイド</span></a>
+    <a href="/blog/"><span class="ndate">2026.07.29</span><span class="ncat">BLOG</span><span class="ntitle">Codex CLIを業務スクリプトに組み込む</span></a>
+    <a href="/news/"><span class="ndate">2026.07.22</span><span class="ncat">NEWS</span><span class="ntitle">メディア掲載のお知らせ</span></a>
+  </div>
+</div></section>
+
+<!-- ============================================================ RECRUIT ============================================================ -->
+<section class="sec secsub" id="recruit"><div class="wrap">
+  <div class="sh"><span class="leaf"></span><span class="en">RECRUIT</span><h2>採用情報</h2><span class="rleaf"></span></div>
+  <p class="lead">バックオフィスを「攻めの装置」に変える仲間を募集しています。新卒・中途・業務委託まで。</p>
+  <div class="rgrid">
+    <div class="rc"><h3>DXコンサルタント</h3><p>kintone・Salesforce導入とBPR推進</p></div>
+    <div class="rc"><h3>会計コンサルタント</h3><p>クラウド会計導入・管理会計・資金調達</p></div>
+    <div class="rc"><h3>AIエンジニア</h3><p>RAG・AIエージェント開発と業務自動化</p></div>
+    <div class="rc"><h3>新卒・インターン</h3><p>Wantedlyより通年で受け付けています</p></div>
+  </div>
+  <div style="text-align:center;margin-top:48px"><a class="tcta" href="/recruit/">採用情報トップへ <em>→</em></a></div>
+</div></section>
+
+<!-- ============================================================ CTA ============================================================ -->
+<section class="cband" id="contact">
+  <span class="en">CONTACT</span>
+  <h2>お気軽に<br>お問い合わせください。</h2>
+  <p>初回のご相談は無料です。オンラインにて対応いたします。</p>
+  <a class="cta" href="/contact/">お問い合わせはこちら →</a>
+</section>
+
+<!-- ============================================================
+     フッター
+     税理士事務所のリンクは tax.hatenabase.jp の各ページへ直接張る。
+     旧 /tax-accountant/* は 301 で生きているが、consulting / service /
+     recruit の 3 本は意図した先に着かず tax トップへ落ちるため。
+     ============================================================ -->
+<footer class="ft"><div class="wrap">
+  <div class="ftg">
+    <div>
+      <img class="ftlogo" src="../images/hatenabase_logo.png" alt="はてなベース株式会社">
+      <div style="font-size:12px;color:#9FB4CB;line-height:2">会計×ITで<br>バックオフィスを再設計する</div>
+    </div>
+    <div>
+      <div class="fth">SERVICE</div>
+      <div class="ftcol">
+        <a href="/hatena-dx/">バックオフィスDX</a>
+        <a href="/hatena-account/">会計コンサルティング</a>
+        <a href="/hatena-content/">研修・人材育成</a>
+        <a href="/ai-automation/">AI自動化支援</a>
+        <a href="/financing-support/">融資支援</a>
+      </div>
+    </div>
+    <div>
+      <div class="fth">ABOUT</div>
+      <div class="ftcol">
+        <a href="/about-us/">私たちについて</a>
+        <a href="/achievements/">支援事例・製品パッケージ</a>
+        <a href="/news/">お知らせ</a>
+        <a href="/blog/">ブログ</a>
+        <a href="/recruit/">採用情報</a>
+        <a href="/contact/">お問い合わせ</a>
+        <a href="/terms/">利用規約</a>
+      </div>
+    </div>
+    <div>
+      <div class="fth">GROUP COMPANIES</div>
+      <div class="gco"><b>はてなベース株式会社</b><span>DX・AI・経営管理コンサルティング</span></div>
+      <div class="gco">
+        <b>はてなベース税理士事務所</b><span>税務・会計・月次決算</span>
+        <div class="ftcol" style="margin-top:10px">
+          <a href="https://tax.hatenabase.jp/">事務所トップ</a>
+          <a href="https://tax.hatenabase.jp/service/tax-advisor/">税務顧問</a>
+          <a href="https://tax.hatenabase.jp/service/advisory/">管理会計コンサル</a>
+          <a href="https://tax.hatenabase.jp/service/financing-support/">融資支援</a>
+          <a href="https://tax.hatenabase.jp/tools/">シミュレーション</a>
+          <a href="https://tax.hatenabase.jp/about-us/">私たちについて</a>
+          <a href="https://tax.hatenabase.jp/blog/">ブログ</a>
+          <a href="/contact/?type=tax-office">事務所へのお問い合わせ</a>
+        </div>
+      </div>
+      <div class="gco"><b>はてなベース社会保険労務士事務所</b><span>労務・人事・社会保険</span></div>
+    </div>
+  </div>
+  <div class="ftbtm">
+    <span>共通所在地：東京都新宿区愛住町23-1 woody21 6階</span>
+    <span>Copyright © 2026 HatenaBase Inc.</span>
+  </div>
+</div></footer>
+
+</body>
+</html>
