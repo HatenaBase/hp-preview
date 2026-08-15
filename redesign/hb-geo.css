@@ -1,9 +1,14 @@
 /* ============================================================
    hb-geo.css — はてなベース株式会社 コーポレートサイト 幾何学デザイン
    ------------------------------------------------------------
-   トークンの正本: HatenaBase Design System / colors_and_type.css
-   事務所HP (tax.hatenabase.jp) の tax-geo.css と同一トークン・同一モチーフ。
-   両サイトで値がズレたら colors_and_type.css を正とする。
+   tax.hatenabase.jp の tax-geo.css と同型の2層構造。
+
+     1層目（正本）  _ds/colors_and_type.css   Hatenabase Design System
+     2層目（これ）  hb-geo.css                会社HP固有のレイアウト・モチーフ
+
+   トークンは値をコピーせず var() で参照する。ここで定義している短縮名は
+   正本トークンのエイリアスであり、独自の値を持たない。
+   → 値の重複が無いので、正本を更新すれば両サイトに反映される。
 
    レスポンシブ方針:
      マークアップは1系統のみ。PC版・SP版のHTMLを分けない。
@@ -11,27 +16,37 @@
      → 現行 variant-d.jsx の VariantDPC / VariantDMobile 二重実装を廃止するため。
    ============================================================ */
 
+@import url('_ds/colors_and_type.css');
+
 :root{
-  --navy:#0A2846;   /* --color-primary     */
-  --navy7:#0E365E;  /* --color-primary-700 hover */
-  --navy9:#061B30;  /* --color-primary-900 press/footer */
+  /* --- 正本トークンのエイリアス。実値は colors_and_type.css にある --- */
+  --navy: var(--color-primary);
+  --navy7:var(--color-primary-700);
+  --navy9:var(--color-primary-900);
+  --ink:  var(--color-text);
+  --mute: var(--color-text-mute);
+  --line: var(--color-border);
+  --sub:  var(--color-bg-sub);
+  --sub2: var(--color-bg-sub-2);
+
+  /* --- 幾何学モザイクの中間階調 ---
+     現時点で colors_and_type.css に該当トークンが無いため、
+     tax-geo.css の定義値をここでも定義している。会社HP・事務所HPの
+     両方で使う色になったので、正本 colors_and_type.css 側へ
+     --color-primary-500 / -300 / -100 等として昇格させたい。
+     昇格したらこの3行は var() 参照に置き換える。 */
   --blu:#2D5FA8;
   --sky:#A9C4E4;
   --pale:#DCE6F2;
-  --ink:#191919;    /* --color-text        */
-  --mute:#555B63;   /* --color-text-mute   */
-  --line:#E0E4E8;   /* --color-border      */
-  --sub:#F5F7FA;    /* --color-bg-sub      */
-  --sub2:#EEF1F6;   /* --color-bg-sub-2    */
 }
 
 *{box-sizing:border-box}
-body{margin:0;font-family:'Zen Kaku Gothic New','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;color:var(--ink);background:#fff;line-height:1.8;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--font-family);color:var(--ink);background:var(--color-bg);line-height:var(--line-height-base);-webkit-font-smoothing:antialiased}
 a{color:var(--navy);text-decoration:none}
 a:hover{color:var(--blu)}
 img{max-width:100%}
 
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.wrap{max-width:var(--container-max);margin:0 auto;padding:0 var(--container-pad)}
 .sec{padding:104px 0}
 .secsub{background:var(--sub)}
 .secdark{background:var(--navy);color:#fff}
@@ -40,7 +55,7 @@ img{max-width:100%}
 .sh{display:flex;align-items:baseline;gap:20px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:64px;position:relative}
 .leaf{width:12px;height:12px;background:var(--navy);border-radius:0 100% 0 100%;align-self:center;flex-shrink:0}
 .en{font-size:12px;letter-spacing:.26em;font-weight:700;color:var(--navy)}
-.sh h2{margin:0;font-size:32px;font-weight:700;letter-spacing:.06em;line-height:1.4}
+.sh h2{margin:0;font-size:var(--text-heading);font-weight:700;letter-spacing:.06em;line-height:1.4}
 .rleaf{position:absolute;right:0;bottom:-30px;width:9px;height:9px;background:var(--blu);border-radius:0 100% 0 100%}
 .secdark .sh{border-color:rgba(255,255,255,.18)}
 .secdark .en{color:var(--sky)}
@@ -66,9 +81,9 @@ img{max-width:100%}
 .burger span::before{top:-6px}.burger span::after{top:6px}
 
 /* ---- ボタン ---- */
-.cta{display:inline-block;background:var(--navy);color:#fff;font-weight:700;border-radius:8px;padding:12px 28px;font-size:14px;letter-spacing:.06em;transition:transform .2s,box-shadow .2s}
-.cta:hover{color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(10,40,70,.25)}
-.cta.gh{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.cta{display:inline-block;background:var(--navy);color:#fff;font-weight:var(--font-weight-bold);border-radius:var(--radius-md);padding:12px 28px;font-size:var(--text-caption);letter-spacing:.06em;transition:transform var(--duration-2) var(--ease-out),box-shadow var(--duration-2) var(--ease-out)}
+.cta:hover{color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-cta)}
+.cta.gh{background:transparent;color:var(--navy);border:1px solid var(--navy);border-radius:var(--radius-md)}
 .cta.gh:hover{color:var(--navy);background:rgba(10,40,70,.04);box-shadow:none;transform:none}
 .tcta{font-weight:700;font-size:14px;letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px}
 .tcta em{font-style:normal;transition:transform .2s}
@@ -88,7 +103,7 @@ img{max-width:100%}
 /* ---- サービス3カード ---- */
 .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .sc{border:1px solid var(--line);background:#fff;border-radius:12px;padding:40px 32px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-a.sc:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(10,40,70,.1);color:inherit}
+a.sc:hover{transform:translateY(-2px);box-shadow:var(--shadow-raise);color:inherit}
 .snum{font-size:12px;letter-spacing:.22em;font-weight:700;color:var(--blu);margin-bottom:22px}
 .sc h3{margin:0 0 16px;font-size:19px;font-weight:700;line-height:1.55;letter-spacing:.04em;color:var(--navy)}
 .sc p{margin:0 0 24px;font-size:13.5px;color:var(--mute);flex:1}
@@ -135,10 +150,10 @@ a.sc:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(10,40,70,.1);co
 /* ---- 事例カード ---- */
 .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .cc{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-a.cc:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(10,40,70,.1);color:inherit}
+a.cc:hover{transform:translateY(-2px);box-shadow:var(--shadow-raise);color:inherit}
 .ccimg{aspect-ratio:16/9;background:var(--sub2);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.16em;color:var(--mute)}
 .ccbody{padding:26px 28px 30px;display:flex;flex-direction:column;flex:1}
-.cctag{display:inline-block;border:1px solid var(--navy);color:var(--navy);border-radius:4px;font-size:11px;padding:2px 12px;margin-bottom:14px;font-weight:700;letter-spacing:.06em;align-self:flex-start}
+.cctag{display:inline-block;border:1px solid var(--navy);color:var(--navy);border-radius:var(--radius-sm);font-size:11px;padding:2px 12px;margin-bottom:14px;font-weight:700;letter-spacing:.06em;align-self:flex-start}
 .cc h3{margin:0 0 12px;font-size:16px;font-weight:700;line-height:1.6;letter-spacing:.03em}
 .cc p{margin:0;font-size:13px;color:var(--mute);flex:1}
 
@@ -180,7 +195,7 @@ a.cc:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(10,40,70,.1);co
 .gco span{font-size:11.5px;color:#9FB4CB}
 .ftlogo{height:32px;filter:brightness(0) invert(1);margin-bottom:20px}
 .ftbtm{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:11.5px;color:#9FB4CB;gap:20px;flex-wrap:wrap}
-.lead{font-size:15px;color:var(--mute);margin:0 0 48px;max-width:780px}
+.lead{font-size:15px;color:var(--mute);margin:0 0 var(--space-xl);max-width:780px}
 
 /* ============================================================
    レスポンシブ — ここだけで PC / タブレット / SP を吸収する
