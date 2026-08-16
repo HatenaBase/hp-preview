@@ -30,11 +30,11 @@
   --sub2: var(--color-bg-sub-2);
 
   /* --- 幾何学モザイクの中間階調 ---
-     現時点で colors_and_type.css に該当トークンが無いため、
-     tax-geo.css の定義値をここでも定義している。会社HP・事務所HPの
-     両方で使う色になったので、正本 colors_and_type.css 側へ
-     --color-primary-500 / -300 / -100 等として昇格させたい。
-     昇格したらこの3行は var() 参照に置き換える。 */
+     正本（hatena-pr design-system/マスターデザインガイド.md）に該当トークンが
+     無いため、tax-geo.css の定義値をここでも定義している。会社HP・事務所HPの
+     両方で使う色になったため、正本への昇格を HatenaBase/hatena-pr#47 で起票済み。
+     --color-primary-mid / -soft / -pale として追加される予定。
+     反映されたらこの3行は var() 参照に置き換える。 */
   --blu:#2D5FA8;
   --sky:#A9C4E4;
   --pale:#DCE6F2;
